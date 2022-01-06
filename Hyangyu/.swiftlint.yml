@@ -1,0 +1,15 @@
+disabled_rules:
+- line_length
+- trailing_whitespace
+- orphaned_doc_comment
+- nesting
+- function_body_length
+included:
+excluded:
+- Pods
+- Hyangyu/Sources/AppDelegate.swift
+- Hyangyu/Sources/SceneDelegate.swift
+
+identifier_name:
+  excluded:
+    - id
