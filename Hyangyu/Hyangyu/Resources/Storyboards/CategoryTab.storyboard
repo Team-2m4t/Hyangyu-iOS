@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1T5-Ea-t0E">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--카테고리-->
+        <scene sceneID="3cW-Dj-jYY">
+            <objects>
+                <viewController id="1T5-Ea-t0E" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CQs-gS-gkR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="카테고리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3i-op-gmx">
+                                <rect key="frame" x="20" y="69" width="77" height="26.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="77" id="OP5-AI-mdh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8vU-Il-5xt">
+                                <rect key="frame" x="20" y="114" width="374" height="669"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcr-VS-RqR" userLabel="전시회">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="209.5"/>
+                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDp-3D-dVB" userLabel="박람회">
+                                        <rect key="frame" x="0.0" y="229.5" width="374" height="210"/>
+                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-Ho-5cC" userLabel="페스티벌">
+                                        <rect key="frame" x="0.0" y="459.5" width="374" height="209.5"/>
+                                        <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ar8-5d-pGF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8vU-Il-5xt" firstAttribute="leading" secondItem="ar8-5d-pGF" secondAttribute="leading" constant="20" id="67C-3o-2Su"/>
+                            <constraint firstItem="a3i-op-gmx" firstAttribute="top" secondItem="ar8-5d-pGF" secondAttribute="top" constant="25" id="EeE-Fg-qyU"/>
+                            <constraint firstItem="ar8-5d-pGF" firstAttribute="bottom" secondItem="8vU-Il-5xt" secondAttribute="bottom" constant="30" id="Jzs-19-UeP"/>
+                            <constraint firstItem="ar8-5d-pGF" firstAttribute="trailing" secondItem="8vU-Il-5xt" secondAttribute="trailing" constant="20" id="KiG-lP-cBh"/>
+                            <constraint firstItem="8vU-Il-5xt" firstAttribute="top" secondItem="ar8-5d-pGF" secondAttribute="top" constant="70" id="TZW-WK-Pur"/>
+                            <constraint firstItem="a3i-op-gmx" firstAttribute="leading" secondItem="ar8-5d-pGF" secondAttribute="leading" constant="20" id="nLm-r2-Ffb"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="카테고리" image="tray.2.fill" catalog="system" id="vQF-eg-Dud"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UXw-yd-Y7V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="176.81159420289856" y="124.55357142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="tray.2.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
