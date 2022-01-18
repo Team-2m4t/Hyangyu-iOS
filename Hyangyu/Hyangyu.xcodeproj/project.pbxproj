@@ -7,24 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		236279132796840B00C16340 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236279122796840B00C16340 /* Home.storyboard */; };
+		236279152796841A00C16340 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236279142796841A00C16340 /* HomeViewController.swift */; };
+		236279172796894800C16340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236279162796894800C16340 /* Main.storyboard */; };
 		6A4324E6077B73484DAA70C1 /* Pods_Hyangyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */; };
 		83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E00278735FF009A8009 /* AppDelegate.swift */; };
 		83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E02278735FF009A8009 /* SceneDelegate.swift */; };
-		83B34E05278735FF009A8009 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E04278735FF009A8009 /* ViewController.swift */; };
-		83B34E08278735FF009A8009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E06278735FF009A8009 /* Main.storyboard */; };
 		83B34E0A27873600009A8009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0927873600009A8009 /* Assets.xcassets */; };
-		83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0B27873600009A8009 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		236279122796840B00C16340 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		236279142796841A00C16340 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		236279162796894800C16340 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyangyu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B34DFD278735FF009A8009 /* Hyangyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyangyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B34E00278735FF009A8009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83B34E02278735FF009A8009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		83B34E04278735FF009A8009 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		83B34E07278735FF009A8009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83B34E0927873600009A8009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		83B34E0C27873600009A8009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83B34E0E27873600009A8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9EA327C994450EF6EBF2D7D3 /* Pods-Hyangyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyangyu.debug.xcconfig"; path = "Target Support Files/Pods-Hyangyu/Pods-Hyangyu.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2EBFDC269698930C317BFF /* Pods-Hyangyu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyangyu.release.xcconfig"; path = "Target Support Files/Pods-Hyangyu/Pods-Hyangyu.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,8 +74,6 @@
 			children = (
 				83B34E162787364A009A8009 /* Sources */,
 				83B34E1527873640009A8009 /* Resources */,
-				83B34E06278735FF009A8009 /* Main.storyboard */,
-				83B34E0B27873600009A8009 /* LaunchScreen.storyboard */,
 			);
 			path = Hyangyu;
 			sourceTree = "<group>";
@@ -115,6 +113,8 @@
 		83B34E182787367D009A8009 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				236279122796840B00C16340 /* Home.storyboard */,
+				236279162796894800C16340 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -129,7 +129,7 @@
 		83B34E1A278736B3009A8009 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				83B34E04278735FF009A8009 /* ViewController.swift */,
+				236279142796841A00C16340 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -223,9 +223,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */,
+				236279172796894800C16340 /* Main.storyboard in Resources */,
 				83B34E0A27873600009A8009 /* Assets.xcassets in Resources */,
-				83B34E08278735FF009A8009 /* Main.storyboard in Resources */,
+				236279132796840B00C16340 /* Home.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,32 +295,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83B34E05278735FF009A8009 /* ViewController.swift in Sources */,
 				83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */,
 				83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */,
+				236279152796841A00C16340 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		83B34E06278735FF009A8009 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83B34E07278735FF009A8009 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		83B34E0B27873600009A8009 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				83B34E0C27873600009A8009 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		83B34E0F27873600009A8009 /* Debug */ = {
@@ -446,7 +427,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Hyangyu/Info.plist;
+				INFOPLIST_FILE = Hyangyu/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +446,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Hyangyu/Info.plist;
+				INFOPLIST_FILE = Hyangyu/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
