@@ -1,29 +1,40 @@
-//
-//  HomeViewController.swift
-//  Hyangyu
-//
-//  Created by 길태연 on 2022/01/18.
-//
-
 import UIKit
 
 class HomeViewController: UIViewController {
 
+  
+    @IBOutlet weak var circleView: UIView!
+    @IBOutlet weak var exhibitionColor: UIButton!
+    @IBOutlet weak var festivalColor: UIButton!
+    @IBOutlet weak var fairColor: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        circleView.layer.cornerRadius = 4
 
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func exhibitionButton(_ sender: Any) {
+        circleView.frame.origin.x = 20
+        exhibitionColor.isHighlighted = false
+        festivalColor.isHighlighted = true
+        fairColor.isHighlighted = true
+        
     }
-    */
-
+    
+    @IBAction func festivalButton(_ sender: Any) {
+        circleView.frame.origin.x = 102
+        exhibitionColor.isHighlighted = true
+        festivalColor.isHighlighted = false
+        fairColor.isHighlighted = true
+    }
+    
+    @IBAction func fairButton(_ sender: Any) {
+        circleView.frame.origin.x = 203
+        exhibitionColor.isHighlighted = true
+        festivalColor.isHighlighted = true
+        fairColor.isHighlighted = false
+    }
+    
 }
