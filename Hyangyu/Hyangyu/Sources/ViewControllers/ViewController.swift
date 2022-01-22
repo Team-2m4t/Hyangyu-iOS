@@ -14,6 +14,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func pushToTabbar(_ sender: Any) {
+        let tabBarStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+                guard let tabBarController = tabBarStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController else {
+                    return
+                }
+                tabBarController.modalPresentationStyle = .fullScreen
+                self.present(tabBarController, animated: true, completion: nil)
+    }
+    
 }
 
