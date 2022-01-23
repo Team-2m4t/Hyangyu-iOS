@@ -141,10 +141,6 @@ class MyPageViewController: CustomPageViewController  {
         menuView.updateLayout(scrollView)
     }
     
-    override func pageController(attach pageController: CustomPageViewController, menuView isAdsorption: Bool) {
-        menuView.backgroundColor = .white
-    }
-    
     
     override func pageController(_ pageController: CustomPageViewController, didDisplay viewController: CustomController, forItemAt index: Int) {
         menuView.checkState(animation: true)

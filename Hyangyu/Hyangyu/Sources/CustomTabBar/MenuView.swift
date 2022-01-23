@@ -31,6 +31,7 @@ public class CustomMenuView: UIView {
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
         stackView.spacing = itemSpace
+        backgroundColor = .white
         return stackView
     }()
     
@@ -237,7 +238,6 @@ public class CustomMenuView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         initialize()
-        backgroundColor = .white
     }
     
     required public init?(coder aDecoder: NSCoder) {
