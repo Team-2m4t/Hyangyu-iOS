@@ -23,6 +23,7 @@ public enum Image {
     // icons
     public static let icSetting = UIImage(named: "settingIcon")!
     public static let backButton = UIImage(named: "backBtn")!
+    public static let closeButton = UIImage(named: "closeBtn")!
     
     
     public static let userDefaultImage = UIImage(named: "userDefaultImage")!
