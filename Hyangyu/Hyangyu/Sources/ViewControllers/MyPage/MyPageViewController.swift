@@ -23,7 +23,7 @@ final class MyPageViewController: CustomPageViewController  {
     // MARK: - Property
     private let tabTitles:[String] = ["전시회", "박람회", "페스티벌"]
     private let profileEditVC = ProfileEditViewController(nibName: "ProfileEditViewController", bundle: nil)
-    private var userName: String = "이물사딱 아요"
+    private var userName: String = "이물사딱아요"
     private var userImage: UIImage =  Image.userDefaultImage
     
     lazy var menuView: CustomMenuView = {

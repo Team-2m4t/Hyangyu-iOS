@@ -30,7 +30,7 @@ class HeaderView: UIView {
     
     private var userNameLabel = UILabel().then {
         $0.font = UIFont(name: FontType.appleSDGothicNeoBold.rawValue, size: 17)
-        $0.text = "이물사딱 아요"
+        $0.text = "이물사딱아요"
         $0.textColor = .textBlack
         $0.numberOfLines = 2
     }
