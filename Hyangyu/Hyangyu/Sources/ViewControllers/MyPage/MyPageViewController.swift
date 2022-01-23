@@ -17,14 +17,14 @@ import UIKit
 import SnapKit
 import Then
 
-class MyPageViewController: CustomPageViewController  {
+final class MyPageViewController: CustomPageViewController  {
     
     
     // MARK: - Property
     private let tabTitles:[String] = ["전시회", "박람회", "페스티벌"]
-    private let profileEditVC = ProfileEditViewController()
-    private var userName: String? = "이물사딱 아요"
-    private var userImage: UIImage? =  Image.userDefaultImage
+    private let profileEditVC = ProfileEditViewController(nibName: "ProfileEditViewController", bundle: nil)
+    private var userName: String = "이물사딱 아요"
+    private var userImage: UIImage =  Image.userDefaultImage
     
     lazy var menuView: CustomMenuView = {
         let view = CustomMenuView(parts:
@@ -62,7 +62,6 @@ class MyPageViewController: CustomPageViewController  {
         initNavigationBar()
         
         profileEditVC.delegate = self
-        configure()
         
     }
     
@@ -81,9 +80,6 @@ class MyPageViewController: CustomPageViewController  {
     }
     
     private func configure() {
-        guard (userImage != nil) && (userName != nil) else {
-            return
-        }
         profileEditVC.configure(with: ProfileEditViewControllerViewModel(profileImage: userImage, userName: userName))
     }
     
@@ -160,11 +156,9 @@ extension MyPageViewController: CustomMenuViewDelegate {
 // MARK: - HeaderViewDelegate
 extension MyPageViewController: HeaderViewDelegate {
     func headerViewDidTapProfileEditButton(_ headerView: HeaderView) {
-        let navBarOnModal = UINavigationController(rootViewController: profileEditVC)
+        configure()
         profileEditVC.modalPresentationStyle = .fullScreen
-        
-        
-        self.present(navBarOnModal, animated: true, completion: nil)
+        self.present(profileEditVC, animated: true, completion: nil)
     }
     
     func headerViewDidTapReviewButton(_ headerView: HeaderView) {
@@ -176,7 +170,7 @@ extension MyPageViewController: HeaderViewDelegate {
 extension MyPageViewController: ProfileEditViewControllerDelegate {
     func setUpdate(profileImage: UIImage?, userName: String?) {
         headerView.configure(with: HeaderViewViewModel(profileImage: profileImage, userName: userName))
-        self.userName = userName
-        self.userImage = profileImage
+        self.userName = userName ?? ""
+        self.userImage = profileImage!
     }
 }
