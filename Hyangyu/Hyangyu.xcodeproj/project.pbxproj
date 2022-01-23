@@ -56,6 +56,7 @@
 		83B34E08278735FF009A8009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E06278735FF009A8009 /* Main.storyboard */; };
 		83B34E0A27873600009A8009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0927873600009A8009 /* Assets.xcassets */; };
 		83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0B27873600009A8009 /* LaunchScreen.storyboard */; };
+		83C167B3279D8B0A00A4F289 /* ProfileEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C167B2279D8B0A00A4F289 /* ProfileEditViewController.xib */; };
 		83E42363279ACB850094DC2E /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E42362279ACB850094DC2E /* UIImage+Extensions.swift */; };
 		83E42366279ACD890094DC2E /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E42365279ACD890094DC2E /* UITextField+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -112,6 +113,7 @@
 		83B34E0927873600009A8009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83B34E0C27873600009A8009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83B34E0E27873600009A8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C167B2279D8B0A00A4F289 /* ProfileEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditViewController.xib; sourceTree = "<group>"; };
 		83E42362279ACB850094DC2E /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		83E42365279ACD890094DC2E /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		9EA327C994450EF6EBF2D7D3 /* Pods-Hyangyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyangyu.debug.xcconfig"; path = "Target Support Files/Pods-Hyangyu/Pods-Hyangyu.debug.xcconfig"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				83537ADD2796BA8800873198 /* MyFestivalViewController.swift */,
 				8399CF9627995319002E5287 /* MyExpoViewController.swift */,
 				8399CFB72799C26B002E5287 /* ProfileEditViewController.swift */,
+				83C167B2279D8B0A00A4F289 /* ProfileEditViewController.xib */,
 			);
 			path = MyPage;
 			sourceTree = "<group>";
@@ -423,6 +426,7 @@
 				8399CF9A2799545E002E5287 /* MyPageCollectionViewCell.xib in Resources */,
 				83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */,
 				83B34E0A27873600009A8009 /* Assets.xcassets in Resources */,
+				83C167B3279D8B0A00A4F289 /* ProfileEditViewController.xib in Resources */,
 				8399CFAF279999BD002E5287 /* HeaderView.xib in Resources */,
 				83B34E08278735FF009A8009 /* Main.storyboard in Resources */,
 				83537AEB2796F06E00873198 /* MyPage.storyboard in Resources */,
