@@ -8,16 +8,103 @@
 
 /* Begin PBXBuildFile section */
 		6A4324E6077B73484DAA70C1 /* Pods_Hyangyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */; };
+		831B67FC279BC6F4009FB738 /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831B67FB279BC6F4009FB738 /* SettingsModel.swift */; };
+		831E91C7279C325B001F7F87 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831E91C6279C325B001F7F87 /* UIColor+Extensions.swift */; };
+		831E91DD279C80F1001F7F87 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831E91DC279C80F1001F7F87 /* Image.swift */; };
+		831E91E1279C8271001F7F87 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831E91E0279C8271001F7F87 /* Font.swift */; };
+		832DFDB32795744500CBFC13 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DFDB22795744500CBFC13 /* MyPageViewController.swift */; };
+		832DFDBE2795C6B300CBFC13 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 832DFDBD2795C6B300CBFC13 /* SettingsViewController.swift */; };
+		834958532798444C0045B419 /* Tabbar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 834958522798444C0045B419 /* Tabbar.storyboard */; };
+		83495860279871180045B419 /* InnerCollectionViewScrollDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349585F279871180045B419 /* InnerCollectionViewScrollDelegate.swift */; };
+		83495864279872210045B419 /* DragDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83495863279872210045B419 /* DragDirection.swift */; };
+		834958672798723F0045B419 /* Page.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834958662798723F0045B419 /* Page.swift */; };
+		83495870279872CD0045B419 /* BarHeight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349586F279872CD0045B419 /* BarHeight.swift */; };
+		8349587527987AB60045B419 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349587427987AB60045B419 /* TabBarViewController.swift */; };
+		834958792798944C0045B419 /* BarAppearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834958782798944C0045B419 /* BarAppearance.swift */; };
+		83537ADB2796BA7800873198 /* MyExhibitionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83537ADA2796BA7800873198 /* MyExhibitionViewController.swift */; };
+		83537ADE2796BA8800873198 /* MyFestivalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83537ADD2796BA8800873198 /* MyFestivalViewController.swift */; };
+		83537AEB2796F06E00873198 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83537AEA2796F06E00873198 /* MyPage.storyboard */; };
+		838434BE279B4B6B00F0484C /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838434BD279B4B6B00F0484C /* MyListModel.swift */; };
+		8399CF5D279926B5002E5287 /* CustomPageControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF5C279926B5002E5287 /* CustomPageControlProtocol.swift */; };
+		8399CF612799271A002E5287 /* CustomPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF602799271A002E5287 /* CustomPageViewController+Extensions.swift */; };
+		8399CF6627992818002E5287 /* CustomPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF6527992818002E5287 /* CustomPageViewController.swift */; };
+		8399CF6927992E01002E5287 /* CustomMainScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF6827992E01002E5287 /* CustomMainScrollView.swift */; };
+		8399CF6C27992F57002E5287 /* CustomContainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF6B27992F57002E5287 /* CustomContainView.swift */; };
+		8399CF6F27994775002E5287 /* UIScrollView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF6E27994775002E5287 /* UIScrollView+Extensions.swift */; };
+		8399CF74279949C3002E5287 /* NSCache+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF73279949C3002E5287 /* NSCache+Extensions.swift */; };
+		8399CF7727994A39002E5287 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF7627994A39002E5287 /* UIViewController+Extensions.swift */; };
+		8399CF7A27994B2C002E5287 /* CustomChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF7927994B2C002E5287 /* CustomChildViewController.swift */; };
+		8399CF7E27994D0F002E5287 /* UIScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF7D27994D0F002E5287 /* UIScrollView.swift */; };
+		8399CF8227994D31002E5287 /* ProcessViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF8127994D31002E5287 /* ProcessViewStyle.swift */; };
+		8399CF8527994D49002E5287 /* MenuItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF8427994D49002E5287 /* MenuItemView.swift */; };
+		8399CF8827994D87002E5287 /* BottomLineViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF8727994D87002E5287 /* BottomLineViewStyle.swift */; };
+		8399CF8B27994DA0002E5287 /* UIColor+RGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF8A27994DA0002E5287 /* UIColor+RGB.swift */; };
+		8399CF8E27994DB9002E5287 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF8D27994DB9002E5287 /* UIFont.swift */; };
+		8399CF9127994DC8002E5287 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF9027994DC8002E5287 /* MenuView.swift */; };
+		8399CF94279950DA002E5287 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF93279950DA002E5287 /* HeaderView.swift */; };
+		8399CF9727995319002E5287 /* MyExpoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF9627995319002E5287 /* MyExpoViewController.swift */; };
+		8399CF9A2799545E002E5287 /* MyPageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8399CF992799545E002E5287 /* MyPageCollectionViewCell.xib */; };
+		8399CF9D279955B4002E5287 /* MyPageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF9C279955B4002E5287 /* MyPageCollectionViewCell.swift */; };
+		8399CFAF279999BD002E5287 /* HeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8399CFAE279999BD002E5287 /* HeaderView.xib */; };
+		8399CFB22799BB04002E5287 /* CALayer+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CFB12799BB04002E5287 /* CALayer+Extensions.swift */; };
+		8399CFB52799BCA6002E5287 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CFB42799BCA6002E5287 /* UIView+Extensions.swift */; };
+		8399CFB82799C26B002E5287 /* ProfileEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CFB72799C26B002E5287 /* ProfileEditViewController.swift */; };
+		8399CFBB2799E54E002E5287 /* UINavigationController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CFBA2799E54E002E5287 /* UINavigationController+Extensions.swift */; };
 		83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E00278735FF009A8009 /* AppDelegate.swift */; };
 		83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E02278735FF009A8009 /* SceneDelegate.swift */; };
 		83B34E05278735FF009A8009 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E04278735FF009A8009 /* ViewController.swift */; };
 		83B34E08278735FF009A8009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E06278735FF009A8009 /* Main.storyboard */; };
 		83B34E0A27873600009A8009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0927873600009A8009 /* Assets.xcassets */; };
 		83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0B27873600009A8009 /* LaunchScreen.storyboard */; };
+		83C167B3279D8B0A00A4F289 /* ProfileEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83C167B2279D8B0A00A4F289 /* ProfileEditViewController.xib */; };
+		83E42363279ACB850094DC2E /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E42362279ACB850094DC2E /* UIImage+Extensions.swift */; };
+		83E42366279ACD890094DC2E /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83E42365279ACD890094DC2E /* UITextField+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyangyu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		831B67FB279BC6F4009FB738 /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		831E91C6279C325B001F7F87 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		831E91DC279C80F1001F7F87 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		831E91E0279C8271001F7F87 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		832DFDB22795744500CBFC13 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		832DFDBD2795C6B300CBFC13 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		834958522798444C0045B419 /* Tabbar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabbar.storyboard; sourceTree = "<group>"; };
+		8349585F279871180045B419 /* InnerCollectionViewScrollDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnerCollectionViewScrollDelegate.swift; sourceTree = "<group>"; };
+		83495863279872210045B419 /* DragDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragDirection.swift; sourceTree = "<group>"; };
+		834958662798723F0045B419 /* Page.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Page.swift; sourceTree = "<group>"; };
+		8349586F279872CD0045B419 /* BarHeight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarHeight.swift; sourceTree = "<group>"; };
+		8349587427987AB60045B419 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		834958782798944C0045B419 /* BarAppearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarAppearance.swift; sourceTree = "<group>"; };
+		83537ADA2796BA7800873198 /* MyExhibitionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExhibitionViewController.swift; sourceTree = "<group>"; };
+		83537ADD2796BA8800873198 /* MyFestivalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyFestivalViewController.swift; sourceTree = "<group>"; };
+		83537AEA2796F06E00873198 /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		838434BD279B4B6B00F0484C /* MyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModel.swift; sourceTree = "<group>"; };
+		8399CF5C279926B5002E5287 /* CustomPageControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlProtocol.swift; sourceTree = "<group>"; };
+		8399CF602799271A002E5287 /* CustomPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomPageViewController+Extensions.swift"; sourceTree = "<group>"; };
+		8399CF6527992818002E5287 /* CustomPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageViewController.swift; sourceTree = "<group>"; };
+		8399CF6827992E01002E5287 /* CustomMainScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMainScrollView.swift; sourceTree = "<group>"; };
+		8399CF6B27992F57002E5287 /* CustomContainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomContainView.swift; sourceTree = "<group>"; };
+		8399CF6E27994775002E5287 /* UIScrollView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extensions.swift"; sourceTree = "<group>"; };
+		8399CF73279949C3002E5287 /* NSCache+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSCache+Extensions.swift"; sourceTree = "<group>"; };
+		8399CF7627994A39002E5287 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		8399CF7927994B2C002E5287 /* CustomChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomChildViewController.swift; sourceTree = "<group>"; };
+		8399CF7D27994D0F002E5287 /* UIScrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIScrollView.swift; sourceTree = "<group>"; };
+		8399CF8127994D31002E5287 /* ProcessViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessViewStyle.swift; sourceTree = "<group>"; };
+		8399CF8427994D49002E5287 /* MenuItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemView.swift; sourceTree = "<group>"; };
+		8399CF8727994D87002E5287 /* BottomLineViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomLineViewStyle.swift; sourceTree = "<group>"; };
+		8399CF8A27994DA0002E5287 /* UIColor+RGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+RGB.swift"; sourceTree = "<group>"; };
+		8399CF8D27994DB9002E5287 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		8399CF9027994DC8002E5287 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		8399CF93279950DA002E5287 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		8399CF9627995319002E5287 /* MyExpoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyExpoViewController.swift; sourceTree = "<group>"; };
+		8399CF992799545E002E5287 /* MyPageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageCollectionViewCell.xib; sourceTree = "<group>"; };
+		8399CF9C279955B4002E5287 /* MyPageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageCollectionViewCell.swift; sourceTree = "<group>"; };
+		8399CFAE279999BD002E5287 /* HeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderView.xib; sourceTree = "<group>"; };
+		8399CFB12799BB04002E5287 /* CALayer+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer+Extensions.swift"; sourceTree = "<group>"; };
+		8399CFB42799BCA6002E5287 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		8399CFB72799C26B002E5287 /* ProfileEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditViewController.swift; sourceTree = "<group>"; };
+		8399CFBA2799E54E002E5287 /* UINavigationController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extensions.swift"; sourceTree = "<group>"; };
 		83B34DFD278735FF009A8009 /* Hyangyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyangyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B34E00278735FF009A8009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83B34E02278735FF009A8009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,6 +113,9 @@
 		83B34E0927873600009A8009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83B34E0C27873600009A8009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83B34E0E27873600009A8009 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83C167B2279D8B0A00A4F289 /* ProfileEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileEditViewController.xib; sourceTree = "<group>"; };
+		83E42362279ACB850094DC2E /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		83E42365279ACD890094DC2E /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		9EA327C994450EF6EBF2D7D3 /* Pods-Hyangyu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyangyu.debug.xcconfig"; path = "Target Support Files/Pods-Hyangyu/Pods-Hyangyu.debug.xcconfig"; sourceTree = "<group>"; };
 		FA2EBFDC269698930C317BFF /* Pods-Hyangyu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hyangyu.release.xcconfig"; path = "Target Support Files/Pods-Hyangyu/Pods-Hyangyu.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +139,97 @@
 				FA2EBFDC269698930C317BFF /* Pods-Hyangyu.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		831E91DB279C80C8001F7F87 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				831E91DC279C80F1001F7F87 /* Image.swift */,
+				831E91E0279C8271001F7F87 /* Font.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		832DFDB12795740200CBFC13 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				832DFDB22795744500CBFC13 /* MyPageViewController.swift */,
+				832DFDBD2795C6B300CBFC13 /* SettingsViewController.swift */,
+				83537ADA2796BA7800873198 /* MyExhibitionViewController.swift */,
+				83537ADD2796BA8800873198 /* MyFestivalViewController.swift */,
+				8399CF9627995319002E5287 /* MyExpoViewController.swift */,
+				8399CFB72799C26B002E5287 /* ProfileEditViewController.swift */,
+				83C167B2279D8B0A00A4F289 /* ProfileEditViewController.xib */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		834958582798598A0045B419 /* MyPage */ = {
+			isa = PBXGroup;
+			children = (
+				83537AEA2796F06E00873198 /* MyPage.storyboard */,
+			);
+			path = MyPage;
+			sourceTree = "<group>";
+		};
+		8349585D2798706F0045B419 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8349585F279871180045B419 /* InnerCollectionViewScrollDelegate.swift */,
+				8399CF5C279926B5002E5287 /* CustomPageControlProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		8349585E279870760045B419 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8399CF602799271A002E5287 /* CustomPageViewController+Extensions.swift */,
+				8399CF6E27994775002E5287 /* UIScrollView+Extensions.swift */,
+				8399CF73279949C3002E5287 /* NSCache+Extensions.swift */,
+				8399CF7627994A39002E5287 /* UIViewController+Extensions.swift */,
+				8399CFB12799BB04002E5287 /* CALayer+Extensions.swift */,
+				8399CFB42799BCA6002E5287 /* UIView+Extensions.swift */,
+				8399CFBA2799E54E002E5287 /* UINavigationController+Extensions.swift */,
+				83E42362279ACB850094DC2E /* UIImage+Extensions.swift */,
+				83E42365279ACD890094DC2E /* UITextField+Extensions.swift */,
+				831E91C6279C325B001F7F87 /* UIColor+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8349586D279872B40045B419 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				8349586F279872CD0045B419 /* BarHeight.swift */,
+				834958782798944C0045B419 /* BarAppearance.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		8399CF5F279926ED002E5287 /* CustomPage */ = {
+			isa = PBXGroup;
+			children = (
+				8399CF6527992818002E5287 /* CustomPageViewController.swift */,
+				8399CF6827992E01002E5287 /* CustomMainScrollView.swift */,
+				8399CF6B27992F57002E5287 /* CustomContainView.swift */,
+				8399CF7927994B2C002E5287 /* CustomChildViewController.swift */,
+			);
+			path = CustomPage;
+			sourceTree = "<group>";
+		};
+		8399CF7C27994CFC002E5287 /* CustomTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8399CF7D27994D0F002E5287 /* UIScrollView.swift */,
+				8399CF8127994D31002E5287 /* ProcessViewStyle.swift */,
+				8399CF8427994D49002E5287 /* MenuItemView.swift */,
+				8399CF8727994D87002E5287 /* BottomLineViewStyle.swift */,
+				8399CF8A27994DA0002E5287 /* UIColor+RGB.swift */,
+				8399CF8D27994DB9002E5287 /* UIFont.swift */,
+				8399CF9027994DC8002E5287 /* MenuView.swift */,
+			);
+			path = CustomTabBar;
 			sourceTree = "<group>";
 		};
 		83B34DF4278735FF009A8009 = {
@@ -83,6 +264,7 @@
 		83B34E1527873640009A8009 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				831E91DB279C80C8001F7F87 /* Constants */,
 				83B34E182787367D009A8009 /* Storyboards */,
 				83B34E172787366C009A8009 /* Font */,
 				83B34E0927873600009A8009 /* Assets.xcassets */,
@@ -94,6 +276,10 @@
 		83B34E162787364A009A8009 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				8399CF7C27994CFC002E5287 /* CustomTabBar */,
+				8349586D279872B40045B419 /* Utility */,
+				8349585E279870760045B419 /* Extensions */,
+				8349585D2798706F0045B419 /* Protocols */,
 				83B34E1D278736E3009A8009 /* ViewModels */,
 				83B34E1C278736D0009A8009 /* Cells */,
 				83B34E1B278736C4009A8009 /* APIModels */,
@@ -115,6 +301,8 @@
 		83B34E182787367D009A8009 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				834958582798598A0045B419 /* MyPage */,
+				834958522798444C0045B419 /* Tabbar.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -122,6 +310,8 @@
 		83B34E19278736A8009A8009 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				8399CF93279950DA002E5287 /* HeaderView.swift */,
+				8399CFAE279999BD002E5287 /* HeaderView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -129,7 +319,10 @@
 		83B34E1A278736B3009A8009 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				8399CF5F279926ED002E5287 /* CustomPage */,
+				832DFDB12795740200CBFC13 /* MyPage */,
 				83B34E04278735FF009A8009 /* ViewController.swift */,
+				8349587427987AB60045B419 /* TabBarViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -144,6 +337,8 @@
 		83B34E1C278736D0009A8009 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8399CF992799545E002E5287 /* MyPageCollectionViewCell.xib */,
+				8399CF9C279955B4002E5287 /* MyPageCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -151,6 +346,10 @@
 		83B34E1D278736E3009A8009 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				83495863279872210045B419 /* DragDirection.swift */,
+				834958662798723F0045B419 /* Page.swift */,
+				838434BD279B4B6B00F0484C /* MyListModel.swift */,
+				831B67FB279BC6F4009FB738 /* SettingsModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -175,7 +374,7 @@
 				83B34DFA278735FF009A8009 /* Frameworks */,
 				83B34DFB278735FF009A8009 /* Resources */,
 				C6B0C43D83B78067A71A40BC /* [CP] Embed Pods Frameworks */,
-				83B34E1F27873ACA009A8009 /* ShellScript */,
+				83B34E1F27873ACA009A8009 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -223,16 +422,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				834958532798444C0045B419 /* Tabbar.storyboard in Resources */,
+				8399CF9A2799545E002E5287 /* MyPageCollectionViewCell.xib in Resources */,
 				83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */,
 				83B34E0A27873600009A8009 /* Assets.xcassets in Resources */,
+				83C167B3279D8B0A00A4F289 /* ProfileEditViewController.xib in Resources */,
+				8399CFAF279999BD002E5287 /* HeaderView.xib in Resources */,
 				83B34E08278735FF009A8009 /* Main.storyboard in Resources */,
+				83537AEB2796F06E00873198 /* MyPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		83B34E1F27873ACA009A8009 /* ShellScript */ = {
+		83B34E1F27873ACA009A8009 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -241,13 +445,16 @@
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n\n";
+			shellScript = "
+
+";
 		};
 		BCD7B72CE654B49324CC23F9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -295,9 +502,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8399CF8227994D31002E5287 /* ProcessViewStyle.swift in Sources */,
 				83B34E05278735FF009A8009 /* ViewController.swift in Sources */,
 				83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */,
+				831E91C7279C325B001F7F87 /* UIColor+Extensions.swift in Sources */,
+				8399CF9D279955B4002E5287 /* MyPageCollectionViewCell.swift in Sources */,
+				8399CF6627992818002E5287 /* CustomPageViewController.swift in Sources */,
+				8399CF8527994D49002E5287 /* MenuItemView.swift in Sources */,
+				831E91DD279C80F1001F7F87 /* Image.swift in Sources */,
+				83537ADB2796BA7800873198 /* MyExhibitionViewController.swift in Sources */,
+				8399CFB22799BB04002E5287 /* CALayer+Extensions.swift in Sources */,
+				8399CF7727994A39002E5287 /* UIViewController+Extensions.swift in Sources */,
+				8399CF9127994DC8002E5287 /* MenuView.swift in Sources */,
+				8399CF612799271A002E5287 /* CustomPageViewController+Extensions.swift in Sources */,
+				838434BE279B4B6B00F0484C /* MyListModel.swift in Sources */,
+				8399CFB52799BCA6002E5287 /* UIView+Extensions.swift in Sources */,
+				8399CF8827994D87002E5287 /* BottomLineViewStyle.swift in Sources */,
+				8399CF8E27994DB9002E5287 /* UIFont.swift in Sources */,
+				83E42363279ACB850094DC2E /* UIImage+Extensions.swift in Sources */,
+				8399CF6F27994775002E5287 /* UIScrollView+Extensions.swift in Sources */,
+				8399CFBB2799E54E002E5287 /* UINavigationController+Extensions.swift in Sources */,
+				8399CF74279949C3002E5287 /* NSCache+Extensions.swift in Sources */,
+				8399CF7E27994D0F002E5287 /* UIScrollView.swift in Sources */,
+				8399CF94279950DA002E5287 /* HeaderView.swift in Sources */,
+				8399CFB82799C26B002E5287 /* ProfileEditViewController.swift in Sources */,
 				83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */,
+				83537ADE2796BA8800873198 /* MyFestivalViewController.swift in Sources */,
+				83495864279872210045B419 /* DragDirection.swift in Sources */,
+				832DFDBE2795C6B300CBFC13 /* SettingsViewController.swift in Sources */,
+				8399CF6C27992F57002E5287 /* CustomContainView.swift in Sources */,
+				8399CF9727995319002E5287 /* MyExpoViewController.swift in Sources */,
+				83495870279872CD0045B419 /* BarHeight.swift in Sources */,
+				8399CF5D279926B5002E5287 /* CustomPageControlProtocol.swift in Sources */,
+				831B67FC279BC6F4009FB738 /* SettingsModel.swift in Sources */,
+				83E42366279ACD890094DC2E /* UITextField+Extensions.swift in Sources */,
+				834958792798944C0045B419 /* BarAppearance.swift in Sources */,
+				831E91E1279C8271001F7F87 /* Font.swift in Sources */,
+				8399CF8B27994DA0002E5287 /* UIColor+RGB.swift in Sources */,
+				832DFDB32795744500CBFC13 /* MyPageViewController.swift in Sources */,
+				8349587527987AB60045B419 /* TabBarViewController.swift in Sources */,
+				8399CF7A27994B2C002E5287 /* CustomChildViewController.swift in Sources */,
+				834958672798723F0045B419 /* Page.swift in Sources */,
+				8399CF6927992E01002E5287 /* CustomMainScrollView.swift in Sources */,
+				83495860279871180045B419 /* InnerCollectionViewScrollDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,7 +693,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Hyangyu/Info.plist;
+				INFOPLIST_FILE = Hyangyu/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -465,7 +712,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Hyangyu/Info.plist;
+				INFOPLIST_FILE = Hyangyu/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
