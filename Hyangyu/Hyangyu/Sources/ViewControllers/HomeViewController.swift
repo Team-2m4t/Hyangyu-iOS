@@ -2,17 +2,13 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
-  
     @IBOutlet weak var circleView: UIView!
     @IBOutlet weak var exhibitionColor: UIButton!
     @IBOutlet weak var festivalColor: UIButton!
     @IBOutlet weak var fairColor: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         circleView.layer.cornerRadius = 4
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func exhibitionButton(_ sender: Any) {
