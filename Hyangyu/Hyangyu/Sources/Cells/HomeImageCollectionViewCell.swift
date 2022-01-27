@@ -8,11 +8,10 @@
 import UIKit
 
 class HomeImageCollectionViewCell: UICollectionViewCell {
-    static let identifier : String = "HomeImageCollectionViewCell"
-    
+    static let identifier: String = "HomeImageCollectionViewCell"
     @IBOutlet weak var posterImageView: UIImageView!
-    func setData(imageName: String){
-        if let image = UIImage(named: imageName){
+    func setData(imageName: String) {
+        if let image = UIImage(named: imageName) {
             posterImageView.image = image
         }
         

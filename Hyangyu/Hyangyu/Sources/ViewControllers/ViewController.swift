@@ -1,18 +1,19 @@
 //
-//  HomeImageViewController.swift
+//  ViewController.swift
 //  Hyangyu
 //
-//  Created by 길태연 on 2022/01/18.
+//  Created by bsorinnn on 2022/01/06.
 //
 
 import UIKit
 
-class HomeImageViewController: UIViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
-    
+
+
 }
+
