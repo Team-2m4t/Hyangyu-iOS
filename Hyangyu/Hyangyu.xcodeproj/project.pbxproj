@@ -11,7 +11,6 @@
 		236279152796841A00C16340 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236279142796841A00C16340 /* HomeViewController.swift */; };
 		236279172796894800C16340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236279162796894800C16340 /* Main.storyboard */; };
 		23842A92279EBCD600621427 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8C279EBCD600621427 /* HomeViewController.swift */; };
-		23842A93279EBCD600621427 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8D279EBCD600621427 /* ViewController.swift */; };
 		23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8E279EBCD600621427 /* ReviewEditViewController.swift */; };
 		23842A95279EBCD600621427 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8F279EBCD600621427 /* ReviewViewController.swift */; };
 		23842A96279EBCD600621427 /* HomeImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A90279EBCD600621427 /* HomeImageViewController.swift */; };
@@ -36,7 +35,6 @@
 		236279142796841A00C16340 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		236279162796894800C16340 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		23842A8C279EBCD600621427 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		23842A8D279EBCD600621427 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		23842A8E279EBCD600621427 /* ReviewEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewEditViewController.swift; sourceTree = "<group>"; };
 		23842A8F279EBCD600621427 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
 		23842A90279EBCD600621427 /* HomeImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeImageViewController.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				23842A8C279EBCD600621427 /* HomeViewController.swift */,
 				23842A8E279EBCD600621427 /* ReviewEditViewController.swift */,
 				23842A8F279EBCD600621427 /* ReviewViewController.swift */,
-				23842A8D279EBCD600621427 /* ViewController.swift */,
 				236279142796841A00C16340 /* HomeViewController.swift */,
 			);
 			path = ViewControllers;
@@ -341,7 +338,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				23842A93279EBCD600621427 /* ViewController.swift in Sources */,
 				23842AA4279EBCF800621427 /* HomeHashtagDataModel.swift in Sources */,
 				83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */,
 				23842A95279EBCD600621427 /* ReviewViewController.swift in Sources */,
