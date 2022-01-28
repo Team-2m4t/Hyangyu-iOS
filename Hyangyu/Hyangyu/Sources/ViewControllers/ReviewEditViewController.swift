@@ -17,23 +17,10 @@ class ReviewEditViewController: UIViewController {
     var numberIndex: Int?
     override func viewDidLoad() {
         super.viewDidLoad()
-    //    setdata()
-    // reviewField.text = "add"
         label.text = lalabel
         reviewField.text = review
-
-        // Do any additional setup after loading the view.
     }
     
-//    func setdata(){
-//        if let review = self.review, let lalabel = self.lalabel {
-//            print("fkfkfk")
-//            reviewField.text = review
-//            label.text = lalabel
-//            
-//            
-//        }
-//    }
 
     @IBAction func cancelButton(_ sender: Any) {
     }
