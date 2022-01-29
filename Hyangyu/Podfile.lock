@@ -5,8 +5,11 @@ PODS:
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - Pageboy (3.6.2)
   - SnapKit (5.0.1)
   - SwiftLint (0.45.1)
+  - Tabman (2.11.1):
+    - Pageboy (~> 3.6.0)
   - Then (2.7.0)
 
 DEPENDENCIES:
@@ -14,6 +17,7 @@ DEPENDENCIES:
   - Moya (~> 14.0)
   - SnapKit
   - SwiftLint
+  - Tabman (~> 2.11)
   - Then
 
 SPEC REPOS:
@@ -21,18 +25,22 @@ SPEC REPOS:
     - Alamofire
     - Kingfisher
     - Moya
+    - Pageboy
     - SnapKit
     - SwiftLint
+    - Tabman
     - Then
 
 SPEC CHECKSUMS:
   Alamofire: 1c4fb5369c3fe93d2857c780d8bbe09f06f97e7c
   Kingfisher: 44ed6a8504763f27bab46163adfac83f5deb240c
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Pageboy: cf121b9dd48c63f3f281b2a9ec93d02e0f23879b
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SwiftLint: 06ac37e4d38c7068e0935bb30cda95f093bec761
+  Tabman: 792ac76fd1ec95af175c93db880a3c47cabedc91
   Then: acfe0be7e98221c6204e12f8161459606d5d822d
 
-PODFILE CHECKSUM: 2adb863ad7b8fbedbc56768f0ac41dfd74a01643
+PODFILE CHECKSUM: 3ed3bde4bf45e5693f8a6bcfeedc60030488fbc1
 
 COCOAPODS: 1.11.2

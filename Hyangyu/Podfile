@@ -11,4 +11,5 @@ target 'Hyangyu' do
 	pod 'SnapKit'
 	pod 'Then'
 	pod 'Kingfisher'
+	pod 'Tabman', '~> 2.11'
 end

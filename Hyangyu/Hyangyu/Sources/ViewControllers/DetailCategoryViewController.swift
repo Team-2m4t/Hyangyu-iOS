@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import Tabman
+import Pageboy
 
-class DetailCategoryViewController: UIViewController {
+class DetailCategoryViewController: TabmanViewController {
+    
+    private var viewControllers: Array<UIViewController> = []
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -20,6 +24,27 @@ class DetailCategoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //상단 탭바
+        let newVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "DetailCategoryViewController") as! DetailCategoryViewController
+        let bestVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "BestVC") as! BestVC
+        let freeVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "FreeVC") as! FreeVC
+        let costVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "CostVC") as! CostVC
+        
+        viewControllers.append(newVC)
+        viewControllers.append(bestVC)
+        viewControllers.append(freeVC)
+        viewControllers.append(costVC)
+        
+        self.dataSource = self
+        
+        // create bar
+        let bar = TMBar.ButtonBar()
+        bar.layout.transitionStyle = .snap
+        
+        // Add to view
+        addBar(bar, dataSource: self, at: .top)
+        
         setCategoryTitle()
         setCardList()
         
@@ -55,19 +80,6 @@ class DetailCategoryViewController: UIViewController {
         ])
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier 내용 ) as? TableViewCell {
-            // ...
-            
-            // 여기에 써주면 됨
-            cell.cellDelegate = self
-            
-            // ...
-            return cell
-        }
-        return UITableViewCell()
-    }
-    
     // 뒤로 가기 버튼
     @IBAction func detailCategoryBackButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -75,18 +87,40 @@ class DetailCategoryViewController: UIViewController {
     
 }
 
+//상단 탭바 extension
+extension DetailCategoryViewController: PageboyViewControllerDataSource, TMBarDataSource {
+    
+    func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
+        switch index {
+        case 0:
+            return TMBarItem(title: "최신순")
+        case 1:
+            return TMBarItem(title: "인기순")
+        case 2:
+            return TMBarItem(title: "무료")
+        case 3:
+            return TMBarItem(title: "유료")
+        default:
+            let title = "Page/(index)"
+            return TMBarItem(title: title)
+        }
+    }
+    
+    func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        return viewControllers.count
+    }
+    
+    func viewController(for pageboyViewController: PageboyViewController, at index: PageboyViewController.PageIndex) -> UIViewController? {
+        return viewControllers[index]
+    }
+    
+    func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
+        return nil
+    }
+}
+
 
 extension DetailCategoryViewController: UICollectionViewDataSource{
-    
-    // didSelectedItemAt() 함수 구현 -> 사용자가 cell을 터치할 때마다, 이 함수가 호출된다
-    func collectionView(_collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell
-        
-        self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item)
-    }
-
-    
-    
     // cell을 몇개를 만들건지 -> cardList의 원소 개수만큼 만듬!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         cardList.count
