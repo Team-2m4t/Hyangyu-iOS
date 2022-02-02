@@ -25,10 +25,13 @@ class DetailCategoryViewController: TabmanViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //상단 탭바
+        // 상단 탭바
         let newVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "DetailCategoryViewController") as! DetailCategoryViewController
+        
         let bestVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "BestVC") as! BestVC
+        
         let freeVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "FreeVC") as! FreeVC
+        
         let costVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "CostVC") as! CostVC
         
         viewControllers.append(newVC)
