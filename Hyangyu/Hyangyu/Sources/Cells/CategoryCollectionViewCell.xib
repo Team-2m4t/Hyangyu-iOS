@@ -88,7 +88,7 @@
                 <outlet property="posterImageView" destination="dkQ-g8-Qe5" id="dnf-hy-2zo"/>
                 <outlet property="titleLabel" destination="2xe-kS-Cvd" id="bp0-Fd-V3Z"/>
             </connections>
-            <point key="canvasLocation" x="211.59420289855075" y="9.375"/>
+            <point key="canvasLocation" x="196" y="-15"/>
         </collectionViewCell>
     </objects>
     <resources>

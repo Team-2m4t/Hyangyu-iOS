@@ -14,6 +14,7 @@ class DetailCategoryViewController: UIViewController {
     var cardList: [ServiceDataModel] = []
     
     let categoryTabStoryboard: UIStoryboard = UIStoryboard(name: "CategoryTab", bundle: nil)
+    let detailPageStoryboard : UIStoryboard = UIStoryboard(name: "DetailViewPage", bundle: nil)
     
     @IBOutlet weak var categoryTitle: UILabel!
     var categoryTabTitle: String?
@@ -55,19 +56,6 @@ class DetailCategoryViewController: UIViewController {
         ])
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: identifier 내용 ) as? TableViewCell {
-            // ...
-            
-            // 여기에 써주면 됨
-            cell.cellDelegate = self
-            
-            // ...
-            return cell
-        }
-        return UITableViewCell()
-    }
-    
     // 뒤로 가기 버튼
     @IBAction func detailCategoryBackButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -76,20 +64,10 @@ class DetailCategoryViewController: UIViewController {
 }
 
 
-extension DetailCategoryViewController: UICollectionViewDataSource{
-    
-    // didSelectedItemAt() 함수 구현 -> 사용자가 cell을 터치할 때마다, 이 함수가 호출된다
-    func collectionView(_collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as? CategoryCollectionViewCell
-        
-        self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item)
-    }
-
-    
-    
+extension DetailCategoryViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     // cell을 몇개를 만들건지 -> cardList의 원소 개수만큼 만듬!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        cardList.count
+        return cardList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -110,6 +88,14 @@ extension DetailCategoryViewController: UICollectionViewDataSource{
         return cell
     }
     
+    // didSelectedItemAt() 함수 구현 -> 사용자가 cell을 터치할 때마다, 이 함수가 호출된다
+    func collectionView(_collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let vc = detailPageStoryboard.instantiateViewController(identifier: "DetailPageViewController") as? DetailPageViewController else {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        //self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item)
+    }
+    
 }
 
 extension CategoryCollectionViewCell: CollectionViewCellDelegate {
@@ -117,9 +103,6 @@ extension CategoryCollectionViewCell: CollectionViewCellDelegate {
         
         print("어쩌구저쩌구")
     }
-}
-
-extension DetailCategoryViewController: UICollectionViewDelegate{
 }
 
 // 보통 UICollectionViewDelegateFlowLayout에서는 4가지 메서드로 Cell들의 Layout을 구성
