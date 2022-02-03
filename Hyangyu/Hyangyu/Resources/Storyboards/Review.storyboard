@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 1-->
+        <!--Review View Controller-->
         <scene sceneID="Ua6-I8-KjB">
             <objects>
                 <viewController id="Eb6-bF-eVn" customClass="ReviewViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,7 +102,7 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이프 사진전 : 더 라스트 프린트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2l-bL-XOu">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이프 사진전 : 더 라스트 프린트" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2l-bL-XOu">
                                                             <rect key="frame" x="20" y="80" width="310" height="46"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
@@ -188,36 +188,42 @@
                             <constraint firstItem="eLa-wf-heu" firstAttribute="top" secondItem="M76-Xw-mjG" secondAttribute="bottom" constant="30" id="xyr-8h-qfM"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="7xO-Ll-2QL"/>
+                    <navigationItem key="navigationItem" id="fVK-LY-eyj"/>
                     <connections>
                         <outlet property="exhibitionColor" destination="eLa-wf-heu" id="edh-bg-gtt"/>
                         <outlet property="fairColor" destination="cCW-3q-ftI" id="G20-Iw-OX6"/>
                         <outlet property="festivalColor" destination="vu5-uM-YNP" id="rd9-AI-ung"/>
                         <outlet property="reviewTableView" destination="dw8-1y-uKA" id="hXX-Ko-RTm"/>
-                        <segue destination="fDX-3w-lZd" kind="presentation" identifier="showDetail" id="UTL-pc-tb2"/>
+                        <segue destination="fDX-3w-lZd" kind="show" identifier="showDetail" id="PDE-w7-PK2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eT-gM-T14" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-597.10144927536237" y="-620.08928571428567"/>
+            <point key="canvasLocation" x="313.04347826086956" y="-620.08928571428567"/>
         </scene>
         <!--Review Edit View Controller-->
         <scene sceneID="W8Q-yu-1SF">
             <objects>
                 <viewController storyboardIdentifier="ReviewEditViewController" id="fDX-3w-lZd" customClass="ReviewEditViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h84-rl-rxu">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰 수정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mew-L2-r3x">
-                                <rect key="frame" x="0.0" y="20" width="414" height="24"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mew-L2-r3x">
+                                <rect key="frame" x="0.0" y="64" width="414" height="24"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="리뷰 수정">
+                                        <attributes>
+                                            <font key="NSFont" size="20" name="AppleSDGothicNeo-Bold"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fs-ch-LNI">
-                                <rect key="frame" x="16" y="20" width="30" height="30"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <rect key="frame" x="20" y="59" width="32" height="34"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <state key="normal" title="취소">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
@@ -226,8 +232,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXD-51-pV5">
-                                <rect key="frame" x="368" y="20" width="30" height="30"/>
-                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
+                                <rect key="frame" x="362" y="59" width="32" height="34"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                 <state key="normal" title="확인">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -235,41 +241,53 @@
                                     <action selector="saveButton:" destination="fDX-3w-lZd" eventType="touchUpInside" id="7Sd-6h-CDx"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="12312312" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uET-5L-Q0P">
-                                <rect key="frame" x="30" y="130" width="280" height="216"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" systemColor="linkColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmB-1i-bP5">
+                                <rect key="frame" x="20" y="131" width="374" height="294"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="294" id="2O1-cU-I2O"/>
+                                    <constraint firstAttribute="width" constant="374" id="5K6-ZZ-WpZ"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DR8-2v-dxg">
-                                <rect key="frame" x="131" y="366" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </textView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bDb-wh-KbG">
+                                <rect key="frame" x="0.0" y="105" width="414" height="1"/>
+                                <color key="backgroundColor" red="0.0" green="0.33333333333333331" blue="0.31372549019607843" alpha="0.24521419701986755" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="xDp-cw-Suo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pyG-Jm-hf9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="3Fs-ch-LNI" firstAttribute="top" secondItem="pyG-Jm-hf9" secondAttribute="top" constant="20" id="S5M-Cd-C4c"/>
+                            <constraint firstItem="pyG-Jm-hf9" firstAttribute="trailing" secondItem="MXD-51-pV5" secondAttribute="trailing" constant="20" id="2Lr-79-G4x"/>
+                            <constraint firstItem="pyG-Jm-hf9" firstAttribute="trailing" secondItem="gmB-1i-bP5" secondAttribute="trailing" constant="20" id="2v3-6O-zdY"/>
+                            <constraint firstItem="3Fs-ch-LNI" firstAttribute="top" secondItem="pyG-Jm-hf9" secondAttribute="top" constant="15" id="2vu-rv-s0O"/>
+                            <constraint firstItem="bDb-wh-KbG" firstAttribute="leading" secondItem="h84-rl-rxu" secondAttribute="leading" id="3aJ-eP-h3d"/>
+                            <constraint firstAttribute="trailing" secondItem="bDb-wh-KbG" secondAttribute="trailing" id="N1r-al-hHK"/>
+                            <constraint firstItem="gmB-1i-bP5" firstAttribute="leading" secondItem="pyG-Jm-hf9" secondAttribute="leading" constant="20" id="Ndr-Tf-ENg"/>
+                            <constraint firstItem="3Fs-ch-LNI" firstAttribute="leading" secondItem="pyG-Jm-hf9" secondAttribute="leading" constant="20" id="Tp9-VX-vaF"/>
                             <constraint firstItem="mew-L2-r3x" firstAttribute="top" secondItem="pyG-Jm-hf9" secondAttribute="top" constant="20" id="ZsX-PU-9tm"/>
+                            <constraint firstItem="MXD-51-pV5" firstAttribute="top" secondItem="pyG-Jm-hf9" secondAttribute="top" constant="15" id="cW6-Jv-rfQ"/>
                             <constraint firstItem="mew-L2-r3x" firstAttribute="trailing" secondItem="pyG-Jm-hf9" secondAttribute="trailing" id="eqx-Q3-0um"/>
-                            <constraint firstItem="3Fs-ch-LNI" firstAttribute="leading" secondItem="pyG-Jm-hf9" secondAttribute="leading" constant="16" id="fta-3o-hnD"/>
-                            <constraint firstItem="pyG-Jm-hf9" firstAttribute="trailing" secondItem="MXD-51-pV5" secondAttribute="trailing" constant="16" id="hbp-U4-8CN"/>
+                            <constraint firstItem="gmB-1i-bP5" firstAttribute="top" secondItem="bDb-wh-KbG" secondAttribute="bottom" constant="25" id="id9-AB-sCE"/>
                             <constraint firstItem="mew-L2-r3x" firstAttribute="leading" secondItem="h84-rl-rxu" secondAttribute="leading" id="jbR-IF-bWF"/>
-                            <constraint firstItem="MXD-51-pV5" firstAttribute="top" secondItem="pyG-Jm-hf9" secondAttribute="top" constant="20" id="vxp-Xa-JhX"/>
+                            <constraint firstItem="bDb-wh-KbG" firstAttribute="top" secondItem="3Fs-ch-LNI" secondAttribute="bottom" constant="12" id="y2Z-0Y-BoY"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="OlR-oe-6Ix"/>
                     <connections>
-                        <outlet property="label" destination="DR8-2v-dxg" id="GBy-8t-12n"/>
-                        <outlet property="reviewField" destination="uET-5L-Q0P" id="t4t-Gk-M72"/>
+                        <outlet property="reviewField" destination="gmB-1i-bP5" id="yGM-ZB-5rs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L7d-wF-WBT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="401" y="-656"/>
+            <point key="canvasLocation" x="1310.144927536232" y="-656.25"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="vCZ-D7-cZQ">
@@ -281,12 +299,30 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="Eb6-bF-eVn" kind="relationship" relationship="viewControllers" id="NkL-bL-S7B"/>
+                        <segue destination="7FK-3b-VfK" kind="relationship" relationship="viewControllers" id="NkL-bL-S7B"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iTA-Tt-ppN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1473" y="-620"/>
+        </scene>
+        <!--Item 1-->
+        <scene sceneID="Yuf-vE-ff4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" hidesBarsWhenKeyboardAppears="YES" id="7FK-3b-VfK" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item 1" id="7xO-Ll-2QL"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2sJ-tE-hUH">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Eb6-bF-eVn" kind="relationship" relationship="rootViewController" id="s9w-Mp-smG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pbX-OC-vSs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-597.10144927536237" y="-620.08928571428567"/>
         </scene>
     </scenes>
     <resources>
@@ -296,8 +332,8 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="linkColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
