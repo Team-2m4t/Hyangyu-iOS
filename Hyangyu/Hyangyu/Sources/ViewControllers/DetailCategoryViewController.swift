@@ -89,13 +89,6 @@ extension DetailCategoryViewController: UICollectionViewDataSource, UICollection
     }
     
     // didSelectedItemAt() 함수 구현 -> 사용자가 cell을 터치할 때마다, 이 함수가 호출된다
-    func collectionView(_collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let vc = detailPageStoryboard.instantiateViewController(identifier: "DetailPageViewController") as? DetailPageViewController else {return}
-        
-        self.navigationController?.pushViewController(vc, animated: true)
-        //self.cellDelegate?.collectionView(collectionviewcell: cell, index: indexPath.item)
-    }
-    
 }
 
 extension CategoryCollectionViewCell: CollectionViewCellDelegate {
