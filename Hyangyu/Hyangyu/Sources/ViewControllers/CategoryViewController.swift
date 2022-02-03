@@ -14,7 +14,7 @@ class CategoryViewController: UIViewController {
     var festival = "페스티벌"
     
     // 화면 전환 스토리보드
-    let detailCategoryStoryboard : UIStoryboard = UIStoryboard(name: "DetailCategoryTab", bundle: nil)
+    let detailCategoryStoryboard : UIStoryboard = UIStoryboard(name: "CategoryTableView", bundle: nil)
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,21 +24,21 @@ class CategoryViewController: UIViewController {
     // 화면 전환
     
     @IBAction func exhibitionButtonClicked(_ sender: Any) {
-        guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "DetailCategoryViewController") as? DetailCategoryViewController else {return}
+        guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "CategoryTableVC") as? DetailCategoryViewController else {return}
         
         nextVC.categoryTabTitle = exhibition // 카테고리 title 이름
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @IBAction func fairButtonClicked(_ sender: Any) {
-        guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "DetailCategoryViewController") as? DetailCategoryViewController else {return}
+        guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "CategoryTableVC") as? DetailCategoryViewController else {return}
         
         nextVC.categoryTabTitle = fair // 카테고리 title 이름
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     @IBAction func festivalButtonClicked(_ sender: Any) {
-        guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "DetailCategoryViewController") as? DetailCategoryViewController else {return}
+        guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "CategoryTableVC") as? DetailCategoryViewController else {return}
         
         nextVC.categoryTabTitle = festival // 카테고리 title 이름
         self.navigationController?.pushViewController(nextVC, animated: true)

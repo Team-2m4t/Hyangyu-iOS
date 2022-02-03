@@ -11,7 +11,10 @@ import Pageboy
 
 class DetailCategoryViewController: TabmanViewController {
     
-    private var viewControllers: Array<UIViewController> = []
+    // 페이징 할 뷰 컨트롤러
+    var viewControllers: Array<UIViewController> = [BestVC(), FreeVC(), CostVC()]
+    // 상단 탭바 들어갈 자리
+    @IBOutlet weak var tabView: UIView!
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -26,13 +29,21 @@ class DetailCategoryViewController: TabmanViewController {
         super.viewDidLoad()
         
         // 상단 탭바
+        // swiftlint:disable force_cast
         let newVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "DetailCategoryViewController") as! DetailCategoryViewController
+        // swiftlint:enable force_cast
         
+        // swiftlint:disable force_cast
         let bestVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "BestVC") as! BestVC
+        // swiftlint:enable force_cast
         
+        // swiftlint:disable force_cast
         let freeVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "FreeVC") as! FreeVC
+        // swiftlint:enable force_cast
         
+        // swiftlint:disable force_cast
         let costVC = UIStoryboard.init(name: "DetailCategoryTab", bundle: nil).instantiateViewController(withIdentifier: "CostVC") as! CostVC
+        // swiftlint:enable force_cast
         
         viewControllers.append(newVC)
         viewControllers.append(bestVC)
@@ -46,7 +57,7 @@ class DetailCategoryViewController: TabmanViewController {
         bar.layout.transitionStyle = .snap
         
         // Add to view
-        addBar(bar, dataSource: self, at: .top)
+        addBar(bar, dataSource: self,  at: .custom(view: tabView, layout: nil))
         
         setCategoryTitle()
         setCardList()
@@ -62,10 +73,6 @@ class DetailCategoryViewController: TabmanViewController {
             categoryTitle.text = title
         }
     }
-    // data 나눠서 테이블 뷰에 보여주기
-    // 전시회 일 때
-    // 박람회 일 때
-    // 페스티벌 일 때
     
     func registerXib(){
         let nibName = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
@@ -90,10 +97,11 @@ class DetailCategoryViewController: TabmanViewController {
     
 }
 
-//상단 탭바 extension
+// 상단 탭바 extension
 extension DetailCategoryViewController: PageboyViewControllerDataSource, TMBarDataSource {
     
     func barItem(for bar: TMBar, at index: Int) -> TMBarItemable {
+        // 탭 안의 글씨들
         switch index {
         case 0:
             return TMBarItem(title: "최신순")
@@ -110,6 +118,7 @@ extension DetailCategoryViewController: PageboyViewControllerDataSource, TMBarDa
     }
     
     func numberOfViewControllers(in pageboyViewController: PageboyViewController) -> Int {
+        // 위에서 선언한 vc array의 count를 반환
         return viewControllers.count
     }
     
@@ -118,10 +127,9 @@ extension DetailCategoryViewController: PageboyViewControllerDataSource, TMBarDa
     }
     
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
-        return nil
+        return .at(index: 0)
     }
 }
-
 
 extension DetailCategoryViewController: UICollectionViewDataSource{
     // cell을 몇개를 만들건지 -> cardList의 원소 개수만큼 만듬!
