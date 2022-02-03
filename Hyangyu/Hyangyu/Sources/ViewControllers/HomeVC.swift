@@ -9,10 +9,32 @@ import Tabman
 import Pageboy
 
 class HomeVC: TabmanViewController {
-    private var viewControllers: Array<UIViewController> = [CategoryTableVC(), BestVC(), FreeVC(), CostVC()]
+    private var viewControllers: Array<UIViewController> = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // 상단 탭바
+        // swiftlint:disable force_cast
+        let newVC = UIStoryboard.init(name: "CategoryTableView", bundle: nil).instantiateViewController(withIdentifier: "CategoryTableVC") as! CategoryTableVC
+        // swiftlint:enable force_cast
+        
+        // swiftlint:disable force_cast
+        let bestVC = UIStoryboard.init(name: "CategoryTableView", bundle: nil).instantiateViewController(withIdentifier: "BestVC") as! BestVC
+        // swiftlint:enable force_cast
+        
+        // swiftlint:disable force_cast
+        let freeVC = UIStoryboard.init(name: "CategoryTableView", bundle: nil).instantiateViewController(withIdentifier: "FreeVC") as! FreeVC
+        // swiftlint:enable force_cast
+        
+        // swiftlint:disable force_cast
+        let costVC = UIStoryboard.init(name: "CategoryTableView", bundle: nil).instantiateViewController(withIdentifier: "CostVC") as! CostVC
+        // swiftlint:enable force_cast
+        
+        viewControllers.append(newVC)
+        viewControllers.append(bestVC)
+        viewControllers.append(freeVC)
+        viewControllers.append(costVC)
         
         self.dataSource = self
     
