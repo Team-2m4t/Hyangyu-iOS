@@ -4,58 +4,30 @@
 //
 //  Created by 길태연 on 2022/01/21.
 //
-
 import UIKit
-
+protocol PassData {
+    func passdata(data: String, num: Int)
+}
 class ReviewEditViewController: UIViewController {
     var reviewViewController: ReviewViewController?
-    @IBOutlet weak var label: UILabel!
-    @IBOutlet weak var reviewField: UITextField!
+    @IBOutlet weak var reviewField: UITextView!
     var reviewList: [ReviewDataModel] = []
     var review: String?
     var lalabel: String?
     var numberIndex: Int?
+    var editText: String!
+    var editMode: PassData!
     override func viewDidLoad() {
         super.viewDidLoad()
-        label.text = lalabel
+        reviewField.becomeFirstResponder()
         reviewField.text = review
     }
-    
-
     @IBAction func cancelButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
-    
     @IBAction func saveButton(_ sender: Any) {
-    //    print(count!)
-    // reviewList[count!].review == reviewField.text!
-        
-       // self.performSegue(withIdentifier: "showDetail", sender: count!)
-     
-        reviewViewController?.review = reviewField.text!
-    
-        reviewViewController?.hello() 
-        self.dismiss(animated: true, completion: nil)
-    }
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "showDetail" {
-//           if let destination = segue.destination as? ReviewViewController {
-//            destination.review = reviewField.text!
-//            }
-//        }
-//    }
-//
-    override func viewWillDisappear(_ animated: Bool) {
-        
-  //      if let context = (UIApplication.shared.delegate as? AppDelegate)
-  //      print(reviewViewController?.review )
-       //    reviewViewController?.review = reviewField.text!
-      //  reviewViewController?.count = numberIndex
-    // reviewList.remove(at: count!)
-      //  reviewList[numberIndex!].review = reviewField.text!
-     //   print(reviewField.text!)
-     //   print(reviewList[0].review)
-  //      reviewList[count!].review = reviewField.text!
-        
-    //    reviewViewController?.reviewTableView.reloadData();
+        editText = reviewField.text
+        editMode?.passdata(data: editText!, num: numberIndex! )
+        navigationController?.popViewController(animated: true)
     }
 }
