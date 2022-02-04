@@ -9,7 +9,13 @@ import Tabman
 import Pageboy
 
 class HomeVC: TabmanViewController {
+    @IBOutlet weak var categoryTitle: UILabel!
+    var categoryTabTitle: String?
+    @IBOutlet weak var tempView: UIView!
+    
     private var viewControllers: Array<UIViewController> = []
+    
+    let tabColor = UIColor(rgb: 0x005550)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,33 +48,36 @@ class HomeVC: TabmanViewController {
         
         bar.backgroundView.style = .blur(style: .regular)
         bar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
+        bar.buttons.customize { (button) in
+            button.tintColor = .black // 선택 안되어 있을 때
+            button.selectedTintColor = self.tabColor // 선택 되어 있을 때
+        }
         // 인디케이터 조정
         bar.indicator.weight = .light
-        bar.indicator.tintColor = .black
+        bar.indicator.tintColor = self.tabColor
         bar.indicator.overscrollBehavior = .compress
         bar.layout.alignment = .centerDistributed
         bar.layout.contentMode = .fit
         bar.layout.interButtonSpacing = 35 // 버튼 사이 간격
         
         bar.layout.transitionStyle = .snap // Customize
+        addBar(bar, dataSource: self, at: .custom(view: tempView, layout: nil))
         
-        settingTabBar(ctBar: bar)
-        addBar(bar, dataSource: self, at: .top)
+        setCategoryTitle()
     }
     
-    func settingTabBar (ctBar : TMBar.ButtonBar) {
-        ctBar.layout.transitionStyle = .snap
-        // 왼쪽 여백주기
-        ctBar.layout.contentInset = UIEdgeInsets(top: 0.0, left: 13.0, bottom: 0.0, right: 20.0)
-        
-        // 간격
-        ctBar.layout.interButtonSpacing = 35
-        
-        ctBar.backgroundView.style = .blur(style: .light)
-        
-        // 인디케이터 (영상에서 주황색 아래 바 부분)
-        ctBar.indicator.weight = .custom(value: 2)
+    // categoryTitle 바꾸기
+    func setCategoryTitle() {
+        if let title = self.categoryTabTitle {
+            categoryTitle.text = title
+        }
     }
+    
+    // 뒤로 가기 버튼
+    @IBAction func categoryBackButtonClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }
 
 extension HomeVC: PageboyViewControllerDataSource, TMBarDataSource {
@@ -102,4 +111,22 @@ extension HomeVC: PageboyViewControllerDataSource, TMBarDataSource {
     func defaultPage(for pageboyViewController: PageboyViewController) -> PageboyViewController.Page? {
         return nil
     }
+}
+
+extension UIColor {
+   convenience init(red: Int, green: Int, blue: Int) {
+       assert(red >= 0 && red <= 255, "Invalid red component")
+       assert(green >= 0 && green <= 255, "Invalid green component")
+       assert(blue >= 0 && blue <= 255, "Invalid blue component")
+
+       self.init(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
+   }
+
+   convenience init(rgb: Int) {
+       self.init(
+           red: (rgb >> 16) & 0xFF,
+           green: (rgb >> 8) & 0xFF,
+           blue: rgb & 0xFF
+       )
+   }
 }
