@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ResetCodeViewController" customModule="Hyangyu" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="COo-WU-dcx" userLabel="이메일스택">
+                    <rect key="frame" x="20" y="144" width="374" height="96"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kzm-C0-pbM">
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aRQ-q9-sOY">
+                            <rect key="frame" x="0.0" y="22" width="374" height="54"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="인증번호를 입력해주세요" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jGb-xJ-s4V">
+                                    <rect key="frame" x="15" y="15" width="344" height="24"/>
+                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="16"/>
+                                    <textInputTraits key="textInputTraits" textContentType="email"/>
+                                </textField>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="jGb-xJ-s4V" firstAttribute="top" secondItem="aRQ-q9-sOY" secondAttribute="top" constant="15" id="LXH-ps-GdF"/>
+                                <constraint firstAttribute="trailing" secondItem="jGb-xJ-s4V" secondAttribute="trailing" constant="15" id="Q3s-eJ-04T"/>
+                                <constraint firstItem="jGb-xJ-s4V" firstAttribute="leading" secondItem="aRQ-q9-sOY" secondAttribute="leading" constant="15" id="bm1-oh-pPc"/>
+                                <constraint firstAttribute="bottom" secondItem="jGb-xJ-s4V" secondAttribute="bottom" constant="15" id="xF0-4h-Yl0"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증번호가 맞지 않습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="arn-Xz-wwJ">
+                            <rect key="frame" x="0.0" y="80" width="374" height="16"/>
+                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
+                            <color key="textColor" systemColor="systemRedColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="인증번호가 전송되었습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uVB-fx-e1x">
+                    <rect key="frame" x="20" y="72" width="374" height="28"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="23"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LcM-3r-zR8">
+                    <rect key="frame" x="20" y="802" width="374" height="40"/>
+                    <color key="backgroundColor" name="primary"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="fxc-Xd-QVy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
+                    <state key="normal" title="인증번호 확인">
+                        <color key="titleColor" name="lightYellow"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="LcM-3r-zR8" secondAttribute="bottom" constant="20" id="4FM-r6-fwF"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="uVB-fx-e1x" secondAttribute="trailing" constant="20" id="LBj-ez-HOC"/>
+                <constraint firstItem="uVB-fx-e1x" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="28" id="QXi-E2-3WT"/>
+                <constraint firstItem="LcM-3r-zR8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="UdR-aj-AwT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="COo-WU-dcx" secondAttribute="trailing" constant="20" id="aUW-20-xsT"/>
+                <constraint firstItem="COo-WU-dcx" firstAttribute="top" secondItem="uVB-fx-e1x" secondAttribute="bottom" constant="44" id="qPu-bE-4Uo"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="LcM-3r-zR8" secondAttribute="trailing" constant="20" id="rQH-cv-5un"/>
+                <constraint firstItem="COo-WU-dcx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="uW9-ah-7Wg"/>
+                <constraint firstItem="uVB-fx-e1x" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="yQP-Az-d1l"/>
+            </constraints>
+            <point key="canvasLocation" x="138" y="74"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="lightYellow">
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primary">
+            <color red="0.0" green="0.33333333333333331" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
