@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var navigationController: UINavigationController?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -17,7 +18,35 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+        
+        if !hasJwtToken() {
+            setRootViewControllerToLogin()
+        } else {
+            print(UserDefaults.standard.string(forKey: "jwtToken"))
+            setRootViewControllerToTabbar()
+        }
+        self.window?.backgroundColor = .white
+        
         guard let _ = (scene as? UIWindowScene) else { return }
+    }
+    
+    private func hasJwtToken() -> Bool {
+        return UserDefaults.standard.object(forKey: "jwtToken") != nil
+    }
+    
+    private func setRootViewControllerToLogin() {
+        self.navigationController = UINavigationController(rootViewController: SignInViewController())
+        self.window?.rootViewController = self.navigationController
+    }
+    
+    private func setRootViewControllerToTabbar() {
+        let tabbarStoryboard = UIStoryboard(name: "Tabbar", bundle: nil)
+        guard let tabbarViewController = tabbarStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as? TabBarViewController else {
+            return
+        }
+        tabbarViewController.modalPresentationStyle = .fullScreen
+        tabbarViewController.modalTransitionStyle = .crossDissolve
+        self.window?.rootViewController = tabbarViewController
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
