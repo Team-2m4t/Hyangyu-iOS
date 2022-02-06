@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8vU-Il-5xt">
-                                <rect key="frame" x="40" y="147" width="334" height="616"/>
+                                <rect key="frame" x="40" y="150" width="334" height="613"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gcr-VS-RqR" userLabel="exhibition">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="192"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="191"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2u-Gh-rja">
                                                 <rect key="frame" x="3" y="1" width="328" height="191"/>
@@ -33,20 +33,28 @@
                                         </subviews>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDp-3D-dVB" userLabel="fair">
-                                        <rect key="frame" x="0.0" y="212" width="334" height="192"/>
+                                        <rect key="frame" x="0.0" y="211" width="334" height="191"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8S-MG-Plc">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B8S-MG-Plc">
                                                 <rect key="frame" x="3" y="1" width="328" height="191"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="191" id="rc7-Dj-lid"/>
+                                                </constraints>
                                                 <state key="normal" image="fair"/>
                                                 <connections>
                                                     <action selector="fairButtonClicked:" destination="1T5-Ea-t0E" eventType="touchUpInside" id="ul6-hT-Uxe"/>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="B8S-MG-Plc" firstAttribute="centerX" secondItem="gDp-3D-dVB" secondAttribute="centerX" id="4Mo-DB-fQX"/>
+                                            <constraint firstItem="B8S-MG-Plc" firstAttribute="leading" secondItem="gDp-3D-dVB" secondAttribute="leading" constant="3" id="Hfx-1x-Qsr"/>
+                                            <constraint firstAttribute="bottom" secondItem="B8S-MG-Plc" secondAttribute="bottom" id="Yvd-ti-8z9"/>
+                                            <constraint firstItem="B8S-MG-Plc" firstAttribute="centerY" secondItem="gDp-3D-dVB" secondAttribute="centerY" id="xsq-88-dJE"/>
+                                        </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPr-Ho-5cC" userLabel="festival">
-                                        <rect key="frame" x="0.0" y="424" width="334" height="192"/>
+                                        <rect key="frame" x="0.0" y="422" width="334" height="191"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QOi-Be-rWz">
                                                 <rect key="frame" x="3" y="1" width="328" height="191"/>
@@ -59,9 +67,17 @@
                                         </subviews>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="gDp-3D-dVB" firstAttribute="top" secondItem="Gcr-VS-RqR" secondAttribute="bottom" constant="20" id="4gg-bV-eNV"/>
+                                    <constraint firstAttribute="bottom" secondItem="KPr-Ho-5cC" secondAttribute="bottom" id="I5u-tR-Tqf"/>
+                                    <constraint firstItem="KPr-Ho-5cC" firstAttribute="top" secondItem="gDp-3D-dVB" secondAttribute="bottom" constant="20" id="Liz-4G-tYv"/>
+                                    <constraint firstItem="gDp-3D-dVB" firstAttribute="top" secondItem="Gcr-VS-RqR" secondAttribute="bottom" constant="20" id="Pq0-tE-U2l"/>
+                                    <constraint firstItem="Gcr-VS-RqR" firstAttribute="top" secondItem="8vU-Il-5xt" secondAttribute="top" id="kNN-aX-4PW"/>
+                                    <constraint firstItem="KPr-Ho-5cC" firstAttribute="top" secondItem="gDp-3D-dVB" secondAttribute="bottom" constant="20" id="mcW-1D-DDr"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3i-op-gmx">
-                                <rect key="frame" x="20" y="67" width="86.5" height="30"/>
+                                <rect key="frame" x="20" y="67" width="86.5" height="33"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="0CB-ap-xuh"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="100" id="iFH-pG-1gu"/>
