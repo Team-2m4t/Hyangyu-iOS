@@ -59,6 +59,20 @@
                                         </subviews>
                                     </view>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="KPr-Ho-5cC" secondAttribute="bottom" id="8j1-zZ-GLR"/>
+                                    <constraint firstAttribute="trailing" secondItem="KPr-Ho-5cC" secondAttribute="trailing" id="CAW-kF-cY7"/>
+                                    <constraint firstAttribute="trailing" secondItem="gDp-3D-dVB" secondAttribute="trailing" id="CLq-Ao-Chj"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gcr-VS-RqR" secondAttribute="trailing" id="MGY-27-aX6"/>
+                                    <constraint firstItem="Gcr-VS-RqR" firstAttribute="top" secondItem="8vU-Il-5xt" secondAttribute="top" id="Mtm-h0-2qx"/>
+                                    <constraint firstItem="Gcr-VS-RqR" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="auO-lC-XiA"/>
+                                    <constraint firstItem="gDp-3D-dVB" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="fbB-xg-cQu"/>
+                                    <constraint firstItem="KPr-Ho-5cC" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="fph-xi-zOW"/>
+                                    <constraint firstItem="gDp-3D-dVB" firstAttribute="top" secondItem="Gcr-VS-RqR" secondAttribute="bottom" constant="20" id="h6K-0J-dC7"/>
+                                    <constraint firstItem="gDp-3D-dVB" firstAttribute="top" secondItem="Gcr-VS-RqR" secondAttribute="bottom" constant="20" id="mdu-my-4DH"/>
+                                    <constraint firstItem="KPr-Ho-5cC" firstAttribute="top" secondItem="gDp-3D-dVB" secondAttribute="bottom" constant="20" id="pDV-iH-odD"/>
+                                    <constraint firstItem="KPr-Ho-5cC" firstAttribute="top" secondItem="gDp-3D-dVB" secondAttribute="bottom" constant="20" id="yEN-zu-bPO"/>
+                                </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a3i-op-gmx">
                                 <rect key="frame" x="20" y="67" width="86.5" height="30"/>
