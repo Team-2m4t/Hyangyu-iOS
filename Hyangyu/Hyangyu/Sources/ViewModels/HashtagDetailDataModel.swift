@@ -8,9 +8,9 @@
 import Foundation
 struct HashtagDetailDataModel {
     
-    var coverName:String
-    var title : String
-    var subtitle : String
-    var data : String
+    var coverName: String
+    var title: String
+    var subtitle: String
+    var data: String
     
 }
