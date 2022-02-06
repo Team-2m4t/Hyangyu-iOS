@@ -77,7 +77,6 @@ class HomeVC: TabmanViewController {
     @IBAction func categoryBackButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
 
 extension HomeVC: PageboyViewControllerDataSource, TMBarDataSource {

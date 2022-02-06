@@ -8,7 +8,6 @@
 import UIKit
 
 class CategoryTableVC: UIViewController {
-    
     @IBOutlet weak var newCollectionView: UICollectionView!
     
     var cardList: [ServiceDataModel] = []
