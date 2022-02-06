@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		0008E3C027953D410089985B /* DetailCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCategoryViewController.swift; sourceTree = "<group>"; };
 		0008E3C227953D770089985B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
-		003AB8CF27AFF01C00902D50 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../../Info.plist; sourceTree = "<group>"; };
+		003AB8D327AFFAF800902D50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0079288B2797E44C006B8EDE /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0079288C2797E44C006B8EDE /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		0093448327AFAE7E00490D57 /* MoreReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreReviewViewController.swift; sourceTree = "<group>"; };
@@ -92,7 +92,6 @@
 				83B34E162787364A009A8009 /* Sources */,
 				83B34E1527873640009A8009 /* Resources */,
 				83B34E0B27873600009A8009 /* LaunchScreen.storyboard */,
-				003AB8CF27AFF01C00902D50 /* Info.plist */,
 			);
 			path = Hyangyu;
 			sourceTree = "<group>";
@@ -100,6 +99,7 @@
 		83B34E1527873640009A8009 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				003AB8D327AFFAF800902D50 /* Info.plist */,
 				83B34E182787367D009A8009 /* Storyboards */,
 				83B34E172787366C009A8009 /* Font */,
 				83B34E0927873600009A8009 /* Assets.xcassets */,
@@ -472,7 +472,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Hyangyu/Info.plist;
+				INFOPLIST_FILE = Hyangyu/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,7 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Hyangyu/Info.plist;
+				INFOPLIST_FILE = Hyangyu/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
