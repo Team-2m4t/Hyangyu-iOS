@@ -7,26 +7,20 @@
 
 import UIKit
 
+protocol RecentSearchCoreDataUsable {
+    func saveRecentResearch(term: String, date: Date, index: Int32)
+}
+
 class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
     
     
     
     // MARK: - Property
-    
-    // 뿌려줄 데이터
-    let tagList: [String] = [
-        "김연경은이태리로간다",
-        "Then",
-        "SnapKit",
-        "RxSwift",
-        "Viper",
-        "Swift",
-        "UIKit",
-        "Foundation",
-        "ReactorKit"
-    ]
+    private let terms = ["재즈", "연인과 함께", "친구와 함께",
+                         "도자기", "정물화", "사진전", "증명사진"]
     
     private var results: [SearchResult] = []
+    private let searchResultsViewController = SearchResultsViewController()
     
     // MARK: - View
     
@@ -51,6 +45,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         return vc
     }()
     
+    
     // MARK: - View Life Cycle
     
     override func viewDidLoad() {
@@ -63,6 +58,12 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        collectionView.register(
+            SearchHeaderCollectionReusableView.self,
+            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+            withReuseIdentifier: SearchHeaderCollectionReusableView.identifier
+        )
         
         searchResultUpdate()
         
@@ -78,6 +79,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         navigationItem.searchController = searchController
     }
     
+    
     func setConstraint() {
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints {
@@ -90,22 +92,27 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         }
     }
     func initSearchBar() {
-        searchController.searchBar.searchTextField.backgroundColor = UIColor.clear
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes([.foregroundColor : UIColor.primary], for: .normal)
+        searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
         searchController.searchBar.searchTextField.font = UIFont.systemFont(ofSize: 14)
+        searchController.searchBar.searchBarStyle = .minimal
     }
     
     func searchResultUpdate() {
         results.append(contentsOf: [
             .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "서울국제재즈페스티벌", startDate: "2020.5.25", endDate: "2020.5.26", location: "올림픽 공원")),
             .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "자라섬재즈페스티벌", startDate: "2021.11.7", endDate: "2021.11.7", location: "자라섬")),
-                        .exhibition(model: MyListModel(
-                                        posterImageURL: "exhibitionImg1",
-                                        title: "재즈의 역사",
-                                        startDate: "2021.3.18",
-                                        endDate: "2021.10.18",
-                                        location: "서울국제뮤지선"))
+            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "제 8회 해운대재즈페스티벌", startDate: "2021.10.26", endDate: "2021.10.30", location: "부산 해운대 문화회관 해운홀")),
+            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "대구국제재즈축제", startDate: "2021.10.6", endDate: "2021.10.11", location: "수성 아트피아&아트 센터")),
+            .exhibition(model: MyListModel(
+                            posterImageURL: "exhibitionImg1",
+                            title: "재즈의 역사",
+                            startDate: "2021.3.18",
+                            endDate: "2021.10.18",
+                            location: "서울국제뮤지선"))
         ])
     }
+    
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let resultsController = searchController.searchResultsController as? SearchResultsViewController,
@@ -114,20 +121,35 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
             return
         }
         resultsController.update(with: results)
-
+        
         print(query)
         // perform search
     }
+    
     // perform search
+    
+    private func search(term: String) {
+        searchController.searchBar.text = term
+        searchController.isActive = true
+        searchController.searchBar.resignFirstResponder()
+    }
+    
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text,
+              !text.isEmpty else {
+            return
+        }
+    }
+}
 
-func updateSearchResults(for searchController: UISearchController) {
-}
-}
+
+
 
 extension SearchViewController: UICollectionViewDataSource {
     // cell갯수
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return tagList.count
+        return terms.count
     }
     
     // cell 선언
@@ -135,23 +157,54 @@ extension SearchViewController: UICollectionViewDataSource {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SearchTagCollectionViewCell", for: indexPath) as? SearchTagCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setData(title: tagList[indexPath.item])
+        cell.setData(title: terms[indexPath.item])
         
         return cell
     }
 }
 
 extension SearchViewController: UICollectionViewDelegateFlowLayout {
+    
     // 셀 크기설정
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let label = UILabel().then {
             $0.font = .systemFont(ofSize: 14)
-            $0.text = tagList[indexPath.row]
+            $0.text = terms[indexPath.row]
             $0.sizeToFit()
         }
         let size = label.frame.size
         
         return CGSize(width: size.width + 36, height: size.height + 30)
+    }
+    
+    // 아이템 선택
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        search(term: terms[indexPath.item])
+        guard let resultsController = searchController.searchResultsController as? SearchResultsViewController else {
+            return
+        }
+        resultsController.update(with: results)
+        // perform search
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionHeader else {
+            return UICollectionReusableView()
+        }
+        
+        guard let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: SearchHeaderCollectionReusableView.identifier,
+            for: indexPath
+        ) as? SearchHeaderCollectionReusableView,
+        kind == UICollectionView.elementKindSectionHeader else {
+            return UICollectionReusableView()
+        }
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 40)
     }
 }
