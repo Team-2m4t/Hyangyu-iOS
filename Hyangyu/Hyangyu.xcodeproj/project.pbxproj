@@ -69,6 +69,8 @@
 		836086F827A6A59B00E9B9F5 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836086F727A6A59B00E9B9F5 /* Search.swift */; };
 		8375EADB27B00D4E007D5EFA /* ServiceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375EADA27B00D4E007D5EFA /* ServiceDataModel.swift */; };
 		8375EADD27B00F04007D5EFA /* CategoryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00D0CCB5278BC3DC0087EF87 /* CategoryTab.storyboard */; };
+		8375EAE527B02D88007D5EFA /* MyPageAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375EAE427B02D88007D5EFA /* MyPageAPI.swift */; };
+		8375EAE827B02D9B007D5EFA /* MyPageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8375EAE727B02D9B007D5EFA /* MyPageService.swift */; };
 		837763BC27A067E600248B6F /* SignUpUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837763BB27A067E600248B6F /* SignUpUser.swift */; };
 		837763C127A0892400248B6F /* MoyaLoggingPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837763C027A0892400248B6F /* MoyaLoggingPlugin.swift */; };
 		837763C427A0894B00248B6F /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837763C327A0894B00248B6F /* SignUpService.swift */; };
@@ -194,6 +196,8 @@
 		836086F427A6A58100E9B9F5 /* SearchTableViewHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewHeaderView.swift; sourceTree = "<group>"; };
 		836086F727A6A59B00E9B9F5 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		8375EADA27B00D4E007D5EFA /* ServiceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDataModel.swift; sourceTree = "<group>"; };
+		8375EAE427B02D88007D5EFA /* MyPageAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageAPI.swift; sourceTree = "<group>"; };
+		8375EAE727B02D9B007D5EFA /* MyPageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageService.swift; sourceTree = "<group>"; };
 		837763BB27A067E600248B6F /* SignUpUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpUser.swift; sourceTree = "<group>"; };
 		837763C027A0892400248B6F /* MoyaLoggingPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaLoggingPlugin.swift; sourceTree = "<group>"; };
 		837763C327A0894B00248B6F /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
@@ -405,6 +409,28 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		8375EAE227B02CA9007D5EFA /* AuthAPI */ = {
+			isa = PBXGroup;
+			children = (
+				837763C327A0894B00248B6F /* SignUpService.swift */,
+				83B8A66227A1042B00C22495 /* SignUpAPI.swift */,
+				83B8A66F27A10ECC00C22495 /* LoginAPI.swift */,
+				83B8A67227A10EEA00C22495 /* LoginService.swift */,
+				8307901927AB184500E0F7D4 /* PasswordAPI.swift */,
+				8307901C27AB185F00E0F7D4 /* PasswordService.swift */,
+			);
+			path = AuthAPI;
+			sourceTree = "<group>";
+		};
+		8375EAE327B02D76007D5EFA /* MyPageAPI */ = {
+			isa = PBXGroup;
+			children = (
+				8375EAE427B02D88007D5EFA /* MyPageAPI.swift */,
+				8375EAE727B02D9B007D5EFA /* MyPageService.swift */,
+			);
+			path = MyPageAPI;
+			sourceTree = "<group>";
+		};
 		837763BA27A067D400248B6F /* AppModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -419,15 +445,11 @@
 		837763BF27A088A400248B6F /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				8375EAE327B02D76007D5EFA /* MyPageAPI */,
+				8375EAE227B02CA9007D5EFA /* AuthAPI */,
 				837763C027A0892400248B6F /* MoyaLoggingPlugin.swift */,
-				837763C327A0894B00248B6F /* SignUpService.swift */,
-				83B8A66227A1042B00C22495 /* SignUpAPI.swift */,
 				83B8A66527A1048C00C22495 /* NetworkResult.swift */,
 				83B8A66827A104C800C22495 /* GenericResponse.swift */,
-				83B8A66F27A10ECC00C22495 /* LoginAPI.swift */,
-				83B8A67227A10EEA00C22495 /* LoginService.swift */,
-				8307901927AB184500E0F7D4 /* PasswordAPI.swift */,
-				8307901C27AB185F00E0F7D4 /* PasswordService.swift */,
 			);
 			path = APIServices;
 			sourceTree = "<group>";
@@ -812,6 +834,7 @@
 				0079288D2797E44C006B8EDE /* CategoryCollectionViewCell.swift in Sources */,
 				23842AA4279EBCF800621427 /* HomeHashtagDataModel.swift in Sources */,
 				83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */,
+				8375EAE527B02D88007D5EFA /* MyPageAPI.swift in Sources */,
 				23842A95279EBCD600621427 /* ReviewViewController.swift in Sources */,
 				23842AA6279EBCF800621427 /* HashtagDetailDataModel.swift in Sources */,
 				23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */,
@@ -852,6 +875,7 @@
 				836086F227A6A55600E9B9F5 /* SearchResultCell.swift in Sources */,
 				837763C127A0892400248B6F /* MoyaLoggingPlugin.swift in Sources */,
 				8399CF8E27994DB9002E5287 /* UIFont.swift in Sources */,
+				8375EAE827B02D9B007D5EFA /* MyPageService.swift in Sources */,
 				83E42363279ACB850094DC2E /* UIImage+Extensions.swift in Sources */,
 				837763C427A0894B00248B6F /* SignUpService.swift in Sources */,
 				8399CF6F27994775002E5287 /* UIScrollView+Extensions.swift in Sources */,
