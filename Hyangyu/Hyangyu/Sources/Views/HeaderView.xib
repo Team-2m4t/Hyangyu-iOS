@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeaderView" customModule="Hyangyu" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="eL6-Fk-GMM">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="255"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VI2-mI-MHu" customClass="HeaderView" customModule="Hyangyu" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="-50" width="414" height="150"/>
+                    <color key="backgroundColor" systemColor="systemGray5Color"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="2cD-WZ-MCI"/>
+                    </constraints>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="exhibitionImg1" translatesAutoresizingMaskIntoConstraints="NO" id="eVh-IT-rEn">
+                    <rect key="frame" x="20" y="55" width="74" height="74"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="eVh-IT-rEn" secondAttribute="height" multiplier="1:1" id="Ank-Ih-vNp"/>
+                        <constraint firstAttribute="width" constant="74" id="H2H-zI-zqn"/>
+                        <constraint firstAttribute="height" constant="74" id="jsT-Tg-276"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이물사딱 아요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5g-m0-vOH">
+                    <rect key="frame" x="20" y="149" width="82" height="18"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hyd-Sy-09P">
+                    <rect key="frame" x="20" y="182" width="49" height="28"/>
+                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="13"/>
+                    <state key="normal" title="마이 리뷰">
+                        <color key="titleColor" red="0.0" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="rEF-eK-zGH"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="eVh-IT-rEn" firstAttribute="top" secondItem="rEF-eK-zGH" secondAttribute="top" constant="11" id="DqQ-3a-JRF"/>
+                <constraint firstItem="VI2-mI-MHu" firstAttribute="top" secondItem="eL6-Fk-GMM" secondAttribute="top" constant="-50" id="V8K-IU-cfG"/>
+                <constraint firstItem="rEF-eK-zGH" firstAttribute="trailing" secondItem="VI2-mI-MHu" secondAttribute="trailing" id="VRD-Wb-z0C"/>
+                <constraint firstItem="X5g-m0-vOH" firstAttribute="top" secondItem="eVh-IT-rEn" secondAttribute="bottom" constant="20" id="Vo2-tg-TxC"/>
+                <constraint firstItem="hyd-Sy-09P" firstAttribute="top" secondItem="X5g-m0-vOH" secondAttribute="bottom" constant="15" id="Wym-ls-0gL"/>
+                <constraint firstItem="eVh-IT-rEn" firstAttribute="leading" secondItem="rEF-eK-zGH" secondAttribute="leading" constant="20" id="cOA-Wy-Jle"/>
+                <constraint firstItem="VI2-mI-MHu" firstAttribute="leading" secondItem="rEF-eK-zGH" secondAttribute="leading" id="eKA-hf-FVV"/>
+                <constraint firstItem="hyd-Sy-09P" firstAttribute="leading" secondItem="rEF-eK-zGH" secondAttribute="leading" constant="20" id="eoc-BI-aoS"/>
+                <constraint firstItem="X5g-m0-vOH" firstAttribute="leading" secondItem="rEF-eK-zGH" secondAttribute="leading" constant="20" id="u2V-gn-Xal"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="137.68115942028987" y="298.32589285714283"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="exhibitionImg1" width="148" height="195"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
