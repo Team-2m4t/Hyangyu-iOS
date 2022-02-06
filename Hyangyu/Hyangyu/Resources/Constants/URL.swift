@@ -28,6 +28,11 @@ extension Const {
         // 회원 탈퇴 (DELETE)
         static let deleteUser = "/UserApi/user/deleteMyUser"
         
+        // MARK: - My Page - User Service
+        
+        // 닉네임 변경 (POST)
+        static let modifyUserName = "/UserApi/modifyUsername"
+        
     }
 }
 
