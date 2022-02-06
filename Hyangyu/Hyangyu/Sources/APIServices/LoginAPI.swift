@@ -37,8 +37,7 @@ public class LoginAPI {
     
     private func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data,  _ object: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-            let welcom = try? decoder.decode(SignIn.self, from: data)
-            print(welcom)
+            let welcome = try? decoder.decode(SignIn.self, from: data)
         guard let decodedData = try? decoder.decode(GenericResponse<SignIn>.self, from: data as Data)
         
         else {
@@ -47,7 +46,7 @@ public class LoginAPI {
         
         switch statusCode {
         case 200:
-            return .success(welcom)
+            return .success(welcome)
         case 400..<500:
             return .requestErr(decodedData.message)
         case 500:

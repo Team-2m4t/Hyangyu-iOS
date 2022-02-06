@@ -247,7 +247,7 @@ extension SignUpViewController {
             switch response {
             case .success(let jwtToken):
                 self.navigationController?.initTransparentNavBar()
-                self.navigationController?.pushViewController(SignInViewController.loadFromNib(), animated: true)
+                self.navigationController?.popToRootViewController(animated: true)
                 
             case .requestErr(let message):
                 print("requestErr")
