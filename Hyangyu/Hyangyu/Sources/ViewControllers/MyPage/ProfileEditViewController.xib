@@ -36,7 +36,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVj-qf-mh2">
-                            <rect key="frame" x="5" y="18" width="44" height="44"/>
+                            <rect key="frame" x="5" y="22" width="36" height="36"/>
                             <state key="normal" image="closeBtn"/>
                             <connections>
                                 <action selector="didTapCancel:" destination="-1" eventType="touchUpInside" id="4T1-uA-XlY"/>
@@ -122,7 +122,7 @@
         </view>
     </objects>
     <resources>
-        <image name="closeBtn" width="44" height="44"/>
+        <image name="closeBtn" width="36" height="36"/>
         <image name="userDefaultImage" width="74" height="74"/>
         <namedColor name="textBlack">
             <color red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
