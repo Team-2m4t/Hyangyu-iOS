@@ -41,6 +41,4 @@ class ViewController: UIViewController {
                 tabBarController.modalPresentationStyle = .fullScreen
                 self.present(tabBarController, animated: true, completion: nil)
     }
-    
 }
-
