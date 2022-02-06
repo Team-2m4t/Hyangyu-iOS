@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o89-QJ-Rrd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o89-QJ-Rrd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -108,11 +108,11 @@
             </objects>
             <point key="canvasLocation" x="1086.9565217391305" y="124.55357142857142"/>
         </scene>
-        <!--카테고리-->
+        <!--Navigation Controller-->
         <scene sceneID="qMV-6j-yOJ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="o89-QJ-Rrd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="카테고리" image="tray.2.fill" catalog="system" id="vQF-eg-Dud"/>
+                    <tabBarItem key="tabBarItem" title="" image="category" selectedImage="category-fill" id="vQF-eg-Dud"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gTJ-Vc-TAQ">
                         <autoresizingMask key="autoresizingMask"/>
@@ -128,10 +128,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="category" width="28" height="28"/>
+        <image name="category-fill" width="28" height="28"/>
         <image name="exhibition" width="320" height="150"/>
         <image name="fair" width="320" height="150"/>
         <image name="festival" width="320" height="150"/>
-        <image name="tray.2.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
