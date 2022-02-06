@@ -9,7 +9,7 @@ import Foundation
 
 struct HomeHashtagDataModel {
     
-    var coverName:String
+    var coverName: String
     var hashName: String
     
 }

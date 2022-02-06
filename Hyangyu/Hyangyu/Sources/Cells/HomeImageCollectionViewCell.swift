@@ -16,5 +16,9 @@ class HomeImageCollectionViewCell: UICollectionViewCell {
         }
         
     }
-    
+    func setImage() {
+        posterImageView.layer.cornerRadius = 70
+        posterImageView.layer.masksToBounds = true
+        posterImageView.layer.maskedCorners = [.layerMinXMaxYCorner]
+    }
 }
