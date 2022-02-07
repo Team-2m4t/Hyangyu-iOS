@@ -12,11 +12,12 @@ class ReviewViewController: UIViewController, PassData {
         super.viewDidLoad()
         setColor()
         enableButtonColor(oneButton: fairColor, twoButton: festivalColor)
-        setReviewList(title: "라이프 사진전 : 더 라스트 프린트", content: "와 진짜! 너무 좋았어요 ㅎㅎ ", data: "4 MAR 2019", scope: Double(5.0))
-        setReviewList(title: "칸딘스키와 함께하는 색채여행", content: "색감이 넘 이뻐요 ", data: "9 MAY 2020", scope: Double(4.5))
-        setReviewList(title: "모네, 르누아르... 샤갈", content: "흠 가지마세요 별루,,", data: "2 JAN 2021", scope: Double(1.0))
-        setReviewList(title: "수퍼네이처 - 부산", content: "쩝스바리~", data: "4 MAR 2019", scope: Double(0.5))
-        setReviewList(title: "카유보트: 향기를 만나다", content: "향기가 납니다", data: "4 MAR 2019", scope: Double(4.0))
+//        setReviewList(title: "라이프 사진전 : 더 라스트 프린트", content: "와 진짜! 너무 좋았어요 ㅎㅎ ", data: "4 MAR 2019", scope: Double(5.0))
+//        setReviewList(title: "칸딘스키와 함께하는 색채여행", content: "색감이 넘 이뻐요 ", data: "9 MAY 2020", scope: Double(4.5))
+//        setReviewList(title: "모네, 르누아르... 샤갈", content: "흠 가지마세요 별루,,", data: "2 JAN 2021", scope: Double(1.0))
+//        setReviewList(title: "수퍼네이처 - 부산", content: "쩝스바리~", data: "4 MAR 2019", scope: Double(0.5))
+//        setReviewList(title: "카유보트: 향기를 만나다", content: "향기가 납니다", data: "4 MAR 2019", scope: Double(4.0))
+        exhibitionApi(button: exhibitionColor)
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
         reviewTableView.separatorStyle = .none
@@ -35,6 +36,83 @@ class ReviewViewController: UIViewController, PassData {
         reviewList.append(contentsOf: [
             ReviewDataModel(title: title, review: content, data: data, scope: scope)
         ])
+    }
+    func exhibitionApi(button: UIButton) {
+        GetReviewDataService.shared.getExhibitionInfo { [self] (response) in
+            switch response {
+            case .success(let resultss):
+                if let results = resultss as? [Review] {
+                        for num in 0 ... results.count-1 {
+                        setReviewList(title: results[num].author, content: results[num].content, data: results[num].createdAt, scope: Double(5.0))
+                    }
+                    DispatchQueue.main.async {
+                        self.reviewTableView.reloadData()
+                    }
+                }
+            case .requestErr(let message) :
+                print("requestERR", message)
+            case .pathErr :
+                print("pathERR")
+            case .serverErr :
+                print("serverERR")
+            case .networkFail:
+                print("networkFail")
+                
+            }
+        }
+    }
+    func fairApi(button: UIButton) {
+        GetReviewDataService.shared.getFairInfo { [self] (response) in
+            
+            switch response {
+            case .success(let resultss):
+                if let results = resultss as? [Review] {
+                
+                        for num in 0 ... results.count-1 {
+                        setReviewList(title: results[num].author, content: results[num].content, data: results[num].createdAt, scope: Double(5.0))
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.reviewTableView.reloadData()
+                        
+                    }
+
+                }
+                
+            case .requestErr(let message) :
+                print("requestERR", message)
+            case .pathErr :
+                print("pathERR")
+            case .serverErr :
+                print("serverERR")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+    
+    func festivalApi(button: UIButton) {
+        GetReviewDataService.shared.getFestivalInfo { [self] (response) in
+            switch response {
+            case .success(let resultss):
+                if let results = resultss as? [Review] {
+                        for num in 0 ... results.count-1 {
+                        setReviewList(title: results[num].author, content: results[num].content, data: results[num].createdAt, scope: Double(5.0))
+                    }
+                    DispatchQueue.main.async {
+                        self.reviewTableView.reloadData()
+                    }
+                }
+            case .requestErr(let message) :
+                print("requestERR", message)
+            case .pathErr :
+                print("pathERR")
+            case .serverErr :
+                print("serverERR")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
     @IBAction func optionMenu(_ sender: Any) {
         self.actionClosure?()
@@ -58,11 +136,12 @@ class ReviewViewController: UIViewController, PassData {
         enableButtonColor(oneButton: fairColor, twoButton: festivalColor)
         reviewTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         reviewList.removeAll()
-        setReviewList(title: "라이프 사진전 : 더 라스트 프린트", content: "와 진짜 ! 너무 좋았어요 ㅎㅎ ", data: "4 MAR 2019", scope: Double(5.0))
-        setReviewList(title: "칸딘스키와 함께하는 색채여행", content: "색감이 넘 이뻐요 ", data: "9 MAY 2020", scope: Double(4.5))
-        setReviewList(title: "모네, 르누아르... 샤갈", content: "흠 가지마세요 별루,,", data: "2 JAN 2021", scope: Double(1.0))
-        setReviewList(title: "수퍼네이처 - 부산", content: "쩝스바리~", data: "4 MAR 2019", scope: Double(0.5))
-        setReviewList(title: "카유보트: 향기를 만나다", content: "향기가 납니다", data: "4 MAR 2019", scope: Double(5.0))
+        exhibitionApi(button: exhibitionColor)
+//        setReviewList(title: "라이프 사진전 : 더 라스트 프린트", content: "와 진짜 ! 너무 좋았어요 ㅎㅎ ", data: "4 MAR 2019", scope: Double(5.0))
+//        setReviewList(title: "칸딘스키와 함께하는 색채여행", content: "색감이 넘 이뻐요 ", data: "9 MAY 2020", scope: Double(4.5))
+//        setReviewList(title: "모네, 르누아르... 샤갈", content: "흠 가지마세요 별루,,", data: "2 JAN 2021", scope: Double(1.0))
+//        setReviewList(title: "수퍼네이처 - 부산", content: "쩝스바리~", data: "4 MAR 2019", scope: Double(0.5))
+//        setReviewList(title: "카유보트: 향기를 만나다", content: "향기가 납니다", data: "4 MAR 2019", scope: Double(5.0))
         reviewTableView.reloadData()
     }
     @IBAction func fairButton(_ sender: Any) {
@@ -70,11 +149,12 @@ class ReviewViewController: UIViewController, PassData {
         enableButtonColor(oneButton: exhibitionColor, twoButton: festivalColor)
         reviewTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         reviewList.removeAll()
-        setReviewList(title: "아라리오뮤지엄", content: "흠 그닥임 ", data: "4 MAR 2019", scope: Double(1.5))
-        setReviewList(title: "어둠속의 대화", content: "가까워지고싶은 사람과 함께가면 좋을 것 같아요", data: "4 MAR 2019", scope: Double(5.0))
-        setReviewList(title: "애니메이션 박물관", content: "뭐냐 미쳤음", data: "4 MAR 2019", scope: Double(5.0))
-        setReviewList(title: "플라워 바이 네이키", content: "쩝..", data: "4 MAR 2019", scope: Double(0.5))
-        setReviewList(title: "필립 할스만 사진전", content: "와!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ", data: "4 MAR 2019", scope: Double(4.5))
+        fairApi(button: fairColor)
+//        setReviewList(title: "아라리오뮤지엄", content: "흠 그닥임 ", data: "4 MAR 2019", scope: Double(1.5))
+//        setReviewList(title: "어둠속의 대화", content: "가까워지고싶은 사람과 함께가면 좋을 것 같아요", data: "4 MAR 2019", scope: Double(5.0))
+//        setReviewList(title: "애니메이션 박물관", content: "뭐냐 미쳤음", data: "4 MAR 2019", scope: Double(5.0))
+//        setReviewList(title: "플라워 바이 네이키", content: "쩝..", data: "4 MAR 2019", scope: Double(0.5))
+//        setReviewList(title: "필립 할스만 사진전", content: "와!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! ", data: "4 MAR 2019", scope: Double(4.5))
         reviewTableView.reloadData()
     }
     @IBAction func festivalButton(_ sender: Any) {
@@ -82,8 +162,9 @@ class ReviewViewController: UIViewController, PassData {
         enableButtonColor(oneButton: exhibitionColor, twoButton: fairColor)
         reviewTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         reviewList.removeAll()
-        setReviewList(title: "유미의 세포들 부산", content: "유미야 사랑해", data: "4 MAR 2019", scope: Double(3.0))
-        setReviewList(title: "아르떼 뮤지엄", content: "와 진짜 ! 너무 좋았어요 ㅎㅎ ", data: "4 MAR 2019", scope: Double(4.5))
+       festivalApi(button: festivalColor)
+//        setReviewList(title: "유미의 세포들 부산", content: "유미야 사랑해", data: "4 MAR 2019", scope: Double(3.0))
+//        setReviewList(title: "아르떼 뮤지엄", content: "와 진짜 ! 너무 좋았어요 ㅎㅎ ", data: "4 MAR 2019", scope: Double(4.5))
         reviewTableView.reloadData()
     }
     func remove(index: IndexPath) {

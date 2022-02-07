@@ -11,6 +11,9 @@
 		236279152796841A00C16340 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236279142796841A00C16340 /* HomeViewController.swift */; };
 		236279172796894800C16340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236279162796894800C16340 /* Main.storyboard */; };
 		2377838327A66BBE00FF2055 /* ReviewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2377838227A66BBE00FF2055 /* ReviewDataModel.swift */; };
+		237FDF5D27B0DB1400898B22 /* ReviewNetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF5C27B0DB1400898B22 /* ReviewNetworkResult.swift */; };
+		237FDF5F27B0E9A200898B22 /* ReviewAPIDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF5E27B0E9A200898B22 /* ReviewAPIDataModel.swift */; };
+		237FDF6127B0EAA700898B22 /* GetReviewDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF6027B0EAA700898B22 /* GetReviewDataService.swift */; };
 		23842A92279EBCD600621427 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8C279EBCD600621427 /* HomeViewController.swift */; };
 		23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8E279EBCD600621427 /* ReviewEditViewController.swift */; };
 		23842A95279EBCD600621427 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8F279EBCD600621427 /* ReviewViewController.swift */; };
@@ -34,6 +37,9 @@
 		236279142796841A00C16340 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		236279162796894800C16340 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2377838227A66BBE00FF2055 /* ReviewDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDataModel.swift; sourceTree = "<group>"; };
+		237FDF5C27B0DB1400898B22 /* ReviewNetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewNetworkResult.swift; sourceTree = "<group>"; };
+		237FDF5E27B0E9A200898B22 /* ReviewAPIDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAPIDataModel.swift; sourceTree = "<group>"; };
+		237FDF6027B0EAA700898B22 /* GetReviewDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewDataService.swift; sourceTree = "<group>"; };
 		23842A8C279EBCD600621427 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		23842A8E279EBCD600621427 /* ReviewEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewEditViewController.swift; sourceTree = "<group>"; };
 		23842A8F279EBCD600621427 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +174,9 @@
 		83B34E1B278736C4009A8009 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				237FDF5C27B0DB1400898B22 /* ReviewNetworkResult.swift */,
+				237FDF5E27B0E9A200898B22 /* ReviewAPIDataModel.swift */,
+				237FDF6027B0EAA700898B22 /* GetReviewDataService.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -341,6 +350,7 @@
 				23842AA6279EBCF800621427 /* HashtagDetailDataModel.swift in Sources */,
 				23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */,
 				23842AA5279EBCF800621427 /* HomePosterDataModel.swift in Sources */,
+				237FDF5F27B0E9A200898B22 /* ReviewAPIDataModel.swift in Sources */,
 				23842A9E279EBCE800621427 /* HomeImageCollectionViewCell.swift in Sources */,
 				23842A9C279EBCE800621427 /* HashtagCollectionViewCell.swift in Sources */,
 				23842A9D279EBCE800621427 /* ReviewTableViewCell.swift in Sources */,
@@ -350,6 +360,8 @@
 				2377838327A66BBE00FF2055 /* ReviewDataModel.swift in Sources */,
 				23842A9F279EBCE800621427 /* HashtagDetailTableViewCell.swift in Sources */,
 				23842A92279EBCD600621427 /* HomeViewController.swift in Sources */,
+				237FDF5D27B0DB1400898B22 /* ReviewNetworkResult.swift in Sources */,
+				237FDF6127B0EAA700898B22 /* GetReviewDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
