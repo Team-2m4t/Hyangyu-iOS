@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" reuseIdentifier="MyPageCollectionViewCell" id="7xf-Dg-228" customClass="MyPageCollectionViewCell" customModule="Hyangyu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="132" height="243"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <collectionViewCellContentView key="contentView" autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="743-Kr-q6j">
+                <rect key="frame" x="0.0" y="0.0" width="132" height="243"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XHO-Ga-Rua">
+                        <rect key="frame" x="10" y="5" width="112" height="149.5"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="XHO-Ga-Rua" secondAttribute="height" multiplier="3:4" id="WrZ-lr-0IM"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mqW-Ae-be6">
+                        <rect key="frame" x="10" y="159.5" width="112" height="18"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="15"/>
+                        <color key="textColor" name="textBlack"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="z80-mN-jFR">
+                        <rect key="frame" x="10" y="182.5" width="102" height="14.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gZV-sK-3qg">
+                                <rect key="frame" x="0.0" y="0.0" width="23" height="14.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" name="subTextGray2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzT-YV-Tyr">
+                                <rect key="frame" x="48" y="0.0" width="6.5" height="14.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" name="subTextGray2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLD-Tx-Cn1">
+                                <rect key="frame" x="79" y="0.0" width="23" height="14.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
+                                <color key="textColor" name="subTextGray2"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9p-RU-DNa">
+                        <rect key="frame" x="10" y="202" width="112" height="14.5"/>
+                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="12"/>
+                        <color key="textColor" name="subTextGray2"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                <constraints>
+                    <constraint firstItem="XHO-Ga-Rua" firstAttribute="top" secondItem="743-Kr-q6j" secondAttribute="top" constant="5" id="4k0-bO-wd5"/>
+                    <constraint firstItem="mqW-Ae-be6" firstAttribute="leading" secondItem="743-Kr-q6j" secondAttribute="leading" constant="10" id="C71-eL-QcG"/>
+                    <constraint firstItem="D9p-RU-DNa" firstAttribute="top" secondItem="z80-mN-jFR" secondAttribute="bottom" constant="5" id="FlS-JJ-i9q"/>
+                    <constraint firstItem="mqW-Ae-be6" firstAttribute="top" secondItem="XHO-Ga-Rua" secondAttribute="bottom" constant="5" id="HU3-Cb-cTa"/>
+                    <constraint firstItem="z80-mN-jFR" firstAttribute="top" secondItem="mqW-Ae-be6" secondAttribute="bottom" constant="5" id="LPR-Rc-5By"/>
+                    <constraint firstAttribute="trailing" secondItem="XHO-Ga-Rua" secondAttribute="trailing" constant="10" id="Sd2-Sc-Y0x"/>
+                    <constraint firstAttribute="trailing" secondItem="D9p-RU-DNa" secondAttribute="trailing" constant="10" id="Ug7-cI-xow"/>
+                    <constraint firstItem="XHO-Ga-Rua" firstAttribute="leading" secondItem="743-Kr-q6j" secondAttribute="leading" constant="10" id="X5f-49-B16"/>
+                    <constraint firstItem="z80-mN-jFR" firstAttribute="leading" secondItem="743-Kr-q6j" secondAttribute="leading" constant="10" id="a7M-K7-qUC"/>
+                    <constraint firstAttribute="trailing" secondItem="mqW-Ae-be6" secondAttribute="trailing" constant="10" id="eO7-5V-fTB"/>
+                    <constraint firstItem="XHO-Ga-Rua" firstAttribute="centerX" secondItem="743-Kr-q6j" secondAttribute="centerX" id="fqQ-ud-jPT"/>
+                    <constraint firstAttribute="trailing" secondItem="z80-mN-jFR" secondAttribute="trailing" constant="20" id="jMG-Zq-IVN"/>
+                    <constraint firstItem="D9p-RU-DNa" firstAttribute="leading" secondItem="743-Kr-q6j" secondAttribute="leading" constant="10" id="mtC-OW-gFI"/>
+                </constraints>
+            </collectionViewCellContentView>
+            <size key="customSize" width="84" height="150"/>
+            <connections>
+                <outlet property="endDateLabel" destination="gLD-Tx-Cn1" id="WTS-gN-1SZ"/>
+                <outlet property="locationLabel" destination="D9p-RU-DNa" id="s1V-sV-Hqc"/>
+                <outlet property="posterImageView" destination="XHO-Ga-Rua" id="H9j-AT-vcp"/>
+                <outlet property="startDateLabel" destination="gZV-sK-3qg" id="5H8-Qu-TxY"/>
+                <outlet property="titleLabel" destination="mqW-Ae-be6" id="frA-eV-EG1"/>
+            </connections>
+            <point key="canvasLocation" x="-26.25" y="-33.125"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="subTextGray2">
+            <color red="0.70980392156862748" green="0.70980392156862748" blue="0.70980392156862748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="textBlack">
+            <color red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

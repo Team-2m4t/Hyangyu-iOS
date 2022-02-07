@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="lZ8-hk-uH2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="Stl-e8-5kc">
+            <objects>
+                <tabBarController storyboardIdentifier="TabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="lZ8-hk-uH2" customClass="TabBarViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RnI-fh-vPh">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="tabBarCustomGray"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="PQs-zs-DKA" kind="relationship" relationship="viewControllers" id="Kwh-rC-btS"/>
+                        <segue destination="6fd-Jz-rhG" kind="relationship" relationship="viewControllers" id="BNU-V5-vLY"/>
+                        <segue destination="1BS-65-UfM" kind="relationship" relationship="viewControllers" id="akg-nM-pM2"/>
+                        <segue destination="V1C-3L-kgP" kind="relationship" relationship="viewControllers" id="Naq-Bg-ccr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UFb-HN-IO5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="231.8840579710145" y="-18.080357142857142"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="UaW-b2-iRk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="PQs-zs-DKA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="home" selectedImage="home-fill" id="35d-JM-Evh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mtW-06-Fi3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-222" y="426"/>
+        </scene>
+        <!--MyPage-->
+        <scene sceneID="N7c-rZ-gan">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MyPage" id="V1C-3L-kgP" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="myPage" selectedImage="myPage-fill" id="snf-AU-k0r"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2DN-fy-Nfm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="423"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="gEL-bm-iPT">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Search" id="1BS-65-UfM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="search" selectedImage="search-fill" id="z8b-Fn-PCQ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9qi-OL-a4k" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="450" y="423"/>
+        </scene>
+        <!--CategoryTab-->
+        <scene sceneID="Uoe-fA-Yoj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="CategoryTab" id="6fd-Jz-rhG" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="category" selectedImage="category-fill" id="j0K-dV-WRp"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lX0-nR-DtH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="674" y="418"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="category" width="28" height="28"/>
+        <image name="category-fill" width="28" height="28"/>
+        <image name="home" width="28" height="28"/>
+        <image name="home-fill" width="28" height="28"/>
+        <image name="myPage" width="27" height="27"/>
+        <image name="myPage-fill" width="28" height="28"/>
+        <image name="search" width="28" height="28"/>
+        <image name="search-fill" width="28" height="28"/>
+        <namedColor name="tabBarCustomGray">
+            <color red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
