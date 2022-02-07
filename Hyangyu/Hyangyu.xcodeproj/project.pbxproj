@@ -9,45 +9,31 @@
 /* Begin PBXBuildFile section */
 		0008E3C327953D770089985B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008E3C227953D770089985B /* CategoryViewController.swift */; };
 		00735E1227ABBA5F00552C37 /* CategoryTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00735E1127ABBA5F00552C37 /* CategoryTableVC.swift */; };
-		00735E1427ABC26C00552C37 /* CategoryTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00735E1327ABC26C00552C37 /* CategoryTableView.storyboard */; };
 		00735E1627ABCEC000552C37 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00735E1527ABCEBF00552C37 /* HomeVC.swift */; };
 		0079288D2797E44C006B8EDE /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079288B2797E44C006B8EDE /* CategoryCollectionViewCell.swift */; };
-		0079288E2797E44C006B8EDE /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0079288C2797E44C006B8EDE /* CategoryCollectionViewCell.xib */; };
 		007928902797E98E006B8EDE /* ServiceDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079288F2797E98E006B8EDE /* ServiceDataModel.swift */; };
 		0099690327A16FFC00D7CDA2 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099690227A16FFC00D7CDA2 /* DetailPageViewController.swift */; };
-		00C96AFF27AF9CB8000DB941 /* HomeTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96AFE27AF9CB8000DB941 /* HomeTab.storyboard */; };
-		00C96B0127AF9CC1000DB941 /* CategoryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96B0027AF9CC1000DB941 /* CategoryTab.storyboard */; };
-		00C96B0327AF9CD2000DB941 /* SearchTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96B0227AF9CD2000DB941 /* SearchTab.storyboard */; };
-		00C96B0527AF9CE4000DB941 /* MyPageTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96B0427AF9CE3000DB941 /* MyPageTab.storyboard */; };
-		00C96B0927AF9D15000DB941 /* CategoryTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96B0827AF9D15000DB941 /* CategoryTableView.storyboard */; };
-		00C96B0B27AFA24D000DB941 /* CategoryTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96B0A27AFA24D000DB941 /* CategoryTable.storyboard */; };
 		00E3271327A39147003F8453 /* BestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3271227A39147003F8453 /* BestVC.swift */; };
 		00E3271527A39158003F8453 /* FreeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3271427A39158003F8453 /* FreeVC.swift */; };
 		00E3271727A3916A003F8453 /* CostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E3271627A3916A003F8453 /* CostVC.swift */; };
+		00F7C3EA27B01375006DC1C7 /* CategoryTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 003AB8D627B0107A00902D50 /* CategoryTab.storyboard */; };
+		00F7C3EB27B013D6006DC1C7 /* CategoryTableView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96B0827AF9D15000DB941 /* CategoryTableView.storyboard */; };
 		6A4324E6077B73484DAA70C1 /* Pods_Hyangyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */; };
 		83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E00278735FF009A8009 /* AppDelegate.swift */; };
 		83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E02278735FF009A8009 /* SceneDelegate.swift */; };
 		83B34E05278735FF009A8009 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E04278735FF009A8009 /* ViewController.swift */; };
-		83B34E08278735FF009A8009 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E06278735FF009A8009 /* Main.storyboard */; };
-		83B34E0A27873600009A8009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0927873600009A8009 /* Assets.xcassets */; };
-		83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0B27873600009A8009 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0008E3C227953D770089985B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		003AB8D627B0107A00902D50 /* CategoryTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CategoryTab.storyboard; path = ../../../../../CategoryTab.storyboard; sourceTree = "<group>"; };
 		00735E1127ABBA5F00552C37 /* CategoryTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableVC.swift; sourceTree = "<group>"; };
-		00735E1327ABC26C00552C37 /* CategoryTableView.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CategoryTableView.storyboard; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/CategoryTableView.storyboard"; sourceTree = "<group>"; };
 		00735E1527ABCEBF00552C37 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		0079288B2797E44C006B8EDE /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0079288C2797E44C006B8EDE /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		0079288F2797E98E006B8EDE /* ServiceDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceDataModel.swift; sourceTree = "<group>"; };
 		0099690227A16FFC00D7CDA2 /* DetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPageViewController.swift; sourceTree = "<group>"; };
-		00C96AFE27AF9CB8000DB941 /* HomeTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = HomeTab.storyboard; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Storyboards/HomeTab.storyboard"; sourceTree = "<group>"; };
-		00C96B0027AF9CC1000DB941 /* CategoryTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CategoryTab.storyboard; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Storyboards/CategoryTab.storyboard"; sourceTree = "<group>"; };
-		00C96B0227AF9CD2000DB941 /* SearchTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = SearchTab.storyboard; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Storyboards/SearchTab.storyboard"; sourceTree = "<group>"; };
-		00C96B0427AF9CE3000DB941 /* MyPageTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MyPageTab.storyboard; path = "../../../../../../Library/Mobile Documents/com~apple~CloudDocs/.Trash/Storyboards/MyPageTab.storyboard"; sourceTree = "<group>"; };
 		00C96B0827AF9D15000DB941 /* CategoryTableView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CategoryTableView.storyboard; path = ../../../../../../Documents/CategoryTableView.storyboard; sourceTree = "<group>"; };
-		00C96B0A27AFA24D000DB941 /* CategoryTable.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CategoryTable.storyboard; path = ../../../../../../Documents/CategoryTable.storyboard; sourceTree = "<group>"; };
 		00E3271227A39147003F8453 /* BestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestVC.swift; sourceTree = "<group>"; };
 		00E3271427A39158003F8453 /* FreeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreeVC.swift; sourceTree = "<group>"; };
 		00E3271627A3916A003F8453 /* CostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostVC.swift; sourceTree = "<group>"; };
@@ -109,7 +95,6 @@
 				83B34E162787364A009A8009 /* Sources */,
 				83B34E1527873640009A8009 /* Resources */,
 				83B34E0B27873600009A8009 /* LaunchScreen.storyboard */,
-				83B34E0E27873600009A8009 /* Info.plist */,
 			);
 			path = Hyangyu;
 			sourceTree = "<group>";
@@ -117,6 +102,7 @@
 		83B34E1527873640009A8009 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				83B34E0E27873600009A8009 /* Info.plist */,
 				83B34E182787367D009A8009 /* Storyboards */,
 				83B34E172787366C009A8009 /* Font */,
 				83B34E0927873600009A8009 /* Assets.xcassets */,
@@ -149,13 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				83B34E06278735FF009A8009 /* Main.storyboard */,
-				00C96AFE27AF9CB8000DB941 /* HomeTab.storyboard */,
-				00C96B0027AF9CC1000DB941 /* CategoryTab.storyboard */,
-				00C96B0227AF9CD2000DB941 /* SearchTab.storyboard */,
-				00C96B0427AF9CE3000DB941 /* MyPageTab.storyboard */,
-				00735E1327ABC26C00552C37 /* CategoryTableView.storyboard */,
+				003AB8D627B0107A00902D50 /* CategoryTab.storyboard */,
 				00C96B0827AF9D15000DB941 /* CategoryTableView.storyboard */,
-				00C96B0A27AFA24D000DB941 /* CategoryTable.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -274,17 +255,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */,
-				00C96B0B27AFA24D000DB941 /* CategoryTable.storyboard in Resources */,
-				00735E1427ABC26C00552C37 /* CategoryTableView.storyboard in Resources */,
-				83B34E0A27873600009A8009 /* Assets.xcassets in Resources */,
-				0079288E2797E44C006B8EDE /* CategoryCollectionViewCell.xib in Resources */,
-				00C96B0927AF9D15000DB941 /* CategoryTableView.storyboard in Resources */,
-				00C96AFF27AF9CB8000DB941 /* HomeTab.storyboard in Resources */,
-				00C96B0527AF9CE4000DB941 /* MyPageTab.storyboard in Resources */,
-				00C96B0327AF9CD2000DB941 /* SearchTab.storyboard in Resources */,
-				83B34E08278735FF009A8009 /* Main.storyboard in Resources */,
-				00C96B0127AF9CC1000DB941 /* CategoryTab.storyboard in Resources */,
+				00F7C3EB27B013D6006DC1C7 /* CategoryTableView.storyboard in Resources */,
+				00F7C3EA27B01375006DC1C7 /* CategoryTab.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,7 +486,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Hyangyu/Info.plist;
+				INFOPLIST_FILE = Hyangyu/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -533,7 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = Hyangyu/Info.plist;
+				INFOPLIST_FILE = Hyangyu/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
