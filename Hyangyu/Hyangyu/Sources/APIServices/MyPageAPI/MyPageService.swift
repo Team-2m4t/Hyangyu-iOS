@@ -11,10 +11,16 @@ import Moya
 enum MyPageService {
     
     case modifyUserName(email:String, password:String, nickname: String)
-
+    
+    case getUserInfo
+    
 }
 
-extension MyPageService: TargetType {
+extension MyPageService: TargetType, AccessTokenAuthorizable {
+    var authorizationType: AuthorizationType? {
+        return .bearer
+    }
+    
     var baseURL: URL {
         return URL(string: Const.URL.baseURL)!
     }
@@ -22,8 +28,10 @@ extension MyPageService: TargetType {
         switch self {
         case .modifyUserName(_, _, _):
             return Const.URL.modifyUserName
-
-
+        case .getUserInfo:
+            return Const.URL.userView
+            
+            
         }
     }
     
@@ -31,13 +39,16 @@ extension MyPageService: TargetType {
         switch self {
         case .modifyUserName(_, _, _):
             return .post
-
+        case .getUserInfo:
+            return .get
+            
         }
     }
     
     var sampleData: Data {
         return Data()
     }
+    
     
     var task: Task {
         switch self {
@@ -47,17 +58,24 @@ extension MyPageService: TargetType {
                 "password": nil,
                 "username": nickname,
             ], encoding: JSONEncoding.default)
-          
+        case .getUserInfo:
+            return .requestPlain
+            
         }
     }
     
     var headers: [String: String]? {
-
+        
         switch self {
         case .modifyUserName(_, _, _):
             return [
                 "Content-Type": "application/json",
-                "Bearer": UserDefaults.standard.string(forKey: "jwtToken") ?? ""
+                "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "jwtToken") ?? "")"
+            ]
+        case .getUserInfo:
+            return [
+                "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "jwtToken") ?? "")",
+                "Content-Type": "application/json",
             ]
         }
     }

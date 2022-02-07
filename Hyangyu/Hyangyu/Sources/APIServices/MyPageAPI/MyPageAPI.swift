@@ -18,11 +18,12 @@ public class MyPageAPI {
     func modifyUserName(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String, nickname: String) {
         myPageProvider.request(.modifyUserName(email: email, password: password, nickname: nickname)) {
             (result) in
-            
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data)
+                completion(networkResult)
                 
             case .failure(let err):
                 print(err)
@@ -30,18 +31,31 @@ public class MyPageAPI {
         }
     }
     
-    private func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data,  _ object: T.Type) -> NetworkResult<Any> {
+    func getUserInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
+        myPageProvider.request(.getUserInfo) { (result) in
+            print(result)
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data)
+                completion(networkResult)
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-            let welcome = try? decoder.decode(SignIn.self, from: data)
-        guard let decodedData = try? decoder.decode(GenericResponse<SignIn>.self, from: data as Data)
-        
+        guard let decodedData = try? decoder.decode(GenericResponse<ModifyCheckData>.self, from: data as Data)
         else {
             return .pathErr
         }
         
         switch statusCode {
         case 200:
-            return .success(welcome)
+            return .success(decodedData.data)
         case 400..<500:
             return .requestErr(decodedData.message)
         case 500:

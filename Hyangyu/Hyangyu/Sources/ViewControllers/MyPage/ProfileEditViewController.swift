@@ -20,10 +20,15 @@ struct ProfileEditViewControllerViewModel {
 
 final class ProfileEditViewController: UIViewController {
     // MARK: - Properties
+    private var user = User.shared
+    
     var userName: String = ""
     var userProfileImage: UIImage = UIImage()
+    
     private var nameCount: Int = 0
     private var isAbleToSubmit: Bool = true
+    private var isKeyboardOn: Bool = false
+    private var keyboardHeight: CGFloat = 0
     private var maxLength = 10
     
     // MARK: - @IBOutlet
@@ -75,7 +80,9 @@ final class ProfileEditViewController: UIViewController {
     
     @IBAction func didTapConfirm(_ sender: Any) {
         delegate?.setUpdate(profileImage: userProfileImageView?.image, userName: userNameTextField?.text)
-        dismiss(animated: true, completion: nil)
+        user.username = userNameTextField.text ?? ""
+        user.profileImage = userProfileImageView.image ?? nil
+        modifyUserName()
     }
     
     
@@ -93,6 +100,8 @@ final class ProfileEditViewController: UIViewController {
     
     private func setUserNameTextField() {
         userNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc func checkTextField () {
@@ -114,6 +123,18 @@ final class ProfileEditViewController: UIViewController {
         } else {
             setConfirmButtonEnable()
         }
+    }
+    
+    // 키보드 Notification
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            keyboardHeight = keyboardFrame.cgRectValue.height
+        }
+        isKeyboardOn = true
+    }
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        keyboardHeight = 0
+        isKeyboardOn = false
     }
     
     private func setWithNoneText() {
@@ -145,6 +166,39 @@ final class ProfileEditViewController: UIViewController {
     
     @objc func touchToPickImage() {
         actionSheetAlert()
+    }
+    
+    // 토스트 메세지
+    private func showToast(message: String) {
+        let isKeyboardOn: Bool = self.isKeyboardOn
+        let keyboardHeight: CGFloat = self.keyboardHeight
+        var toastLabel = UILabel()
+        // 토스트 위치
+        if isKeyboardOn {
+            toastLabel = UILabel(frame: CGRect(x: 30,
+                                               y: self.view.frame.size.height - keyboardHeight - 59,
+                                               width: self.view.frame.size.width - 60,
+                                               height: 40))
+        } else {
+            toastLabel = UILabel(frame: CGRect(x: 30,
+                                               y: self.view.frame.size.height - 95,
+                                               width: self.view.frame.size.width - 60,
+                                               height: 40))
+        }
+        // 토스트 색
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        // 토스트 값
+        toastLabel.text = message
+        // 토스트 모양
+        toastLabel.textAlignment = .center
+        toastLabel.layer.cornerRadius = 12
+        toastLabel.clipsToBounds = true
+        // 토스트 애니메이션
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 1.0, delay: 0.1,
+                       options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
+                       completion: {_ in toastLabel.removeFromSuperview() })
     }
     
     
@@ -235,4 +289,28 @@ extension ProfileEditViewController: UITextFieldDelegate {
         
     }
     
+}
+
+extension ProfileEditViewController {
+    func modifyUserName() {
+        guard let userName = User.shared.username else { return }
+
+        MyPageAPI.shared.modifyUserName(completion: { (response) in
+            switch response {
+            case .success:
+                self.showToast(message: "닉네임 변경에 성공하였습니다")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                    self.dismiss(animated: true)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }, email: "", password: "", nickname: userName)
+    }
 }
