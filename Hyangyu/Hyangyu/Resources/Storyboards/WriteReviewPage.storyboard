@@ -11,7 +11,7 @@
         <!--Write Review View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="WriteReviewViewController" id="Y6W-OH-hqX" customClass="WriteReviewViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WriteReviewViewController" id="Y6W-OH-hqX" customClass="WriteReviewViewController" customModule="Hyangyu" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,6 +25,9 @@
                                 <state key="normal" title="취소">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="6je-cy-d6R"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8t-ky-XcK">
                                 <rect key="frame" x="355" y="59" width="39" height="30"/>
@@ -36,21 +39,16 @@
                                 <state key="normal" title="확인">
                                     <color key="titleColor" systemColor="labelColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="confirmButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7Mc-zm-fEp"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰 작성" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMo-T6-VGT">
                                 <rect key="frame" x="173" y="63" width="68" height="22"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="18"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.0" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Qh-D7-agy">
-                                <rect key="frame" x="5" y="105" width="404" height="221"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -58,15 +56,11 @@
                             <constraint firstItem="ewo-Kw-Ily" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="1VH-wv-o96"/>
                             <constraint firstItem="eMo-T6-VGT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="19" id="7Tv-De-CZO"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="q8t-ky-XcK" secondAttribute="trailing" constant="20" id="Cik-Mo-4YJ"/>
-                            <constraint firstItem="7Qh-D7-agy" firstAttribute="top" secondItem="eMo-T6-VGT" secondAttribute="bottom" constant="20" id="Hyf-lr-u0g"/>
                             <constraint firstItem="eMo-T6-VGT" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="MRJ-Ol-4Se"/>
                             <constraint firstItem="eMo-T6-VGT" firstAttribute="centerY" secondItem="q8t-ky-XcK" secondAttribute="centerY" id="bMW-3v-kWY"/>
-                            <constraint firstItem="7Qh-D7-agy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="5" id="dG0-xF-Qc3"/>
                             <constraint firstItem="eMo-T6-VGT" firstAttribute="centerY" secondItem="ewo-Kw-Ily" secondAttribute="centerY" id="dL0-gB-IOJ"/>
                             <constraint firstItem="ewo-Kw-Ily" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="i2Q-SB-HD3"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7Qh-D7-agy" secondAttribute="trailing" constant="5" id="kpM-w2-9kg"/>
                             <constraint firstItem="q8t-ky-XcK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="mFd-jO-qbx"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7Qh-D7-agy" secondAttribute="bottom" constant="637" id="oiG-M2-Svz"/>
                         </constraints>
                     </view>
                 </viewController>
