@@ -275,7 +275,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNh-08-Xiw" userLabel="content">
                                                         <rect key="frame" x="0.0" y="0.0" width="378" height="109.5"/>
-                                                        <string key="text">이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. </string>
+                                                        <mutableString key="text">이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. </mutableString>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
