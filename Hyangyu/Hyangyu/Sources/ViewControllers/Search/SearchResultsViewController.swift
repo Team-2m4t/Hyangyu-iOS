@@ -12,13 +12,13 @@ struct SearchSection {
     let results: [SearchResult]
 }
 
-//protocol SearchResultsViewControllerDelegate: AnyObject {
-//    func didTapResult(_ result: SearchResult)
-//}
+protocol SearchResultsViewConrollerDelegate: AnyObject {
+    func didTapResult(_ result: SearchResult)
+}
 
 class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-//    weak var delegate : SearchResultsViewContollerDelegate?
+        weak var delegate : SearchResultsViewConrollerDelegate?
     
     private var sections: [SearchSection] = []
     
@@ -80,8 +80,6 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.isHidden = results.isEmpty
     }
     
-    func search(term: String) {
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
@@ -96,8 +94,8 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         switch  result {
         case .exhibition(let exhibition):
             guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: SearchResultsTableViewCell.identifier,
-                    for: indexPath
+                withIdentifier: SearchResultsTableViewCell.identifier,
+                for: indexPath
             ) as? SearchResultsTableViewCell else {
                 return UITableViewCell()
             }
@@ -112,8 +110,8 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
         case .expo(let expo):
             guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: SearchResultsTableViewCell.identifier,
-                    for: indexPath
+                withIdentifier: SearchResultsTableViewCell.identifier,
+                for: indexPath
             ) as? SearchResultsTableViewCell else {
                 return UITableViewCell()
             }
@@ -128,8 +126,8 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
             return cell
         case .festival(let festival):
             guard let cell = tableView.dequeueReusableCell(
-                    withIdentifier: SearchResultsTableViewCell.identifier,
-                    for: indexPath
+                withIdentifier: SearchResultsTableViewCell.identifier,
+                for: indexPath
             ) as? SearchResultsTableViewCell  else {
                 return UITableViewCell()
             }
@@ -145,12 +143,6 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        tableView.deselectRow(at: indexPath, animated: true)
-//        let result = sections[indexPath.section].results[indexPath.row]
-//        delegate?.didTapResult(result)
-//
-//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
@@ -165,16 +157,19 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
             $0.font = UIFont(name: FontType.appleSDGothicNeoSemiBold.rawValue, size: 15)
             $0.text = "(\(sections[section].results.count))"
         }
+        let moreButton = UIButton().then {
+            $0.setImage(UIImage(systemName: "chevron.right"), for: .normal)
+            $0.tintColor = .black
+        }
         titleLabel.frame = CGRect(x: 20, y: 0, width: headerView.frame.width, height: headerView.frame.height)
-        countLabel.frame = CGRect(x: headerView.frame.width - 50, y: 0, width: 50, height: 50)
-              headerView.addSubview(titleLabel)
+        countLabel.frame = CGRect(x: headerView.frame.width - 60, y: 0, width: 50, height: 50)
+        moreButton.frame = CGRect(x: headerView.frame.width - 30, y: 0, width: 10, height: 50)
+        headerView.addSubview(titleLabel)
         headerView.addSubview(countLabel)
-              
-              return headerView
         
-        
-        
+        return headerView
     }
+    
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
