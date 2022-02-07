@@ -9,24 +9,28 @@ import UIKit
 
 class DetailPageViewController: UIViewController {
     
-    let writeReviewStoryBoard : UIStoryboard = UIStoryboard(name: "DetailViewPage", bundle: nil)
+    let moreReviewStoryboard : UIStoryboard = UIStoryboard(name: "MoreReviewPage", bundle: nil)
+    
+    let writeReviewStoryboard : UIStoryboard = UIStoryboard(name: "WriteReviewPage", bundle: nil)
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func writeReviewButtonClicked(_ sender: Any) {
-        guard let writeReviewVC = writeReviewStoryBoard.instantiateViewController(identifier: "WriteReviewViewController") as? WriteReviewViewController else {return}
+        guard let writeReviewVC = writeReviewStoryboard.instantiateViewController(identifier: "WriteReviewViewController") as? WriteReviewViewController else {return}
         
-        self.navigationController?.pushViewController(writeReviewVC, animated: true)
+        writeReviewVC.modalPresentationStyle = .fullScreen
+        writeReviewVC.modalTransitionStyle = .crossDissolve
+        self.present(writeReviewVC, animated: true, completion: nil)
     }
     
     @IBAction func moreReviewButtonClicked(_ sender: Any) {
-        guard let moreReviewVC = writeReviewStoryBoard.instantiateViewController(identifier: "MoreReviewViewController") as? MoreReviewViewController else {return}
+        guard let moreReviewVC = moreReviewStoryboard.instantiateViewController(identifier: "MoreReviewViewController") as? MoreReviewViewController else {return}
         
-        self.navigationController?.pushViewController(moreReviewVC, animated: true)
+        moreReviewVC.modalPresentationStyle = .fullScreen
+        moreReviewVC.modalTransitionStyle = .crossDissolve
+        self.present(moreReviewVC, animated: true, completion: nil)
     }
     
 }

@@ -8,12 +8,12 @@
 import UIKit
 
 class MoreReviewViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    @IBAction func moreReviewButtonClicked(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+    
+    @IBAction func backButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
 }

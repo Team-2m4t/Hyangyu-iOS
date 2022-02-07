@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0003779127B0CCAB00724152 /* WriteReviewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96B1027AFA59A000DB941 /* WriteReviewPage.storyboard */; };
+		0003779227B0CCAF00724152 /* MoreReviewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00C96B0C27AFA466000DB941 /* MoreReviewPage.storyboard */; };
 		0008E3C127953D410089985B /* DetailCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008E3C027953D410089985B /* DetailCategoryViewController.swift */; };
 		0008E3C327953D770089985B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0008E3C227953D770089985B /* CategoryViewController.swift */; };
 		003AB8D227AFF22E00902D50 /* DetailViewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0099690027A15AD200D7CDA2 /* DetailViewPage.storyboard */; };
@@ -254,6 +256,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				003AB8D227AFF22E00902D50 /* DetailViewPage.storyboard in Resources */,
+				0003779227B0CCAF00724152 /* MoreReviewPage.storyboard in Resources */,
+				0003779127B0CCAB00724152 /* WriteReviewPage.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
