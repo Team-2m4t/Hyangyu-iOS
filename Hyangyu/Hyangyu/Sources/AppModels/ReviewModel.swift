@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ReviewDataModel
+struct ReviewModel
 {
     var nickName : String
     var createTime : String

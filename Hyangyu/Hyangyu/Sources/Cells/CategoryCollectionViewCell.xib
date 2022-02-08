@@ -17,23 +17,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="304" height="184"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xe-kS-Cvd">
-                        <rect key="frame" x="10" y="136" width="295" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="width" constant="295" id="Svl-Pa-XbM"/>
-                        </constraints>
-                        <attributedString key="attributedText">
-                            <fragment content="Label">
-                                <attributes>
-                                    <color key="NSColor" systemColor="labelColor"/>
-                                    <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="75w-vL-8ck">
-                        <rect key="frame" x="10" y="160" width="150" height="21"/>
+                        <rect key="frame" x="15" y="160" width="150" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="150" id="PvV-9X-xwP"/>
                         </constraints>
@@ -48,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezy-GQ-6Q3">
-                        <rect key="frame" x="170" y="160" width="130" height="21"/>
+                        <rect key="frame" x="175" y="160" width="130" height="21"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="130" id="8ov-cH-bzy"/>
                         </constraints>
@@ -68,6 +53,21 @@
                             <constraint firstAttribute="height" constant="128" id="ysH-zh-PAi"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xe-kS-Cvd">
+                        <rect key="frame" x="15" y="136" width="280" height="22"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="280" id="Svl-Pa-XbM"/>
+                        </constraints>
+                        <attributedString key="attributedText">
+                            <fragment content="Label">
+                                <attributes>
+                                    <color key="NSColor" systemColor="labelColor"/>
+                                    <font key="NSFont" size="18" name="AppleSDGothicNeo-Bold"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -76,9 +76,9 @@
                 <constraint firstItem="75w-vL-8ck" firstAttribute="top" secondItem="2xe-kS-Cvd" secondAttribute="bottom" constant="2" id="Itd-iR-F5H"/>
                 <constraint firstItem="ezy-GQ-6Q3" firstAttribute="leading" secondItem="75w-vL-8ck" secondAttribute="trailing" constant="10" id="MIq-Ic-EFs"/>
                 <constraint firstItem="dkQ-g8-Qe5" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Nnj-gB-OiP"/>
+                <constraint firstItem="2xe-kS-Cvd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="Pem-ti-ytk"/>
                 <constraint firstItem="dkQ-g8-Qe5" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Qit-4d-sbc"/>
-                <constraint firstItem="2xe-kS-Cvd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="ack-sn-zhF"/>
-                <constraint firstItem="75w-vL-8ck" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="h1y-IH-Mpe"/>
+                <constraint firstItem="75w-vL-8ck" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="b9X-bZ-ld0"/>
                 <constraint firstItem="2xe-kS-Cvd" firstAttribute="top" secondItem="dkQ-g8-Qe5" secondAttribute="bottom" constant="8" id="phj-RA-XeM"/>
                 <constraint firstItem="ezy-GQ-6Q3" firstAttribute="centerY" secondItem="75w-vL-8ck" secondAttribute="centerY" id="rwC-G2-Q5w"/>
             </constraints>

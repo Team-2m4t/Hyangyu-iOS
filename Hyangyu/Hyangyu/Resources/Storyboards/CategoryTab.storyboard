@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o89-QJ-Rrd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="o89-QJ-Rrd">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -60,17 +60,23 @@
                                     </view>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="KPr-Ho-5cC" secondAttribute="trailing" id="4Lg-GC-zah"/>
                                     <constraint firstAttribute="bottom" secondItem="KPr-Ho-5cC" secondAttribute="bottom" id="8j1-zZ-GLR"/>
                                     <constraint firstAttribute="trailing" secondItem="KPr-Ho-5cC" secondAttribute="trailing" id="CAW-kF-cY7"/>
                                     <constraint firstAttribute="trailing" secondItem="gDp-3D-dVB" secondAttribute="trailing" id="CLq-Ao-Chj"/>
+                                    <constraint firstItem="KPr-Ho-5cC" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="JPK-IY-xz1"/>
                                     <constraint firstAttribute="trailing" secondItem="Gcr-VS-RqR" secondAttribute="trailing" id="MGY-27-aX6"/>
                                     <constraint firstItem="Gcr-VS-RqR" firstAttribute="top" secondItem="8vU-Il-5xt" secondAttribute="top" id="Mtm-h0-2qx"/>
+                                    <constraint firstItem="gDp-3D-dVB" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="Uh3-He-HYu"/>
+                                    <constraint firstAttribute="trailing" secondItem="gDp-3D-dVB" secondAttribute="trailing" id="aFW-GR-ZWe"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gcr-VS-RqR" secondAttribute="trailing" id="ajM-hG-Iv8"/>
                                     <constraint firstItem="Gcr-VS-RqR" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="auO-lC-XiA"/>
                                     <constraint firstItem="gDp-3D-dVB" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="fbB-xg-cQu"/>
                                     <constraint firstItem="KPr-Ho-5cC" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="fph-xi-zOW"/>
                                     <constraint firstItem="gDp-3D-dVB" firstAttribute="top" secondItem="Gcr-VS-RqR" secondAttribute="bottom" constant="20" id="h6K-0J-dC7"/>
                                     <constraint firstItem="gDp-3D-dVB" firstAttribute="top" secondItem="Gcr-VS-RqR" secondAttribute="bottom" constant="20" id="mdu-my-4DH"/>
                                     <constraint firstItem="KPr-Ho-5cC" firstAttribute="top" secondItem="gDp-3D-dVB" secondAttribute="bottom" constant="20" id="pDV-iH-odD"/>
+                                    <constraint firstItem="Gcr-VS-RqR" firstAttribute="leading" secondItem="8vU-Il-5xt" secondAttribute="leading" id="qEk-Hd-nTv"/>
                                     <constraint firstItem="KPr-Ho-5cC" firstAttribute="top" secondItem="gDp-3D-dVB" secondAttribute="bottom" constant="20" id="yEN-zu-bPO"/>
                                 </constraints>
                             </stackView>
