@@ -26,15 +26,24 @@ extension Const {
         static let passwordURL = "/UserApi/modifyPassword"
         
         // 회원 탈퇴 (DELETE)
-        static let deleteUser = "/UserApi/user/deleteMyUser"
+        static let deleteUserURL = "/UserApi/user/deleteMyUser"
+        
+        // MARK: - Saved - My Page Saved Service
+        
+        // 전시회 조회 (GET), 전시회 저장 (POST)
+        static let displayURL = "/display"
+        
         
         // MARK: - My Page - User Service
         
         // 닉네임 변경 (POST)
-        static let modifyUserName = "/UserApi/user/modifyUsername"
+        static let modifyUserNameURL = "/UserApi/user/modifyUsername"
         
         // 유저 조회 (GET)
-        static let userView = "/api/UserApi/user"
+        static let userViewURL = "/UserApi/user"
+        
+        // 마이페이지 조회 (GET)
+        static let myPageURL = "/myPage"
         
         
     }
