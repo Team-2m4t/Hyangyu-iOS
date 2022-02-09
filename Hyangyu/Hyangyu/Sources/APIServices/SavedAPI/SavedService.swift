@@ -13,6 +13,10 @@ enum SavedService {
     
     case getMyDisplay(page: Int)
     
+    case saveMyDisplay(displayId: Int)
+    
+    case deleteMySavedDisplay(displayId: Int)
+    
 }
 
 extension SavedService: TargetType, AccessTokenAuthorizable {
@@ -27,8 +31,10 @@ extension SavedService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .getMyDisplay(let page):
             return Const.URL.displayURL + "/\(page)"
-            
-            
+        case .saveMyDisplay(let displayID):
+            return Const.URL.displayURL + "/\(displayID)"
+        case .deleteMySavedDisplay(let displayID):
+            return Const.URL.displayURL + "/\(displayID)"
         }
     }
     
@@ -36,6 +42,10 @@ extension SavedService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .getMyDisplay:
             return .get
+        case .saveMyDisplay:
+            return .post
+        case .deleteMySavedDisplay:
+            return .delete
             
         }
     }
@@ -47,16 +57,15 @@ extension SavedService: TargetType, AccessTokenAuthorizable {
     
     var task: Task {
         switch self {
-        case .getMyDisplay:
+        case .getMyDisplay, .saveMyDisplay, .deleteMySavedDisplay:
             return .requestPlain
-            
         }
     }
     
     var headers: [String: String]? {
         
         switch self {
-        case .getMyDisplay:
+        case .getMyDisplay, .saveMyDisplay, .deleteMySavedDisplay:
             return [
                 "Content-Type": "application/json",
                 "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "jwtToken") ?? "")"
@@ -64,3 +73,4 @@ extension SavedService: TargetType, AccessTokenAuthorizable {
         }
     }
 }
+

@@ -16,7 +16,6 @@ struct ModifyCheckData: Codable {
 struct MyPageResponse: Codable {
     let image: String?
     let username: String
-    var displays: [Event]
 }
 
 // MARK: - SavedResponse
@@ -35,7 +34,7 @@ struct Event: Codable {
     let photo1: String
     let photo2, photo3: String?
     let price: Int
-    let saved: Bool
+    var saved: Bool
 
     enum CodingKeys: String, CodingKey {
         case eventID = "eventId"

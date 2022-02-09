@@ -81,7 +81,7 @@ class MyExhibitionViewController: UIViewController, CustomChildViewController  {
     }
     
     private func addObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(getMyDisplay), name: NSNotification.Name("RefreshMyCollectionView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didDismissDetailNotification), name: NSNotification.Name("RefreshMyExhibitionCollectionView"), object: nil)
     }
     
     private func updateData(display: SavedResponse) {
@@ -136,6 +136,17 @@ class MyExhibitionViewController: UIViewController, CustomChildViewController  {
     func customChildScrollView() -> UIScrollView {
         return collectionView
     }
+    
+    @objc func didDismissDetailNotification(_ notification: Notification) {
+        self.allData =  SavedResponse(displays: [Event]())
+        self.currentData = SavedResponse(displays: [Event]())
+        self.currentPage = 0
+        self.isPaging = false // 현재 페이징 중인지 체크
+        self.isLast = false // 마지막 페이지인지 체크
+        self.cachedPages = []
+        getMyDisplay(page: currentPage)
+        
+    }
 }
 
 // MARK: - UICollectionViewDataSource, UICollectionViewDelegate
@@ -170,6 +181,7 @@ extension MyExhibitionViewController: UICollectionViewDataSource, UICollectionVi
         
     }
     
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return allData.displays.count
     }
@@ -190,13 +202,14 @@ extension MyExhibitionViewController: UICollectionViewDataSource, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let result = allData.displays[indexPath.row]
-        let detailPageStoryboard = UIStoryboard(name: "DetailViewPage", bundle: nil)
+        let detailPageStoryboard = UIStoryboard.init(name: "DetailViewPage", bundle: nil)
         guard let detailPageVC = detailPageStoryboard.instantiateViewController(withIdentifier: "DetailPageViewController") as? DetailPageViewController else {
             return
         }
         detailPageVC.configure(with: result)
         detailPageVC.title = result.title
         detailPageVC.navigationItem.largeTitleDisplayMode = .never
+        self.navigationController?.isNavigationBarHidden = false
         detailPageVC.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(detailPageVC, animated: true)
     }
@@ -214,7 +227,6 @@ extension MyExhibitionViewController  {
                         self.cachedPages.append(page)
                     }
                 case .requestErr(let message):
-                    print("얘도 문제야?")
                     print("requestErr", message)
                 case .pathErr:
                     print("pathErr")
