@@ -66,7 +66,6 @@ class DetailPageViewController: UIViewController {
         weekendCloseLabel?.text = event[0].weekendClose
         priceLabel?.text = "\(event[0].price)"
         siteLabel?.text = event[0].site
-        
     }
     //
     
@@ -92,5 +91,4 @@ class DetailPageViewController: UIViewController {
     @IBAction func backButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
