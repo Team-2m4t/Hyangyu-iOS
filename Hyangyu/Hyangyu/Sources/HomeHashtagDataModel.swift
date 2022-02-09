@@ -10,6 +10,6 @@ import Foundation
 struct HomeHashtagDataModel {
     
     var coverName: String
-    var hashName : String
+    var hashName: String
     
 }
