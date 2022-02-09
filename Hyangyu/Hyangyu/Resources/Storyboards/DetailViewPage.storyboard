@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y8U-GD-de0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y8U-GD-de0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InR-8F-k9m">
-                                <rect key="frame" x="0.0" y="88" width="414" height="1378"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1422"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Kg-Ll-bQl">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1416"/>
@@ -29,9 +29,9 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLo-4b-jrf">
-                                                <rect key="frame" x="20" y="469" width="200" height="20"/>
+                                                <rect key="frame" x="20" y="469" width="330" height="20"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="E0d-Ml-9wU"/>
+                                                    <constraint firstAttribute="width" constant="330" id="E0d-Ml-9wU"/>
                                                     <constraint firstAttribute="height" constant="20" id="INr-nB-82t"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="20"/>
@@ -347,6 +347,13 @@
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" id="xiB-jA-drQ"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xvN-7F-PgI">
+                                                <rect key="frame" x="10" y="5" width="32" height="30"/>
+                                                <state key="normal" image="back 1"/>
+                                                <connections>
+                                                    <action selector="backButtonClicked:" destination="Cbm-bF-b24" eventType="touchUpInside" id="adM-GJ-e89"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -387,6 +394,7 @@
                                             <constraint firstItem="hot-bG-1qd" firstAttribute="centerY" secondItem="dtx-gB-SCN" secondAttribute="centerY" id="JYA-OG-LS4"/>
                                             <constraint firstItem="goz-Ss-DjJ" firstAttribute="top" secondItem="Aqh-Pm-hM2" secondAttribute="bottom" constant="8" symbolic="YES" id="Jcr-BS-yNK"/>
                                             <constraint firstItem="r62-Yh-kWp" firstAttribute="centerY" secondItem="4Bf-FS-Tnc" secondAttribute="centerY" id="KdQ-rF-eTa"/>
+                                            <constraint firstItem="xvN-7F-PgI" firstAttribute="top" secondItem="0Kg-Ll-bQl" secondAttribute="top" constant="5" id="LdF-nH-yky"/>
                                             <constraint firstItem="HWb-oF-qtJ" firstAttribute="top" secondItem="DK8-KI-3b9" secondAttribute="bottom" constant="25" id="Nmk-PA-8V4"/>
                                             <constraint firstItem="9iO-l4-QeG" firstAttribute="leading" secondItem="0Kg-Ll-bQl" secondAttribute="leading" constant="21" id="O6d-C7-nJu"/>
                                             <constraint firstAttribute="trailing" secondItem="9iO-l4-QeG" secondAttribute="trailing" constant="15" id="Oyi-Y7-PPT"/>
@@ -406,6 +414,7 @@
                                             <constraint firstItem="hot-bG-1qd" firstAttribute="leading" secondItem="Jdx-N6-2g2" secondAttribute="trailing" constant="15" id="Wqt-q6-Sq1"/>
                                             <constraint firstItem="b1W-nz-2Xz" firstAttribute="centerY" secondItem="Aqh-Pm-hM2" secondAttribute="centerY" id="WxL-uc-lvQ"/>
                                             <constraint firstItem="PA9-62-00o" firstAttribute="top" secondItem="zzg-D9-4Wt" secondAttribute="bottom" constant="8" id="XNo-9D-pEU"/>
+                                            <constraint firstItem="xvN-7F-PgI" firstAttribute="leading" secondItem="0Kg-Ll-bQl" secondAttribute="leading" constant="10" id="YQY-05-JEh"/>
                                             <constraint firstItem="4Bf-FS-Tnc" firstAttribute="leading" secondItem="PbR-2Z-oAW" secondAttribute="leading" id="ZIb-3M-GZv"/>
                                             <constraint firstItem="T8T-Ux-y3K" firstAttribute="top" secondItem="4em-U5-4dK" secondAttribute="bottom" constant="35.5" id="ZiV-Mb-sU3"/>
                                             <constraint firstItem="dOg-sA-qMo" firstAttribute="leading" secondItem="Aqh-Pm-hM2" secondAttribute="trailing" id="ZnH-A5-gsH"/>
@@ -473,7 +482,15 @@
                             <constraint firstItem="0Kg-Ll-bQl" firstAttribute="height" secondItem="xJl-7E-W3I" secondAttribute="height" priority="250" id="zWm-4D-vwb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Qx5-Ip-I3M"/>
+                    <navigationItem key="navigationItem" title="Title" id="Qx5-Ip-I3M">
+                        <barButtonItem key="leftBarButtonItem" image="back 1" style="plain" id="1rI-3d-pvv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uNj-mU-FCW">
+                                <rect key="frame" x="20" y="7" width="32" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="back 1"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="endDateLabel" destination="Faw-DM-4fV" id="13Q-lZ-qmn"/>
@@ -498,10 +515,9 @@
         <!--Navigation Controller-->
         <scene sceneID="OSh-o1-jna">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Y8U-GD-de0" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Y8U-GD-de0" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6y7-Rw-BtE">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </navigationBar>

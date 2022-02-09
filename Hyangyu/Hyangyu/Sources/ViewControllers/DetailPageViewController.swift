@@ -68,6 +68,7 @@ class DetailPageViewController: UIViewController {
         setButton()
         
     }
+  
     // 토스트 메세지
     private func showToast(message: String) {
         // 토스트 위치
@@ -139,7 +140,6 @@ class DetailPageViewController: UIViewController {
     @IBAction func backButtonClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
 
 extension DetailPageViewController {
@@ -182,7 +182,6 @@ extension DetailPageViewController {
             case .requestErr(let message):
                 print("requestErr", message)
                 if let message = message as? String {
-                    print("얘도?")
                     self.showToast(message: message)
                 }
             case .pathErr:
