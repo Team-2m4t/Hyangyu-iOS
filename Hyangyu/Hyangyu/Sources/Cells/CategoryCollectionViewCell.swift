@@ -19,7 +19,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     static let identifier: String = "CategoryCollectionViewCell"
     
     @IBOutlet weak var posterImageView: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -29,14 +28,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setData(iconName: String, title: String, placeTitle: String, dateTitle: String) {
-        titleLabel.text = title
-        placeLabel.text = placeTitle
-        dateLabel.text = dateTitle
+    func setData(event: Event) {
+        titleLabel.text = event.title
+        placeLabel.text = event.location
+        dateLabel.text = event.startDate
         
-        if let icon = UIImage(named: iconName) {
-            posterImageView.image = icon
+        if !posterImageView.updateServerImage(event.photo1) {
+            posterImageView.image = UIImage(named: "exhibitionImg1")
         }
     }
-
 }

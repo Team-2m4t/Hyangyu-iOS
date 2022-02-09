@@ -45,6 +45,9 @@ extension Const {
         // 마이페이지 조회 (GET)
         static let myPageURL = "/myPage"
         
+        // 카테고리 조회(GET)
+        static let display = "/display"
+        
         
     }
 }

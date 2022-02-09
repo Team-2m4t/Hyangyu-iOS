@@ -93,4 +93,9 @@ class DetailPageViewController: UIViewController {
         self.present(moreReviewVC, animated: true, completion: nil)
     }
     
+    
+    @IBAction func backButtonClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

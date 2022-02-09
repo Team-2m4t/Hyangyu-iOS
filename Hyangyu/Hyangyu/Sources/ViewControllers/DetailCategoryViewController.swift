@@ -82,7 +82,7 @@ extension DetailCategoryViewController: UICollectionViewDataSource, UICollection
         }
         
         // 위에서 생성한 cell에 대해서 값을 cardList의 값으로 채움
-        cell.setData(iconName: cardList[indexPath.row].iconImageName, title: cardList[indexPath.row].title, placeTitle: cardList[indexPath.row].placeTitle, dateTitle: cardList[indexPath.row].dateTitle)
+        //cell.setData(iconName: cardList[indexPath.row].iconImageName, title: cardList[indexPath.row].title, placeTitle: cardList[indexPath.row].placeTitle, dateTitle: cardList[indexPath.row].dateTitle)
         
         // 위 코드를 작성하면 cell에는 데이터가 담겨있는데 해당 cell을 return!
         return cell
