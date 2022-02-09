@@ -93,7 +93,6 @@ class DetailPageViewController: UIViewController {
         } else {
             likeButton.setImage(UIImage(systemName: "heart"), for: .normal)
         }
-        likeButton.tintColor = .primary
     }
     
     // MARK: - @IBAction
