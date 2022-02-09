@@ -36,6 +36,9 @@ extension Const {
         // 유저 조회 (GET)
         static let userView = "/api/UserApi/user"
         
+        // 카테고리 조회(GET)
+        static let display = "/display"
+        
         
     }
 }
