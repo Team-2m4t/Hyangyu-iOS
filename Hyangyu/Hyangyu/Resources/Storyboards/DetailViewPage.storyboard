@@ -62,7 +62,11 @@
                                                     <constraint firstAttribute="height" constant="20" id="C4u-K7-aBF"/>
                                                     <constraint firstAttribute="width" constant="20" id="JAr-Qe-KX0"/>
                                                 </constraints>
-                                                <state key="normal" image="heart"/>
+                                                <color key="tintColor" red="0.0" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" image="heart" catalog="system"/>
+                                                <connections>
+                                                    <action selector="likeButtonDidTap:" destination="Cbm-bF-b24" eventType="touchUpInside" id="Beg-tY-uXQ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ef0-8f-2NI">
                                                 <rect key="frame" x="374" y="509" width="20" height="20"/>
@@ -469,22 +473,12 @@
                             <constraint firstItem="0Kg-Ll-bQl" firstAttribute="height" secondItem="xJl-7E-W3I" secondAttribute="height" priority="250" id="zWm-4D-vwb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Qx5-Ip-I3M">
-                        <barButtonItem key="leftBarButtonItem" image="back 1" style="plain" id="1rI-3d-pvv">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uNj-mU-FCW">
-                                <rect key="frame" x="20" y="7" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back 1"/>
-                            </button>
-                            <connections>
-                                <action selector="backButtonClicked:" destination="Cbm-bF-b24" id="tg3-nS-Ump"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="Qx5-Ip-I3M"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="endDateLabel" destination="Faw-DM-4fV" id="13Q-lZ-qmn"/>
                         <outlet property="holidayLabel" destination="5Ei-0Z-dHM" id="RxE-hA-NcH"/>
+                        <outlet property="likeButton" destination="qth-N3-kfU" id="h7k-xL-HN8"/>
                         <outlet property="locationLabel" destination="l2I-Y0-lmV" id="Kir-JJ-CNx"/>
                         <outlet property="mainPosterImageView" destination="PbR-2Z-oAW" id="s1m-ol-GqZ"/>
                         <outlet property="priceLabel" destination="goz-Ss-DjJ" id="BWu-gt-PVW"/>
@@ -522,9 +516,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="back 1" width="32" height="30"/>
         <image name="e1" width="430" height="602"/>
-        <image name="heart" width="100" height="100"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <image name="report" width="15" height="4"/>
         <image name="share" width="20" height="20"/>
         <systemColor name="labelColor">
