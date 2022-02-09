@@ -40,10 +40,12 @@ class ReviewViewController: UIViewController, PassData {
     func exhibitionApi(button: UIButton) {
         GetReviewDataService.shared.getExhibitionInfo { [self] (response) in
             switch response {
+            
             case .success(let resultss):
                 if let results = resultss as? [Review] {
+                    
                         for num in 0 ... results.count-1 {
-                        setReviewList(title: results[num].author, content: results[num].content, data: results[num].createdAt, scope: Double(5.0))
+                            setReviewList(title: results[num].username, content: results[num].content, data: results[num].createTime, scope: Double(5.0))
                     }
                     DispatchQueue.main.async {
                         self.reviewTableView.reloadData()
@@ -69,7 +71,7 @@ class ReviewViewController: UIViewController, PassData {
                 if let results = resultss as? [Review] {
                 
                         for num in 0 ... results.count-1 {
-                        setReviewList(title: results[num].author, content: results[num].content, data: results[num].createdAt, scope: Double(5.0))
+                            setReviewList(title: results[num].username, content: results[num].content, data: results[num].createTime, scope: Double(5.0))
                     }
                     
                     DispatchQueue.main.async {
@@ -97,7 +99,7 @@ class ReviewViewController: UIViewController, PassData {
             case .success(let resultss):
                 if let results = resultss as? [Review] {
                         for num in 0 ... results.count-1 {
-                        setReviewList(title: results[num].author, content: results[num].content, data: results[num].createdAt, scope: Double(5.0))
+                            setReviewList(title: results[num].username, content: results[num].content, data: results[num].createTime, scope: Double(5.0))
                     }
                     DispatchQueue.main.async {
                         self.reviewTableView.reloadData()

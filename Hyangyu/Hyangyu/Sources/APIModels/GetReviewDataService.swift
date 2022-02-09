@@ -16,7 +16,7 @@ struct GetReviewDataService {
     }
     
     func getExhibitionInfo(completion : @escaping (ReviewNetworkResult<Any>) -> Void) {
-        let URL = "https://api.themoviedb.org/3/movie/12/reviews?api_key=227dee86e48bc552eb003429f225f5b1&language=en-US&page=1"
+        let URL = "http://52.79.236.231:8080/api/show/review/display/2"
         
         let header: HTTPHeaders = ["Content-Type": "application/json"]
         
@@ -108,7 +108,7 @@ struct GetReviewDataService {
             else { return.pathErr}
             
          //   decodedData.results
-            return .success(decodedData.results)
+            return .success(decodedData.data)
         }
         
     }
