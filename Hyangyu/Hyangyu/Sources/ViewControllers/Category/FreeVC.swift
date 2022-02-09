@@ -90,8 +90,14 @@ extension FreeVC : UICollectionViewDataSource
 extension FreeVC : UICollectionViewDelegate
 {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        collectionView.deselectItem(at: indexPath, animated: true)
+        let result = allData.displays[indexPath.row]
+        
         guard let nextVC = detailViewStoryboard.instantiateViewController(identifier: "DetailPageViewController") as? DetailPageViewController else {return}
+        
+        nextVC.configure(with: result)
+        nextVC.title = result.title
+        nextVC.navigationItem.largeTitleDisplayMode = .never
+        nextVC.hidesBottomBarWhenPushed = true
         
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
