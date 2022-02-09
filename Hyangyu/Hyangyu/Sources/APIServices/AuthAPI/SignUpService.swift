@@ -27,7 +27,7 @@ extension SignUpService: TargetType {
 
 
         case .deleteUser:
-            return Const.URL.deleteUser
+            return Const.URL.deleteUserURL
 
         }
     }
