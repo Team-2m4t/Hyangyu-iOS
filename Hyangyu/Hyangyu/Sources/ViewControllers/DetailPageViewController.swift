@@ -38,15 +38,10 @@ class DetailPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initNavigationController()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         configureUI()
-    }
-    
-    private func initNavigationController() {
-        self.navigationController?.initWithBackButton()
     }
     
     // MARK: - Functions
