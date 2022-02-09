@@ -5,9 +5,9 @@
 //  Created by 배소린 on 2022/01/21.
 //
 import UIKit
+import Kingfisher
 
 extension UIImage {
-    
     func resize(newWidth: CGFloat) -> UIImage {
         let scale = newWidth / self.size.width
         let newHeight = self.size.height * scale
