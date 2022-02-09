@@ -8,47 +8,62 @@
 import UIKit
 
 class NewVC: UIViewController {
-
+    
+    // MARK: - Properties
+    private var allData: CagetoryDisplayResponse = CagetoryDisplayResponse(displays: [Event]())
+    private var currentData: CagetoryDisplayResponse = CagetoryDisplayResponse(displays: [Event]())
+    private var currentPage = 0
+    private var isPaging: Bool = false // 현재 페이징 중인지 체크
+    private var isLast = false // 마지막 페이지인지 체크
+    private var cachedPages: [Int] = []
+    
     @IBOutlet weak var newCollectionView: UICollectionView!
     
-    var cardList: [ServiceDataModel] = []
-    
+    // 화면 전환 스토리보드
     let categoryTabStoryboard: UIStoryboard = UIStoryboard(name: "CategoryTab", bundle: nil)
+    let detailViewStoryboard : UIStoryboard = UIStoryboard(name: "DetailViewPage", bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setCardList()
         
         newCollectionView.delegate = self
         newCollectionView.dataSource = self
         
         registerXib()
+        getCategory(order: "latest", page: currentPage)
     }
+    
     
     func registerXib() {
         let nibName = UINib(nibName: "CategoryCollectionViewCell", bundle: nil)
         newCollectionView.register(nibName, forCellWithReuseIdentifier: "CategoryCollectionViewCell")
     }
     
-    //아까 선언해둔 cardList형 Array에 정보를 넣는 함수
-    func setCardList(){
-        cardList.append(contentsOf: [
-            ServiceDataModel(iconImageName: "poster", title: "라이프 사진전: 더 라스트 프린트", placeTitle: "세종문화회관 미술관", dateTitle: "2021.05.11~08.21"),
-            ServiceDataModel(iconImageName: "poster", title: "라이프 사진전: 더 라스트 프린트", placeTitle: "세종문화회관 미술관", dateTitle: "2021.05.11~08.21"),
-            ServiceDataModel(iconImageName: "poster", title: "라이프 사진전: 더 라스트 프린트", placeTitle: "세종문화회관 미술관", dateTitle: "2021.05.11~08.21"),
-            ServiceDataModel(iconImageName: "poster", title: "라이프 사진전: 더 라스트 프린트", placeTitle: "세종문화회관 미술관", dateTitle: "2021.05.11~08.21"),
-            ServiceDataModel(iconImageName: "poster", title: "라이프 사진전: 더 라스트 프린트", placeTitle: "세종문화회관 미술관", dateTitle: "2021.05.11~08.21")
-        ])
+    private func updateData(display: CagetoryDisplayResponse) {
+        if display.displays.isEmpty {
+            isLast = true
+            return
+        }
+        
+        currentData = display
+        if currentPage == 0 {
+            allData = display
+        } else {
+            if cachedPages.filter({ $0 == currentPage }).count == 0 {
+                allData.displays.append(contentsOf: display.displays)
+            }
+        }
+        
+        newCollectionView.reloadData()
     }
-
 }
 
+// MARK: - UICollectionViewDataSource
 extension NewVC : UICollectionViewDataSource
 {
     // cell을 몇개를 만들건지 -> cardList의 원소 개수만큼 만듬!
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        cardList.count
+        return allData.displays.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -58,21 +73,31 @@ extension NewVC : UICollectionViewDataSource
          -> identifier를 통해 Cell을 구분하고 indexPath를 통해 순서를 관리
          -> guard - let 구문을 통해 안전하게 값을 가져와서 cell에 넣어준다
          */
+        
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? CategoryCollectionViewCell else {
             return UICollectionViewCell()
+
         }
         
-        // 위에서 생성한 cell에 대해서 값을 cardList의 값으로 채움
-        cell.setData(iconName: cardList[indexPath.row].iconImageName, title: cardList[indexPath.row].title, placeTitle: cardList[indexPath.row].placeTitle, dateTitle: cardList[indexPath.row].dateTitle)
+        cell.setData(event: allData.displays[indexPath.row])
         
+        if indexPath.row == allData.displays.count - 1 && !isLast {
+            currentPage += 1
+            self.getCategory(order: "latest", page: currentPage)
+        }
         // 위 코드를 작성하면 cell에는 데이터가 담겨있는데 해당 cell을 return!
         return cell
     }
 }
 
+// MARK: - UICollectionViewDelegate
+
 extension NewVC : UICollectionViewDelegate
 {
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let detailPageVC = detailViewStoryboard.instantiateViewController(identifier: "DetailPageViewController") as? DetailPageViewController else {return}
+        self.navigationController?.pushViewController(detailPageVC, animated: true)
+    }
 }
 
 extension NewVC : UICollectionViewDelegateFlowLayout
@@ -112,3 +137,27 @@ extension NewVC : UICollectionViewDelegateFlowLayout
     }
 }
 
+extension NewVC
+{
+    @objc func getCategory(order: String, page: Int) {
+        CategoryAPI.shared.getCategory(order: "latest", page: currentPage) { response in
+            switch(response)
+            {
+            case .success(let data):
+                if let data = data as? CagetoryDisplayResponse {
+                    self.updateData(display: data)
+                    self.newCollectionView.reloadData()
+                    self.cachedPages.append(page)
+                }
+            case .requestErr(let message) :
+                print("requestERR",message)
+            case .pathErr :
+                print("pathERR")
+            case .serverErr:
+                print("serverERR")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+    }
+}
