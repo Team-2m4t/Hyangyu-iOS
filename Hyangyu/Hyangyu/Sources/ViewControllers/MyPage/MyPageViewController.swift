@@ -23,7 +23,7 @@ final class MyPageViewController: CustomPageViewController  {
     // MARK: - Property
     
     private let tabTitles:[String] = ["전시회", "박람회", "페스티벌"]
-    private var userName: String = "이물사딱아요"
+    private var userName: String = ""
     private var userImage: UIImage =  Image.userDefaultImage
     
     private let profileEditVC = ProfileEditViewController(nibName: "ProfileEditViewController", bundle: nil)
@@ -70,7 +70,6 @@ final class MyPageViewController: CustomPageViewController  {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("이게 실행되요")
         getUserData()
     }
     
@@ -91,11 +90,6 @@ final class MyPageViewController: CustomPageViewController  {
         )
         navigationItem.rightBarButtonItem?.tintColor = .textBlack
     }
-    
-//    private func configure() {
-//        print(userName)
-//        profileEditVC.configure(with: ProfileEditViewControllerViewModel(profileImage: self.userImage, userName: self.userName))
-//    }
     
     
     @objc func didTapSettings() {
@@ -186,10 +180,10 @@ extension MyPageViewController: HeaderViewDelegate {
 
 // MARK: - ProfileEditViewControllerDelegate
 extension MyPageViewController: ProfileEditViewControllerDelegate {
-    func setUpdate(data: MyPageResponse, profileImage: UIImage?) {
-        headerView.configure(with: HeaderViewViewModel(profileImage: profileImage, userName: data.username))
+    func setUpdate(data: MyPageResponse) {
+        headerView.configure(with: HeaderViewViewModel(profileImage: userImage, userName: data.username))
         self.userName = data.username
-        self.userImage = profileImage ?? Image.userDefaultImage
+        profileEditVC.configure(with: ProfileEditViewControllerViewModel(profileImage: userImage, userName: self.userName))
     }
 }
 
@@ -202,7 +196,7 @@ extension MyPageViewController {
             case .success(let data):
                 if let data = data as? MyPageResponse {
                     print(data)
-                    self.setUpdate(data: data, profileImage: Image.userDefaultImage)
+                    self.setUpdate(data: data)
                 }
             case .requestErr(let message):
                 print("requestErr", message)

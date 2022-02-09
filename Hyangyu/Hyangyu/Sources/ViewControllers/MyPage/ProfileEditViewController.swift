@@ -10,8 +10,7 @@ import UIKit
 import Then
 
 protocol ProfileEditViewControllerDelegate: class {
-//    func setUpdate(profileImage: UIImage?, userName: String?)
-    func setUpdate(data: MyPageResponse, profileImage: UIImage?)
+    func setUpdate(data: MyPageResponse)
 }
 
 struct ProfileEditViewControllerViewModel {
@@ -59,6 +58,8 @@ final class ProfileEditViewController: UIViewController {
     
     weak var delegate: ProfileEditViewControllerDelegate?
     
+    private var viewModel: ProfileEditViewControllerViewModel = ProfileEditViewControllerViewModel(profileImage: UIImage(), userName: "")
+    
     // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,11 +68,20 @@ final class ProfileEditViewController: UIViewController {
         configureUI()
         setUserNameTextField()
         setDelegation()
- 
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureFirstData()
     }
     
     // MARK: - Functions
-
+    
+    func configureFirstData() {
+        userProfileImageView?.image = viewModel.profileImage
+        userNameTextField?.text = viewModel.userName
+    }
+    
     func configureUI() {
         userNameTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
         warningLabel.isHidden = true
@@ -140,7 +150,7 @@ final class ProfileEditViewController: UIViewController {
     }
     
     @IBAction func didTapConfirm(_ sender: Any) {
-//        delegate?.setUpdate(data: data)
+        //        delegate?.setUpdate(data: data)
         user.username = userNameTextField.text ?? ""
         user.profileImage = userProfileImageView.image ?? nil
         modifyUserName()
@@ -218,7 +228,7 @@ final class ProfileEditViewController: UIViewController {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.allowsEditing = true // 편집을 허용
-
+        
         let actionSheet = UIAlertController(title: "프로필 사진 선택", message: nil, preferredStyle: .actionSheet)
         actionSheet.addAction(UIAlertAction(title: "앨범에서 가져오기", style: .default, handler: { (action:UIAlertAction) in
             if(UIImagePickerController.isSourceTypeAvailable(.photoLibrary)){
@@ -253,8 +263,9 @@ final class ProfileEditViewController: UIViewController {
     }
     
     func configure(with viewModel: ProfileEditViewControllerViewModel) {
-        userProfileImageView?.image = viewModel.profileImage
-        userNameTextField?.text = viewModel.userName
+        //        userProfileImageView?.image = viewModel.profileImage
+        //        userNameTextField?.text = viewModel.userName
+        self.viewModel = viewModel
     }
     
     
@@ -305,7 +316,7 @@ extension ProfileEditViewController: UITextFieldDelegate {
 extension ProfileEditViewController {
     func modifyUserName() {
         guard let userName = User.shared.username else { return }
-
+        
         MyPageAPI.shared.modifyUserName(completion: { (response) in
             switch response {
             case .success:
