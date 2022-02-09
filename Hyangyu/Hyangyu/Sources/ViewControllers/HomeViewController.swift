@@ -14,20 +14,98 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()
-        setPosterList(postertitle: "e1")
-        setPosterList(postertitle: "e10")
-        setPosterList(postertitle: "e3")
-        setPosterList(postertitle: "e4")
-        setPosterList(postertitle: "e5")
-        setPosterList(postertitle: "e6")
-        setPosterList(postertitle: "e7")
+//        setPosterList(postertitle: "e1")
+//        setPosterList(postertitle: "e10")
+//        setPosterList(postertitle: "e3")
+//        setPosterList(postertitle: "e4")
+//        setPosterList(postertitle: "e5")
+//        setPosterList(postertitle: "e6")
+//        setPosterList(postertitle: "e7")
         setHashList()
+        exhibitionApiLoad(button: exhibitionColor)
 
         hashTagCollectionView.delegate = self
         hashTagCollectionView.dataSource = self
         homeCollectionView.delegate = self
         homeCollectionView.dataSource = self
         homeCollectionView.collectionViewLayout.invalidateLayout()
+        
+    }
+    
+    func festivalApiLoad() {
+
+            HomeGetDataService.shared.getDataInfo { [self] (response) in
+                switch(response) {
+                case .success(let home):
+                    
+                    if let results = home as? [Home] {
+                        
+        
+                        for num in 2 ... 9 {
+                            setPosterList(postertitle: results[2].posterPath)
+                  
+                        DispatchQueue.main.async {
+                            self.homeCollectionView.reloadData()
+                        }
+                        
+                    }
+                    }
+                
+                case .requestErr(let message) :
+                    print("requestERR", message)
+                case .pathErr :
+                    print("pathERR")
+                case .serverErr :
+                    print("serverERR")
+                case .networkFail:
+                    print("networkFail")
+                    }
+            }
+        
+    }
+    func exhibitionApiLoad(button: UIButton) {
+
+            HomeGetDataService.shared.getDataInfo { [self] (response) in
+                switch(response) {
+                case .success(let home):
+                    
+                    if let results = home as? [Home] {
+                        
+                        if button == exhibitionColor {
+                        for num in 0 ... 9 {
+                            setPosterList(postertitle: results[num].posterPath)
+                            
+                        }
+                        }
+                        if button == festivalColor {
+                        for num in 10 ... 19 {
+                            setPosterList(postertitle: results[num].posterPath)
+                            
+                        }
+                        }
+                        
+                        if button == fairColor {
+                        for num in 6 ... 15 {
+                            setPosterList(postertitle: results[num].posterPath)
+                            
+                        }
+                        }
+                        DispatchQueue.main.async {
+                            self.homeCollectionView.reloadData()
+                        }
+                        
+                    }
+                    
+                case .requestErr(let message) :
+                    print("requestERR", message)
+                case .pathErr :
+                    print("pathERR")
+                case .serverErr :
+                    print("serverERR")
+                case .networkFail:
+                    print("networkFail")
+                    }
+            }
         
     }
     
@@ -62,13 +140,14 @@ class HomeViewController: UIViewController {
         exhibitionColor.isHighlighted = false
         festivalColor.isHighlighted = true
         fairColor.isHighlighted = true
-        setPosterList(postertitle: "e1")
-        setPosterList(postertitle: "e10")
-        setPosterList(postertitle: "e3")
-        setPosterList(postertitle: "e4")
-        setPosterList(postertitle: "e5")
-        setPosterList(postertitle: "e6")
-        setPosterList(postertitle: "e7")
+//        setPosterList(postertitle: "e1")
+//        setPosterList(postertitle: "e10")
+//        setPosterList(postertitle: "e3")
+//        setPosterList(postertitle: "e4")
+//        setPosterList(postertitle: "e5")
+//        setPosterList(postertitle: "e6")
+//        setPosterList(postertitle: "e7")
+        exhibitionApiLoad(button: exhibitionColor)
         homeCollectionView.reloadData()
         homeCollectionView.scrollsToTop = true
         homeCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredHorizontally, animated: true)
@@ -81,10 +160,12 @@ class HomeViewController: UIViewController {
         exhibitionColor.isHighlighted = true
         festivalColor.isHighlighted = false
         fairColor.isHighlighted = true
-        setPosterList(postertitle: "e6")
-        setPosterList(postertitle: "e6")
-        setPosterList(postertitle: "e6")
-        setPosterList(postertitle: "e6")
+//        setPosterList(postertitle: "e6")
+//        setPosterList(postertitle: "e6")
+//        setPosterList(postertitle: "e6")
+//        setPosterList(postertitle: "e6")
+    //    exhibitionApiLoad(button: festivalColor)
+        festivalApiLoad()
         homeCollectionView.reloadData()
         homeCollectionView.scrollsToTop = true
         homeCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredHorizontally, animated: true)
@@ -96,10 +177,11 @@ class HomeViewController: UIViewController {
         exhibitionColor.isHighlighted = true
         festivalColor.isHighlighted = true
         fairColor.isHighlighted = false
-        setPosterList(postertitle: "e8")
-        setPosterList(postertitle: "e8")
-        setPosterList(postertitle: "e8")
-        setPosterList(postertitle: "e8")
+//        setPosterList(postertitle: "e8")
+//        setPosterList(postertitle: "e8")
+//        setPosterList(postertitle: "e8")
+//        setPosterList(postertitle: "e8")
+        exhibitionApiLoad(button: fairColor)
         homeCollectionView.reloadData()
         homeCollectionView.scrollsToTop = true
         homeCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredHorizontally, animated: true)
@@ -146,7 +228,7 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //api 연결 후 작성
+        // api 연결 후 작성
         self.performSegue(withIdentifier: "showHashDetail", sender: indexPath.row)
     }
 }
