@@ -6,3 +6,4 @@ struct ReviewDataModel {
     var data: String
     var scope: Double
 }
+

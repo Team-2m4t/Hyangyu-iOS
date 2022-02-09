@@ -11,7 +11,7 @@ protocol PassData {
 class ReviewEditViewController: UIViewController {
     var reviewViewController: ReviewViewController?
     @IBOutlet weak var reviewField: UITextView!
-    var reviewList: [ReviewDataModel] = []
+    var reviewList: [ReviewModel] = []
     var review: String?
     var lalabel: String?
     var numberIndex: Int?
