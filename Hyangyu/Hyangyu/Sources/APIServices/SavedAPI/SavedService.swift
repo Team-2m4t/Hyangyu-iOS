@@ -1,22 +1,21 @@
 //
-//  MyPageService.swift
+//  SavedService.swift
 //  Hyangyu
 //
-//  Created by 배소린 on 2022/02/07.
+//  Created by 배소린 on 2022/02/08.
 //
 
 import Foundation
+
 import Moya
 
-enum MyPageService {
+enum SavedService {
     
-    case modifyUserName(email:String, password:String, nickname: String)
-    
-    case getUserData
+    case getMyDisplay(page: Int)
     
 }
 
-extension MyPageService: TargetType, AccessTokenAuthorizable {
+extension SavedService: TargetType, AccessTokenAuthorizable {
     var authorizationType: AuthorizationType? {
         return .bearer
     }
@@ -26,10 +25,8 @@ extension MyPageService: TargetType, AccessTokenAuthorizable {
     }
     var path: String {
         switch self {
-        case .modifyUserName(_, _, _):
-            return Const.URL.modifyUserNameURL
-        case .getUserData:
-            return Const.URL.myPageURL
+        case .getMyDisplay(let page):
+            return Const.URL.displayURL + "/\(page)"
             
             
         }
@@ -37,9 +34,7 @@ extension MyPageService: TargetType, AccessTokenAuthorizable {
     
     var method: Moya.Method {
         switch self {
-        case .modifyUserName(_, _, _):
-            return .post
-        case .getUserData:
+        case .getMyDisplay:
             return .get
             
         }
@@ -52,13 +47,7 @@ extension MyPageService: TargetType, AccessTokenAuthorizable {
     
     var task: Task {
         switch self {
-        case .modifyUserName(let email, let password, let nickname):
-            return .requestParameters(parameters: [
-                "email": nil,
-                "password": nil,
-                "username": nickname,
-            ], encoding: JSONEncoding.default)
-        case .getUserData:
+        case .getMyDisplay:
             return .requestPlain
             
         }
@@ -67,7 +56,7 @@ extension MyPageService: TargetType, AccessTokenAuthorizable {
     var headers: [String: String]? {
         
         switch self {
-        case .modifyUserName(_, _, _), .getUserData:
+        case .getMyDisplay:
             return [
                 "Content-Type": "application/json",
                 "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "jwtToken") ?? "")"

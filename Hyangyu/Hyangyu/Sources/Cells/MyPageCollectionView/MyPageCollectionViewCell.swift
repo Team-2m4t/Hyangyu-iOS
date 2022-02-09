@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyPageCollectionViewCell: UICollectionViewCell {
+final class MyPageCollectionViewCell: UICollectionViewCell {
     
     // MARK: - @IBOutlet
     
@@ -21,9 +21,11 @@ class MyPageCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var locationLabel: UILabel!
     
+    let dateFormatter = DateFormatter()
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
         // Initialization code
     }
     
@@ -31,12 +33,14 @@ class MyPageCollectionViewCell: UICollectionViewCell {
     
     // set Data functions
     
-    public func setData(myList: MyListModel){
-        posterImageView.image = UIImage(named: myList.posterImageURL ?? "exhibitionImg1")
-        titleLabel.text = myList.title
-        startDateLabel.text = myList.startDate
-        endDateLabel.text = myList.endDate
-        locationLabel.text = myList.location
+    public func setData(event: Event){
+        if !posterImageView.updateServerImage(event.photo1) {
+            posterImageView.image = UIImage(named: "exhibitionImg1")
+        }
+        titleLabel.text = event.title
+        startDateLabel.text = event.startDate
+        endDateLabel.text = event.endDate
+        locationLabel.text = event.site
     }
     
 }

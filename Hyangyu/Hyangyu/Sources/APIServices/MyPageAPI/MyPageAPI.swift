@@ -22,7 +22,7 @@ public class MyPageAPI {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data)
+                let networkResult = self.judgeStatus(by: statusCode, data, ModifyCheckData.self)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -31,24 +31,24 @@ public class MyPageAPI {
         }
     }
     
-    func getUserInfo(completion: @escaping (NetworkResult<Any>) -> Void) {
-        myPageProvider.request(.getUserInfo) { (result) in
-            print(result)
+    func getUserData(completion: @escaping (NetworkResult<Any>) -> Void) {
+        myPageProvider.request(.getUserData) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                let networkResult = self.judgeStatus(by: statusCode, data)
+                let networkResult = self.judgeStatus(by: statusCode, data, MyPageResponse.self)
                 completion(networkResult)
+                
             case .failure(let err):
                 print(err)
             }
         }
     }
     
-    private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
+    private func judgeStatus<T: Codable>(by statusCode: Int, _ data: Data,  _ object: T.Type) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<ModifyCheckData>.self, from: data as Data)
+        guard let decodedData = try? decoder.decode(GenericResponse<T>.self, from: data as Data)
         else {
             return .pathErr
         }

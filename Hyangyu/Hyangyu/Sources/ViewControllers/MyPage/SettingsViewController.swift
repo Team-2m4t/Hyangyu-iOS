@@ -27,7 +27,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     
     private var sections = [Section]()
-
+    
     // MARK: - Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         
         tableView.dataSource = self
         tableView.delegate = self
-
+        
         // Do any additional setup after loading the view.
     }
     
@@ -50,13 +50,57 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     private func configureModels() {
-        sections.append(Section(title: "공지", options: [Option(title: "공지"), Option(title: "문의사항")]))
-        sections.append(Section(title: "설정", options: [Option(title: "계정 설정"), Option(title: "푸시 알림 설정")]))
-        sections.append(Section(title: "로그아웃", options: [Option(title: "로그아웃"), Option(title: "회원 탈퇴")]))
+        sections.append(Section(title: "공지", options: [Option(title: "공지", handler: { [weak self] in
+            DispatchQueue.main.async {
+                self?.signOutTapped()
+            }
+        }), Option(title: "문의사항", handler: { [weak self] in
+            DispatchQueue.main.async {
+                self?.signOutTapped()
+            }
+        })]))
+        sections.append(Section(title: "설정", options: [Option(title: "계정 설정", handler: { [weak self] in
+            DispatchQueue.main.async {
+                self?.signOutTapped()
+            }
+        }), Option(title: "푸시 알림 설정", handler: { [weak self] in
+            DispatchQueue.main.async {
+                self?.signOutTapped()
+            }
+        })]))
+        sections.append(Section(title: "로그아웃", options: [Option(title: "로그아웃", handler: { [weak self] in
+            DispatchQueue.main.async {
+                self?.signOutTapped()
+            }
+        }), Option(title: "회원 탈퇴", handler: { [weak self] in
+            DispatchQueue.main.async {
+                self?.signOutTapped()
+            }
+        })]))
+    }
+    
+    private func popToLoginViewController() {
+        if let loginViewController = self.navigationController?.viewControllers.filter({$0 is SignInViewController}).first as? SignInViewController {
+            print("이거 실행됨")
+            self.navigationController?.popToViewController(loginViewController, animated: true)
+        } else {
+            guard let homeViewController = self.navigationController?.viewControllers.filter({$0 is HomeViewController}).first as? HomeViewController else {
+                print("아님 이거")
+                return
+            }
+            homeViewController.isFromLogoutOrWithdrawal = true
+            self.navigationController?.popToViewController(homeViewController, animated: true)
+        }
     }
     
     private func signOutTapped() {
-        
+//        UserDefaults.standard.removeObject(forKey: "jwtToken")
+//        UIApplication.shared.unregisterForRemoteNotifications()
+        guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
+        let viewControllerStack = presentingVC.viewControllers
+        // 출력해보자
+        print("✅ viewControllerStack: \(viewControllerStack)")
+        popToLoginViewController()
     }
     
     override func viewDidLayoutSubviews() {
@@ -65,7 +109,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     private func viewProfile() {
-
+        
     }
     
     // MARK: - TableView
@@ -88,13 +132,15 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         // Call handler for cell
+        let model = sections[indexPath.section].options[indexPath.row]
+        model.handler()
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         let model = sections[section]
         return model.title
     }
-
-
+    
+    
 }
 

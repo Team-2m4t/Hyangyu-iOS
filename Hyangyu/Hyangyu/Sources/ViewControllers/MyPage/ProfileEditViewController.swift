@@ -7,8 +7,11 @@
 
 import UIKit
 
+import Then
+
 protocol ProfileEditViewControllerDelegate: class {
-    func setUpdate(profileImage: UIImage?, userName: String?)
+//    func setUpdate(profileImage: UIImage?, userName: String?)
+    func setUpdate(data: MyPageResponse, profileImage: UIImage?)
 }
 
 struct ProfileEditViewControllerViewModel {
@@ -19,11 +22,12 @@ struct ProfileEditViewControllerViewModel {
 
 
 final class ProfileEditViewController: UIViewController {
+    
     // MARK: - Properties
     private var user = User.shared
     
-    var userName: String = ""
-    var userProfileImage: UIImage = UIImage()
+    private var userName: String = ""
+    private var userProfileImage: UIImage = UIImage()
     
     private var nameCount: Int = 0
     private var isAbleToSubmit: Bool = true
@@ -62,27 +66,32 @@ final class ProfileEditViewController: UIViewController {
         
         configureUI()
         setUserNameTextField()
-        
+        setDelegation()
+ 
+    }
+    
+    // MARK: - Functions
+
+    func configureUI() {
+        userNameTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
+        warningLabel.isHidden = true
+        countingLabel.isHidden = true
         userProfileImageView.layer.cornerRadius = 50
         userProfileImageView.clipsToBounds = true
-                
+    }
+    
+    
+    private func setDelegation() {
+        userNameTextField.delegate = self
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(touchToPickImage))
         userProfileImageView.addGestureRecognizer(tapGesture)
         userProfileImageView.isUserInteractionEnabled = true
-        
-        userNameTextField.delegate = self
-        
     }
     
-    @IBAction func didTapCancel(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func didTapConfirm(_ sender: Any) {
-        delegate?.setUpdate(profileImage: userProfileImageView?.image, userName: userNameTextField?.text)
-        user.username = userNameTextField.text ?? ""
-        user.profileImage = userProfileImageView.image ?? nil
-        modifyUserName()
+    private func setUserNameTextField() {
+        userNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     
@@ -90,18 +99,51 @@ final class ProfileEditViewController: UIViewController {
         view.endEditing(true)
     }
     
-    
-    func configureUI() {
-        userNameTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
-        warningLabel.isHidden = true
-        countingLabel.isHidden = true
-        
+    // 토스트 메세지
+    private func showToast(message: String) {
+        let isKeyboardOn: Bool = self.isKeyboardOn
+        let keyboardHeight: CGFloat = self.keyboardHeight
+        var toastLabel = UILabel()
+        // 토스트 위치
+        if isKeyboardOn {
+            toastLabel = UILabel(frame: CGRect(x: 30,
+                                               y: self.view.frame.size.height - keyboardHeight - 59,
+                                               width: self.view.frame.size.width - 60,
+                                               height: 40))
+        } else {
+            toastLabel = UILabel(frame: CGRect(x: 30,
+                                               y: self.view.frame.size.height - 95,
+                                               width: self.view.frame.size.width - 60,
+                                               height: 40))
+        }
+        // 토스트 색
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        // 토스트 값
+        toastLabel.text = message
+        // 토스트 모양
+        toastLabel.textAlignment = .center
+        toastLabel.layer.cornerRadius = 12
+        toastLabel.clipsToBounds = true
+        // 토스트 애니메이션
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 1.0, delay: 0.1,
+                       options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
+                       completion: {_ in toastLabel.removeFromSuperview() })
     }
     
-    private func setUserNameTextField() {
-        userNameTextField.addTarget(self, action: #selector(self.checkTextField), for: .editingChanged)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    // MARK: - @IBAction
+    
+    
+    @IBAction func didTapCancel(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func didTapConfirm(_ sender: Any) {
+//        delegate?.setUpdate(data: data)
+        user.username = userNameTextField.text ?? ""
+        user.profileImage = userProfileImageView.image ?? nil
+        modifyUserName()
     }
     
     @objc func checkTextField () {
@@ -166,39 +208,6 @@ final class ProfileEditViewController: UIViewController {
     
     @objc func touchToPickImage() {
         actionSheetAlert()
-    }
-    
-    // 토스트 메세지
-    private func showToast(message: String) {
-        let isKeyboardOn: Bool = self.isKeyboardOn
-        let keyboardHeight: CGFloat = self.keyboardHeight
-        var toastLabel = UILabel()
-        // 토스트 위치
-        if isKeyboardOn {
-            toastLabel = UILabel(frame: CGRect(x: 30,
-                                               y: self.view.frame.size.height - keyboardHeight - 59,
-                                               width: self.view.frame.size.width - 60,
-                                               height: 40))
-        } else {
-            toastLabel = UILabel(frame: CGRect(x: 30,
-                                               y: self.view.frame.size.height - 95,
-                                               width: self.view.frame.size.width - 60,
-                                               height: 40))
-        }
-        // 토스트 색
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        toastLabel.textColor = UIColor.white
-        // 토스트 값
-        toastLabel.text = message
-        // 토스트 모양
-        toastLabel.textAlignment = .center
-        toastLabel.layer.cornerRadius = 12
-        toastLabel.clipsToBounds = true
-        // 토스트 애니메이션
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 1.0, delay: 0.1,
-                       options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
-                       completion: {_ in toastLabel.removeFromSuperview() })
     }
     
     
@@ -268,7 +277,7 @@ extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigati
     
 }
 
-// MARK: -
+// MARK: - UITextFieldDelegate
 extension ProfileEditViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else {return false}
@@ -290,6 +299,8 @@ extension ProfileEditViewController: UITextFieldDelegate {
     }
     
 }
+
+// MARK: - Server
 
 extension ProfileEditViewController {
     func modifyUserName() {

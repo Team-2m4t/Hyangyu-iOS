@@ -11,6 +11,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var hashTagCollectionView: UICollectionView!
     private var posterList: [HomePosterDataModel] = []
     private var hashList: [HomeHashtagDataModel] = []
+    var isFromLogoutOrWithdrawal: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()

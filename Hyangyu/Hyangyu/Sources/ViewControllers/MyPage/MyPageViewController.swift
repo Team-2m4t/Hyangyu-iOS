@@ -21,10 +21,14 @@ final class MyPageViewController: CustomPageViewController  {
     
     
     // MARK: - Property
+    
     private let tabTitles:[String] = ["전시회", "박람회", "페스티벌"]
-    private let profileEditVC = ProfileEditViewController(nibName: "ProfileEditViewController", bundle: nil)
     private var userName: String = "이물사딱아요"
     private var userImage: UIImage =  Image.userDefaultImage
+    
+    private let profileEditVC = ProfileEditViewController(nibName: "ProfileEditViewController", bundle: nil)
+    
+    private let headerView = HeaderView()
     
     lazy var menuView: CustomMenuView = {
         let view = CustomMenuView(parts:
@@ -57,12 +61,21 @@ final class MyPageViewController: CustomPageViewController  {
     // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGray6
         
         initNavigationBar()
+        configUI()
         
         profileEditVC.delegate = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("이게 실행되요")
+        getUserData()
+    }
+    
+    func configUI() {
+        view.backgroundColor = .systemGray6
     }
     
     // MARK: - Functions
@@ -79,9 +92,10 @@ final class MyPageViewController: CustomPageViewController  {
         navigationItem.rightBarButtonItem?.tintColor = .textBlack
     }
     
-    private func configure() {
-        profileEditVC.configure(with: ProfileEditViewControllerViewModel(profileImage: userImage, userName: userName))
-    }
+//    private func configure() {
+//        print(userName)
+//        profileEditVC.configure(with: ProfileEditViewControllerViewModel(profileImage: self.userImage, userName: self.userName))
+//    }
     
     
     @objc func didTapSettings() {
@@ -93,10 +107,8 @@ final class MyPageViewController: CustomPageViewController  {
         navigationController?.pushViewController(vc, animated: true)
     }
     
+    
     // MARK: - setHeaderView
-    
-    
-    private let headerView = HeaderView()
     
     
     override func headerViewFor(_ pageController: CustomPageViewController) -> UIView {
@@ -156,21 +168,52 @@ extension MyPageViewController: CustomMenuViewDelegate {
 // MARK: - HeaderViewDelegate
 extension MyPageViewController: HeaderViewDelegate {
     func headerViewDidTapProfileEditButton(_ headerView: HeaderView) {
-        configure()
+//        configure()
         profileEditVC.modalPresentationStyle = .fullScreen
         self.present(profileEditVC, animated: true, completion: nil)
     }
     
     func headerViewDidTapReviewButton(_ headerView: HeaderView) {
+        let storyboard = UIStoryboard(name: "Review", bundle: nil)
+        guard let reviewVC = storyboard.instantiateViewController(withIdentifier: "ReviewViewController") as? ReviewViewController else {
+            return
+        }
+        reviewVC.navigationController?.initTransparentNavBar()
+        self.navigationController?.pushViewController(reviewVC, animated: true)
         
     }
 }
 
 // MARK: - ProfileEditViewControllerDelegate
 extension MyPageViewController: ProfileEditViewControllerDelegate {
-    func setUpdate(profileImage: UIImage?, userName: String?) {
-        headerView.configure(with: HeaderViewViewModel(profileImage: profileImage, userName: userName))
-        self.userName = userName ?? ""
-        self.userImage = profileImage!
+    func setUpdate(data: MyPageResponse, profileImage: UIImage?) {
+        headerView.configure(with: HeaderViewViewModel(profileImage: profileImage, userName: data.username))
+        self.userName = data.username
+        self.userImage = profileImage ?? Image.userDefaultImage
+    }
+}
+
+// MARK: - Server
+extension MyPageViewController {
+    private func getUserData() {
+        
+        MyPageAPI.shared.getUserData { (response) in
+            switch response {
+            case .success(let data):
+                if let data = data as? MyPageResponse {
+                    print(data)
+                    self.setUpdate(data: data, profileImage: Image.userDefaultImage)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+                print("어디가 문제야?")
+            case .pathErr:
+                print(".pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
     }
 }

@@ -101,7 +101,7 @@ extension MyFestivalViewController: UICollectionViewDataSource, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: MyPageCollectionViewCell.self), for: indexPath) as? MyPageCollectionViewCell else {
             return UICollectionViewCell()
         }
-        cell.setData(myList: myFestivalList[indexPath.item])
+//        cell.setData(event: myFestivalList[indexPath.item])
         return cell
     }
     

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y8U-GD-de0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y8U-GD-de0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -469,6 +469,7 @@
                             <constraint firstItem="0Kg-Ll-bQl" firstAttribute="height" secondItem="xJl-7E-W3I" secondAttribute="height" priority="250" id="zWm-4D-vwb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="Qx5-Ip-I3M"/>
                     <navigationItem key="navigationItem" title="Title" id="Qx5-Ip-I3M">
                         <barButtonItem key="leftBarButtonItem" image="back 1" style="plain" id="1rI-3d-pvv">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uNj-mU-FCW">
@@ -482,6 +483,20 @@
                         </barButtonItem>
                     </navigationItem>
                     <size key="freeformSize" width="414" height="1500"/>
+                    <connections>
+                        <outlet property="endDateLabel" destination="Faw-DM-4fV" id="13Q-lZ-qmn"/>
+                        <outlet property="holidayLabel" destination="5Ei-0Z-dHM" id="RxE-hA-NcH"/>
+                        <outlet property="locationLabel" destination="l2I-Y0-lmV" id="Kir-JJ-CNx"/>
+                        <outlet property="mainPosterImageView" destination="PbR-2Z-oAW" id="s1m-ol-GqZ"/>
+                        <outlet property="priceLabel" destination="goz-Ss-DjJ" id="BWu-gt-PVW"/>
+                        <outlet property="siteLabel" destination="aPS-iz-Tsb" id="Exo-Mr-HCe"/>
+                        <outlet property="startDateLabel" destination="4Bf-FS-Tnc" id="goR-29-IUQ"/>
+                        <outlet property="titleLabel" destination="aLo-4b-jrf" id="M6K-eS-LEh"/>
+                        <outlet property="weekdayCloseLabel" destination="wMU-PM-sMG" id="3G3-8D-H9q"/>
+                        <outlet property="weekdayOpenLabel" destination="eOF-L8-vpp" id="r80-ta-K8n"/>
+                        <outlet property="weekendCloseLabel" destination="b1W-nz-2Xz" id="cbh-YB-NYf"/>
+                        <outlet property="weekendOpenLabel" destination="Aqh-Pm-hM2" id="M98-jl-5D4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XLp-ld-bMN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
