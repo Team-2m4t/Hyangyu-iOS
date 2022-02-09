@@ -13,6 +13,9 @@
 		237FDF5927AFEC1500898B22 /* HashtagDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF5527AFEC1500898B22 /* HashtagDetailDataModel.swift */; };
 		237FDF5A27AFEC1500898B22 /* HomePosterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF5627AFEC1500898B22 /* HomePosterDataModel.swift */; };
 		237FDF5B27AFEC1500898B22 /* HomeHashtagDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF5727AFEC1500898B22 /* HomeHashtagDataModel.swift */; };
+		237FDF6327B358FB00898B22 /* HomeNetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF6227B358FB00898B22 /* HomeNetworkResult.swift */; };
+		237FDF6527B3595400898B22 /* HomeGetDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF6427B3595400898B22 /* HomeGetDataService.swift */; };
+		237FDF6727B3596D00898B22 /* HomeApiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF6627B3596D00898B22 /* HomeApiDataModel.swift */; };
 		23842A92279EBCD600621427 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8C279EBCD600621427 /* HomeViewController.swift */; };
 		23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8E279EBCD600621427 /* ReviewEditViewController.swift */; };
 		23842A95279EBCD600621427 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8F279EBCD600621427 /* ReviewViewController.swift */; };
@@ -37,6 +40,9 @@
 		237FDF5527AFEC1500898B22 /* HashtagDetailDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashtagDetailDataModel.swift; path = ../HashtagDetailDataModel.swift; sourceTree = "<group>"; };
 		237FDF5627AFEC1500898B22 /* HomePosterDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePosterDataModel.swift; path = ../HomePosterDataModel.swift; sourceTree = "<group>"; };
 		237FDF5727AFEC1500898B22 /* HomeHashtagDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeHashtagDataModel.swift; path = ../HomeHashtagDataModel.swift; sourceTree = "<group>"; };
+		237FDF6227B358FB00898B22 /* HomeNetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNetworkResult.swift; sourceTree = "<group>"; };
+		237FDF6427B3595400898B22 /* HomeGetDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGetDataService.swift; sourceTree = "<group>"; };
+		237FDF6627B3596D00898B22 /* HomeApiDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeApiDataModel.swift; sourceTree = "<group>"; };
 		23842A8C279EBCD600621427 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		23842A8E279EBCD600621427 /* ReviewEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewEditViewController.swift; sourceTree = "<group>"; };
 		23842A8F279EBCD600621427 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -171,6 +177,9 @@
 		83B34E1B278736C4009A8009 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				237FDF6227B358FB00898B22 /* HomeNetworkResult.swift */,
+				237FDF6427B3595400898B22 /* HomeGetDataService.swift */,
+				237FDF6627B3596D00898B22 /* HomeApiDataModel.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237FDF6327B358FB00898B22 /* HomeNetworkResult.swift in Sources */,
 				83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */,
 				23842A95279EBCD600621427 /* ReviewViewController.swift in Sources */,
 				23842A96279EBCD600621427 /* HomeImageViewController.swift in Sources */,
@@ -349,11 +359,13 @@
 				83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */,
 				237FDF5A27AFEC1500898B22 /* HomePosterDataModel.swift in Sources */,
 				237FDF5927AFEC1500898B22 /* HashtagDetailDataModel.swift in Sources */,
+				237FDF6727B3596D00898B22 /* HomeApiDataModel.swift in Sources */,
 				236279152796841A00C16340 /* HomeViewController.swift in Sources */,
 				23842A97279EBCD600621427 /* HashtagDetailViewController.swift in Sources */,
 				237FDF5B27AFEC1500898B22 /* HomeHashtagDataModel.swift in Sources */,
 				23842A9F279EBCE800621427 /* HashtagDetailTableViewCell.swift in Sources */,
 				23842A92279EBCD600621427 /* HomeViewController.swift in Sources */,
+				237FDF6527B3595400898B22 /* HomeGetDataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
