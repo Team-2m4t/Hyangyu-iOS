@@ -12,7 +12,7 @@ enum MyPageService {
     
     case modifyUserName(email:String, password:String, nickname: String)
     
-    case getUserInfo
+    case getUserData
     
 }
 
@@ -27,9 +27,9 @@ extension MyPageService: TargetType, AccessTokenAuthorizable {
     var path: String {
         switch self {
         case .modifyUserName(_, _, _):
-            return Const.URL.modifyUserName
-        case .getUserInfo:
-            return Const.URL.userView
+            return Const.URL.modifyUserNameURL
+        case .getUserData:
+            return Const.URL.myPageURL
             
             
         }
@@ -39,7 +39,7 @@ extension MyPageService: TargetType, AccessTokenAuthorizable {
         switch self {
         case .modifyUserName(_, _, _):
             return .post
-        case .getUserInfo:
+        case .getUserData:
             return .get
             
         }
@@ -58,7 +58,7 @@ extension MyPageService: TargetType, AccessTokenAuthorizable {
                 "password": nil,
                 "username": nickname,
             ], encoding: JSONEncoding.default)
-        case .getUserInfo:
+        case .getUserData:
             return .requestPlain
             
         }
@@ -67,15 +67,10 @@ extension MyPageService: TargetType, AccessTokenAuthorizable {
     var headers: [String: String]? {
         
         switch self {
-        case .modifyUserName(_, _, _):
+        case .modifyUserName(_, _, _), .getUserData:
             return [
                 "Content-Type": "application/json",
                 "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "jwtToken") ?? "")"
-            ]
-        case .getUserInfo:
-            return [
-                "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "jwtToken") ?? "")",
-                "Content-Type": "application/json",
             ]
         }
     }
