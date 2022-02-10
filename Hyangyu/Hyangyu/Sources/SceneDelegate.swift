@@ -26,6 +26,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             setRootViewControllerToTabbar()
         }
         self.window?.backgroundColor = .white
+        
         guard let _ = (scene as? UIWindowScene) else { return }
     }
     
