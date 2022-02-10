@@ -68,25 +68,6 @@ class DetailPageViewController: UIViewController {
         setButton()
         
     }
-  
-    // 토스트 메세지
-    private func showToast(message: String) {
-        // 토스트 위치
-        let toastLabel = UILabel(frame: CGRect(x: 30,
-                                               y: self.view.frame.size.height - 95,
-                                               width: self.view.frame.size.width - 60,
-                                               height: 40))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        toastLabel.textColor = UIColor.white
-        toastLabel.text = message
-        toastLabel.textAlignment = .center
-        toastLabel.layer.cornerRadius = 12
-        toastLabel.clipsToBounds = true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 1.0, delay: 0.5,
-                       options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
-                       completion: {_ in toastLabel.removeFromSuperview() })
-    }
     
     func setButton() {
         if event[0].saved {
@@ -122,7 +103,7 @@ class DetailPageViewController: UIViewController {
     
     @IBAction func writeReviewButtonClicked(_ sender: Any) {
         guard let writeReviewVC = writeReviewStoryboard.instantiateViewController(identifier: "WriteReviewViewController") as? WriteReviewViewController else {return}
-        
+        writeReviewVC.configure(displayId: event[0].eventID)
         writeReviewVC.modalPresentationStyle = .fullScreen
         writeReviewVC.modalTransitionStyle = .crossDissolve
         self.present(writeReviewVC, animated: true, completion: nil)

@@ -94,13 +94,9 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     private func signOutTapped() {
-//        UserDefaults.standard.removeObject(forKey: "jwtToken")
-//        UIApplication.shared.unregisterForRemoteNotifications()
-        guard let presentingVC = self.presentingViewController as? UINavigationController else { return }
-        let viewControllerStack = presentingVC.viewControllers
-        // 출력해보자
-        print("✅ viewControllerStack: \(viewControllerStack)")
-        popToLoginViewController()
+        
+        guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first else { return }
+        
     }
     
     override func viewDidLayoutSubviews() {

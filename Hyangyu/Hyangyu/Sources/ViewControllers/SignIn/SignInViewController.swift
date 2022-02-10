@@ -85,25 +85,6 @@ class SignInViewController: UIViewController {
         self.present(tabbarViewController, animated: true, completion: nil)
     }
     
-    // 토스트 메세지
-    private func showToast(message: String) {
-        var toastLabel = UILabel()
-        toastLabel = UILabel(frame: CGRect(x: 20,
-                                           y: self.view.frame.size.height/2,
-                                           width: self.view.frame.size.width - 40,
-                                           height: 47))
-        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
-        toastLabel.textColor = .white
-        toastLabel.text = message
-        toastLabel.textAlignment = .center
-        toastLabel.layer.cornerRadius = 12
-        toastLabel.clipsToBounds = true
-        self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 1.5, delay: 0.1,
-                       options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
-                       completion: {_ in toastLabel.removeFromSuperview() })
-    }
-    
 }
 
 extension SignInViewController {

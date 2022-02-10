@@ -92,6 +92,9 @@
 		837763C427A0894B00248B6F /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837763C327A0894B00248B6F /* SignUpService.swift */; };
 		837763C727A0899F00248B6F /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837763C627A0899F00248B6F /* Const.swift */; };
 		837763CA27A089C400248B6F /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837763C927A089C400248B6F /* URL.swift */; };
+		837E481527B42FFC00971486 /* ReviewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837E481427B42FFC00971486 /* ReviewAPI.swift */; };
+		837E481827B4300D00971486 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837E481727B4300D00971486 /* ReviewService.swift */; };
+		837E481B27B4457500971486 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837E481A27B4457500971486 /* Review.swift */; };
 		838434BE279B4B6B00F0484C /* MyListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838434BD279B4B6B00F0484C /* MyListModel.swift */; };
 		8399CF5D279926B5002E5287 /* CustomPageControlProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF5C279926B5002E5287 /* CustomPageControlProtocol.swift */; };
 		8399CF612799271A002E5287 /* CustomPageViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8399CF602799271A002E5287 /* CustomPageViewController+Extensions.swift */; };
@@ -234,6 +237,9 @@
 		837763C327A0894B00248B6F /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		837763C627A0899F00248B6F /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		837763C927A089C400248B6F /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		837E481427B42FFC00971486 /* ReviewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewAPI.swift; sourceTree = "<group>"; };
+		837E481727B4300D00971486 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		837E481A27B4457500971486 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		838434BD279B4B6B00F0484C /* MyListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyListModel.swift; sourceTree = "<group>"; };
 		8399CF5C279926B5002E5287 /* CustomPageControlProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControlProtocol.swift; sourceTree = "<group>"; };
 		8399CF602799271A002E5287 /* CustomPageViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomPageViewController+Extensions.swift"; sourceTree = "<group>"; };
@@ -507,6 +513,7 @@
 		837763BF27A088A400248B6F /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				837E481327B42FDD00971486 /* ReviewAPI */,
 				83DADD6927B16A40001DCE44 /* SavedAPI */,
 				000112B527B37C6100201225 /* CategoryAPI */,
 				8375EAE327B02D76007D5EFA /* MyPageAPI */,
@@ -516,6 +523,15 @@
 				83B8A66827A104C800C22495 /* GenericResponse.swift */,
 			);
 			path = APIServices;
+			sourceTree = "<group>";
+		};
+		837E481327B42FDD00971486 /* ReviewAPI */ = {
+			isa = PBXGroup;
+			children = (
+				837E481427B42FFC00971486 /* ReviewAPI.swift */,
+				837E481727B4300D00971486 /* ReviewService.swift */,
+			);
+			path = ReviewAPI;
 			sourceTree = "<group>";
 		};
 		8399CF5F279926ED002E5287 /* CustomPage */ = {
@@ -672,6 +688,7 @@
 				83DADD5F27B12B51001DCE44 /* MyPage.swift */,
 				000112B327B37BAB00201225 /* CagetoryDisplayResponse.swift */,
 				00721AC127B3DAFE00E99CA2 /* DetailDisplayResponse.swift */,
+				837E481A27B4457500971486 /* Review.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -943,6 +960,7 @@
 				8399CF8227994D31002E5287 /* ProcessViewStyle.swift in Sources */,
 				83C167C3279DD1E700A4F289 /* SearchTagCollectionViewCell.swift in Sources */,
 				83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */,
+				837E481B27B4457500971486 /* Review.swift in Sources */,
 				8307902227AB1D8100E0F7D4 /* NewPasswordViewController.swift in Sources */,
 				831E91C7279C325B001F7F87 /* UIColor+Extensions.swift in Sources */,
 				8399CF9D279955B4002E5287 /* MyPageCollectionViewCell.swift in Sources */,
@@ -950,6 +968,7 @@
 				8399CF8527994D49002E5287 /* MenuItemView.swift in Sources */,
 				831E91DD279C80F1001F7F87 /* Image.swift in Sources */,
 				83537ADB2796BA7800873198 /* MyExhibitionViewController.swift in Sources */,
+				837E481527B42FFC00971486 /* ReviewAPI.swift in Sources */,
 				8399CFB22799BB04002E5287 /* CALayer+Extensions.swift in Sources */,
 				8399CF7727994A39002E5287 /* UIViewController+Extensions.swift in Sources */,
 				8399CF9127994DC8002E5287 /* MenuView.swift in Sources */,
@@ -1025,6 +1044,7 @@
 				834958672798723F0045B419 /* Page.swift in Sources */,
 				8399CF6927992E01002E5287 /* CustomMainScrollView.swift in Sources */,
 				837763BC27A067E600248B6F /* SignUpUser.swift in Sources */,
+				837E481827B4300D00971486 /* ReviewService.swift in Sources */,
 				8307A33F279ECA60006258E1 /* SignUpViewController.swift in Sources */,
 				83B8A66927A104C800C22495 /* GenericResponse.swift in Sources */,
 				83495860279871180045B419 /* InnerCollectionViewScrollDelegate.swift in Sources */,
