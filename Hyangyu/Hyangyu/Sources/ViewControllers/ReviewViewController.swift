@@ -19,6 +19,7 @@ class ReviewViewController: UIViewController, PassData {
         setReviewList(title: "모네, 르누아르... 샤갈", content: "흠 가지마세요 별루,,", data: "2 JAN 2021", scope: Double(1.0))
         setReviewList(title: "수퍼네이처 - 부산", content: "쩝스바리~", data: "4 MAR 2019", scope: Double(0.5))
         setReviewList(title: "카유보트: 향기를 만나다", content: "향기가 납니다", data: "4 MAR 2019", scope: Double(4.0))
+       navigationController?.navigationBar.barStyle = .black
         reviewTableView.delegate = self
         reviewTableView.dataSource = self
         reviewTableView.separatorStyle = .none
@@ -26,6 +27,9 @@ class ReviewViewController: UIViewController, PassData {
     func passdata(data: String, num: Int) {
         reviewList[num].review = data
         reviewTableView.reloadData()
+    }
+    @IBAction func backButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     func setColor() {
         exhibitionColor.layer.borderColor = green.cgColor
