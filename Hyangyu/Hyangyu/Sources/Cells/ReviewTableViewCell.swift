@@ -7,7 +7,7 @@ class ReviewTableViewCell: UITableViewCell {
     static let identifier: String = "ReviewTableViewCell"
     @IBOutlet weak var scopeLabel: UILabel!
     @IBOutlet weak var dataLabel: UILabel!
-    @IBOutlet weak var reviewLabel: UILabel!
+    @IBOutlet weak var reviewLabel: UITextView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var whiteView: UIView!
     @IBOutlet weak var optionButton: UIButton!
