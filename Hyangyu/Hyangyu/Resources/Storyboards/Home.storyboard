@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--Item-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="HomeViewController" id="Y6W-OH-hqX" customClass="HomeViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
@@ -241,6 +241,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ANY-fn-fzu" secondAttribute="trailing" id="vay-i8-HDM"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="GK6-6h-1gT"/>
                     <navigationItem key="navigationItem" id="vhA-wb-gZR"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="840"/>
