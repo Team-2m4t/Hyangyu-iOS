@@ -18,7 +18,11 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="createtime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNV-ZD-L7v">
-                        <rect key="frame" x="296" y="12" width="59" height="16"/>
+                        <rect key="frame" x="203" y="12" width="152" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="Jlf-Bj-reK"/>
+                            <constraint firstAttribute="width" constant="152" id="nzf-XR-ech"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -49,8 +53,13 @@
                             <constraint firstItem="N1j-n0-TLD" firstAttribute="top" secondItem="ZJC-HY-7eP" secondAttribute="top" id="ufq-ke-XLU"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va1-f8-ENe">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Va1-f8-ENe">
                         <rect key="frame" x="0.0" y="12" width="53" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="53" id="4JL-CQ-BWg"/>
+                            <constraint firstAttribute="height" constant="16" id="VBS-mD-rTq"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="16" id="ywB-QB-DYQ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                         <color key="textColor" red="0.0" green="0.33333333329999998" blue="0.31372549020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
@@ -67,8 +76,8 @@
                 <constraint firstItem="ZuE-Wl-DFS" firstAttribute="leading" secondItem="pNV-ZD-L7v" secondAttribute="trailing" constant="6" id="Smg-Ra-ydy"/>
                 <constraint firstAttribute="bottom" secondItem="ZJC-HY-7eP" secondAttribute="bottom" id="Soz-za-QuF"/>
                 <constraint firstItem="Va1-f8-ENe" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="fAF-z0-H6u"/>
+                <constraint firstItem="pNV-ZD-L7v" firstAttribute="leading" secondItem="Va1-f8-ENe" secondAttribute="trailing" constant="150" id="fLc-AN-LQe"/>
                 <constraint firstAttribute="trailing" secondItem="ZuE-Wl-DFS" secondAttribute="trailing" constant="10" id="gZb-1V-V4F"/>
-                <constraint firstItem="pNV-ZD-L7v" firstAttribute="leading" secondItem="Va1-f8-ENe" secondAttribute="trailing" constant="243" id="he5-qJ-u6V"/>
                 <constraint firstItem="ZuE-Wl-DFS" firstAttribute="leading" secondItem="pNV-ZD-L7v" secondAttribute="trailing" constant="6" id="jnC-vT-bGm"/>
                 <constraint firstItem="Va1-f8-ENe" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="kek-Ev-Jl5"/>
                 <constraint firstItem="pNV-ZD-L7v" firstAttribute="centerY" secondItem="Va1-f8-ENe" secondAttribute="centerY" id="myk-zN-uhB"/>

@@ -131,6 +131,9 @@ class DetailPageViewController: UIViewController {
     @IBAction func moreReviewButtonClicked(_ sender: Any) {
         guard let moreReviewVC = moreReviewStoryboard.instantiateViewController(identifier: "MoreReviewViewController") as? MoreReviewViewController else {return}
         
+        //moreReviewVC.displayiD = event[0].eventID
+        moreReviewVC.displayiD = 10
+        
         moreReviewVC.modalPresentationStyle = .fullScreen
         moreReviewVC.modalTransitionStyle = .crossDissolve
         self.present(moreReviewVC, animated: true, completion: nil)
