@@ -23,12 +23,14 @@ class CategoryViewController: UIViewController {
     
     // 화면 전환
     
+
     @IBAction func exhibitionButtonClicked(_ sender: Any) {
         guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "HomeVC") as? HomeVC else {return}
         
         nextVC.categoryTabTitle = exhibition // 카테고리 title 이름
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
+    
     
     @IBAction func fairButtonClicked(_ sender: Any) {
         guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "HomeVC") as? HomeVC else {return}
@@ -37,6 +39,7 @@ class CategoryViewController: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
+    
     @IBAction func festivalButtonClicked(_ sender: Any) {
         guard let nextVC = detailCategoryStoryboard.instantiateViewController(identifier: "HomeVC") as? HomeVC else {return}
         
@@ -44,3 +47,4 @@ class CategoryViewController: UIViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
 }
+

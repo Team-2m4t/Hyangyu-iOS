@@ -48,6 +48,8 @@ extension Const {
         // 카테고리 조회(GET)
         static let display = "/display"
         
+        // 리뷰 조회(GET)
+        static let showDisplayReview = "/show/review/display"
         // MARK: - Review
         
         static let displayReviewURL = "/review/display"
