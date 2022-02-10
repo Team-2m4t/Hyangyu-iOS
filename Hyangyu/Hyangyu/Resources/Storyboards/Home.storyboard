@@ -92,7 +92,7 @@
                                                     <constraint firstAttribute="height" constant="8" id="Qju-nB-lXm"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="마동석" translatesAutoresizingMaskIntoConstraints="NO" id="rxT-Zq-z4l">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userimage" translatesAutoresizingMaskIntoConstraints="NO" id="rxT-Zq-z4l">
                                                 <rect key="frame" x="339" y="40" width="55" height="55"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="55" id="buj-ly-2yK"/>
@@ -406,7 +406,7 @@
         <image name="chevron.backward" catalog="system" width="96" height="128"/>
         <image name="home" width="28" height="28"/>
         <image name="home-fill" width="28" height="28"/>
-        <image name="마동석" width="507" height="457"/>
+        <image name="userimage" width="507" height="457"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

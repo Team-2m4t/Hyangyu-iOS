@@ -43,9 +43,9 @@ class HomeViewController: UIViewController {
     
     func setHashList() {
         hashList.append(contentsOf: [
-            HomeHashtagDataModel(coverName: "이색적", hashName: "이색적"),
-            HomeHashtagDataModel(coverName: "삶", hashName: "삶"),
-            HomeHashtagDataModel(coverName: "철학", hashName: "철학")
+            HomeHashtagDataModel(coverName: "has1", hashName: "이색적"),
+            HomeHashtagDataModel(coverName: "has3", hashName: "삶"),
+            HomeHashtagDataModel(coverName: "has2", hashName: "철학")
         ])
         
     }
