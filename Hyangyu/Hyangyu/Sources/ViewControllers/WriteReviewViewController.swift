@@ -11,6 +11,12 @@ import Then
 
 class WriteReviewViewController: UIViewController {
     
+    private var reviewRequest = ReviewRequest(content: "", score: 0)
+    
+    private var score: Int = 0
+    
+    private var displayId: Int = 0
+    
     let placeholder = "전시/박람회/페스티벌에 대한 리뷰를 남겨주세요."
     
     let activityTextView = UITextView().then {
@@ -58,6 +64,10 @@ class WriteReviewViewController: UIViewController {
         }
     }
     
+    func configure(displayId: Int) {
+        self.displayId = displayId
+    }
+    
     func setupTextView() {
         activityTextView.delegate = self
         activityTextView.text = placeholder /// 초반 placeholder 생성
@@ -76,6 +86,13 @@ class WriteReviewViewController: UIViewController {
     
     // 확인 버튼
     @IBAction func confirmButtonClicked(_ sender: Any) {
+        postDisplayReivew{[weak self] response in
+            NotificationCenter.default.post(
+                name: NSNotification.Name("RefreshMyReviewCollectionView"),
+                object: nil,
+                userInfo: nil
+            )
+        }
         self.dismiss(animated: true, completion: nil)
     }
     
@@ -121,6 +138,30 @@ extension WriteReviewViewController : UITextViewDelegate {
             letterNumLabel.textColor = .gray /// 텍스트 개수가 0일 경우에는 글자 수 표시 색상이 모두 gray 색이게 설정
             letterNumLabel.text = "0/300"
         }
+    }
+}
+
+extension WriteReviewViewController {
+    func postDisplayReivew(completion: @escaping(ReviewResponse) -> Void) {
+        reviewRequest.content = activityTextView.text
+        score = Int.random(in: 2...5)
+        ReviewAPI.shared.postDisplayReview(displayId: displayId, content: reviewRequest.content, score: score) { (response) in
+            switch response {
+            case .success(let data):
+                if let data = data as? ReviewResponse {
+                    completion(data)
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
     }
 }
 
