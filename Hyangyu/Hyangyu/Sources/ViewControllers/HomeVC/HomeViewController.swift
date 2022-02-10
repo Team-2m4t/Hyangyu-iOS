@@ -188,6 +188,7 @@ extension HomeViewController: UICollectionViewDataSource {
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // 서버 연결 후 작성
+        
         if collectionView == homeCollectionView {
       //  let detailPageStoryboard = UIStoryboard(name: "DetailViewPage", bundle: nil)
             /*    guard let detailPageVC = detailPageStoryboard.instantiateViewController(withIdentifier: "DetailPageViewController") as? DetailPageViewController else {
@@ -196,7 +197,6 @@ extension HomeViewController: UICollectionViewDataSource {
         detailPageVC.navigationItem.largeTitleDisplayMode = .never
                 detailPageVC.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(detailPageVC, animated: true)*/
-        
         } else {
             guard let hashDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "HashtagDetailViewController") as? HashtagDetailViewController else {
                 return }
