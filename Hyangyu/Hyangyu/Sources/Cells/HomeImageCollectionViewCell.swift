@@ -12,13 +12,17 @@ class HomeImageCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     
     func setData(imageName: String) {
-        let url = URL(string: "https://image.tmdb.org/t/p/original\(imageName)")
-        DispatchQueue.global().async {
-            let data = try? Data(contentsOf: url!)
-            DispatchQueue.main.async {
-                self.posterImageView.image = UIImage(data: data!)
-            }
-        }
+                if let image = UIImage(named: imageName) {
+                    posterImageView.image = image
+                }
+        
+//         let url = URL(string: imageName)
+//        DispatchQueue.global().async {
+//         let data = try? Data(contentsOf: url!)
+//            DispatchQueue.main.async {
+//            self.posterImageView.image = UIImage(data: data!)
+//            }
+//        }
                            
     }
     func setImage() {
