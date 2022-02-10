@@ -7,7 +7,7 @@
 
 import Foundation
 enum SearchResult {
-    case exhibition(model: MyListModel)
-    case festival(model: MyListModel)
-    case expo(model: MyListModel)
+    case display(model: Event)
+    case festival(model: Event)
+    case fair(model: Event)
 }

@@ -27,5 +27,5 @@ enum SearchType {
         case .recent: return "최근 검색어가 없습니다."
         }
     }
-}
+}   
 

@@ -52,6 +52,9 @@ extension Const {
         
         static let displayReviewURL = "/review/display"
         
+        // MARK: - Search
+        static let searchURL = "/search"
+        
         
     }
 }
