@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+
 		000112B127B35C3900201225 /* ReviewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112B027B35C3900201225 /* ReviewDataModel.swift */; };
 		000112B227B36DFB00201225 /* DetailViewPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0099690027A15AD200D7CDA2 /* DetailViewPage.storyboard */; };
 		000112B427B37BAC00201225 /* CagetoryDisplayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 000112B327B37BAB00201225 /* CagetoryDisplayResponse.swift */; };
@@ -34,6 +35,9 @@
 		236279132796840B00C16340 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236279122796840B00C16340 /* Home.storyboard */; };
 		236279152796841A00C16340 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 236279142796841A00C16340 /* HomeViewController.swift */; };
 		236279172796894800C16340 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236279162796894800C16340 /* Main.storyboard */; };
+		237FDF5927AFEC1500898B22 /* HashtagDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF5527AFEC1500898B22 /* HashtagDetailDataModel.swift */; };
+		237FDF5A27AFEC1500898B22 /* HomePosterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF5627AFEC1500898B22 /* HomePosterDataModel.swift */; };
+		237FDF5B27AFEC1500898B22 /* HomeHashtagDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 237FDF5727AFEC1500898B22 /* HomeHashtagDataModel.swift */; };
 		23842A92279EBCD600621427 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8C279EBCD600621427 /* HomeViewController.swift */; };
 		23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8E279EBCD600621427 /* ReviewEditViewController.swift */; };
 		23842A95279EBCD600621427 /* ReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A8F279EBCD600621427 /* ReviewViewController.swift */; };
@@ -42,10 +46,15 @@
 		23842A9D279EBCE800621427 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A99279EBCE800621427 /* ReviewTableViewCell.swift */; };
 		23842A9E279EBCE800621427 /* HomeImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A9A279EBCE800621427 /* HomeImageCollectionViewCell.swift */; };
 		23842A9F279EBCE800621427 /* HashtagDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842A9B279EBCE800621427 /* HashtagDetailTableViewCell.swift */; };
+		23842AA7279EBCF800621427 /* ReviewDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842AA3279EBCF800621427 /* ReviewDataModel.swift */; };
 		23842AA4279EBCF800621427 /* HomeHashtagDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842AA0279EBCF800621427 /* HomeHashtagDataModel.swift */; };
 		23842AA5279EBCF800621427 /* HomePosterDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842AA1279EBCF800621427 /* HomePosterDataModel.swift */; };
 		23842AA6279EBCF800621427 /* HashtagDetailDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23842AA2279EBCF800621427 /* HashtagDetailDataModel.swift */; };
 		23842AA9279EBD3800621427 /* Review.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23842AA8279EBD3800621427 /* Review.storyboard */; };
+		23C6669327B3C3ED00FD2BF0 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 236279122796840B00C16340 /* Home.storyboard */; };
+		23C6669A27B4CCAE00FD2BF0 /* HomeApiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6669927B4CCAE00FD2BF0 /* HomeApiDataModel.swift */; };
+		23C6669C27B4CCB000FD2BF0 /* HomeGetDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6669B27B4CCB000FD2BF0 /* HomeGetDataService.swift */; };
+		23C6669E27B4CCB500FD2BF0 /* HomeNetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6669D27B4CCB500FD2BF0 /* HomeNetworkResult.swift */; };
 		6A4324E6077B73484DAA70C1 /* Pods_Hyangyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */; };
 		8307901627AB116500E0F7D4 /* FindPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8307901427AB116500E0F7D4 /* FindPasswordViewController.swift */; };
 		8307901727AB116500E0F7D4 /* FindPasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8307901527AB116500E0F7D4 /* FindPasswordViewController.xib */; };
@@ -177,6 +186,9 @@
 		236279122796840B00C16340 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		236279142796841A00C16340 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		236279162796894800C16340 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		237FDF5527AFEC1500898B22 /* HashtagDetailDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashtagDetailDataModel.swift; path = ../HashtagDetailDataModel.swift; sourceTree = "<group>"; };
+		237FDF5627AFEC1500898B22 /* HomePosterDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomePosterDataModel.swift; path = ../HomePosterDataModel.swift; sourceTree = "<group>"; };
+		237FDF5727AFEC1500898B22 /* HomeHashtagDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeHashtagDataModel.swift; path = ../HomeHashtagDataModel.swift; sourceTree = "<group>"; };
 		23842A8C279EBCD600621427 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		23842A8E279EBCD600621427 /* ReviewEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewEditViewController.swift; sourceTree = "<group>"; };
 		23842A8F279EBCD600621427 /* ReviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewViewController.swift; sourceTree = "<group>"; };
@@ -185,10 +197,14 @@
 		23842A99279EBCE800621427 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewTableViewCell.swift; path = Hyangyu/Sources/Cells/ReviewTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		23842A9A279EBCE800621427 /* HomeImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeImageCollectionViewCell.swift; path = Hyangyu/Sources/Cells/HomeImageCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		23842A9B279EBCE800621427 /* HashtagDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HashtagDetailTableViewCell.swift; path = Hyangyu/Sources/Cells/HashtagDetailTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		23842AA3279EBCF800621427 /* ReviewDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ReviewDataModel.swift; path = ../ReviewDataModel.swift; sourceTree = "<group>"; };
 		23842AA0279EBCF800621427 /* HomeHashtagDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHashtagDataModel.swift; sourceTree = "<group>"; };
 		23842AA1279EBCF800621427 /* HomePosterDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePosterDataModel.swift; sourceTree = "<group>"; };
 		23842AA2279EBCF800621427 /* HashtagDetailDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagDetailDataModel.swift; sourceTree = "<group>"; };
 		23842AA8279EBD3800621427 /* Review.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Review.storyboard; sourceTree = "<group>"; };
+		23C6669927B4CCAE00FD2BF0 /* HomeApiDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeApiDataModel.swift; sourceTree = "<group>"; };
+		23C6669B27B4CCB000FD2BF0 /* HomeGetDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGetDataService.swift; sourceTree = "<group>"; };
+		23C6669D27B4CCB500FD2BF0 /* HomeNetworkResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNetworkResult.swift; path = Hyangyu/Sources/APIModels/HomeAPIModels/HomeNetworkResult.swift; sourceTree = SOURCE_ROOT; };
 		804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyangyu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8307901427AB116500E0F7D4 /* FindPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPasswordViewController.swift; sourceTree = "<group>"; };
 		8307901527AB116500E0F7D4 /* FindPasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FindPasswordViewController.xib; sourceTree = "<group>"; };
@@ -304,6 +320,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		23C6669827B4CC9F00FD2BF0 /* HomeAPIModel */ = {
+			isa = PBXGroup;
+			children = (
+				23C6669B27B4CCB000FD2BF0 /* HomeGetDataService.swift */,
+				23C6669D27B4CCB500FD2BF0 /* HomeNetworkResult.swift */,
+				23C6669927B4CCAE00FD2BF0 /* HomeApiDataModel.swift */,
+			);
+			path = HomeAPIModel;
 		000112B527B37C6100201225 /* CategoryAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,6 +692,7 @@
 		83B34E1B278736C4009A8009 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				23C6669827B4CC9F00FD2BF0 /* HomeAPIModel */,
 				83B8A65F27A103C100C22495 /* Auth.swift */,
 				83DADD5F27B12B51001DCE44 /* MyPage.swift */,
 				000112B327B37BAB00201225 /* CagetoryDisplayResponse.swift */,
@@ -698,6 +723,10 @@
 		83B34E1D278736E3009A8009 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				237FDF5527AFEC1500898B22 /* HashtagDetailDataModel.swift */,
+				237FDF5727AFEC1500898B22 /* HomeHashtagDataModel.swift */,
+				237FDF5627AFEC1500898B22 /* HomePosterDataModel.swift */,
+				23842AA3279EBCF800621427 /* ReviewDataModel.swift */,
 				23842AA2279EBCF800621427 /* HashtagDetailDataModel.swift */,
 				23842AA0279EBCF800621427 /* HomeHashtagDataModel.swift */,
 				23842AA1279EBCF800621427 /* HomePosterDataModel.swift */,
@@ -821,6 +850,9 @@
 				0003779827B0F05800724152 /* ReviewCollectionViewCell.xib in Resources */,
 				0003779127B0CCAB00724152 /* WriteReviewPage.storyboard in Resources */,
 				236279172796894800C16340 /* Main.storyboard in Resources */,
+				23C6669327B3C3ED00FD2BF0 /* Home.storyboard in Resources */,
+				83B34E0A27873600009A8009 /* Assets.xcassets in Resources */,
+				23842AA9279EBD3800621427 /* Review.storyboard in Resources */,
 				00788D4E27B2AA3800CA115A /* CategoryCollectionViewCell.xib in Resources */,
 				83B34E0A27873600009A8009 /* Assets.xcassets in Resources */,
 				23842AA9279EBD3800621427 /* Review.storyboard in Resources */,
@@ -927,6 +959,11 @@
 				83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */,
 				8375EAE527B02D88007D5EFA /* MyPageAPI.swift in Sources */,
 				23842A95279EBCD600621427 /* ReviewViewController.swift in Sources */,
+				23842A96279EBCD600621427 /* HomeImageViewController.swift in Sources */,
+				23C6669A27B4CCAE00FD2BF0 /* HomeApiDataModel.swift in Sources */,
+				23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */,
+				23842AA7279EBCF800621427 /* ReviewDataModel.swift in Sources */,
+				23C6669E27B4CCB500FD2BF0 /* HomeNetworkResult.swift in Sources */,
 				23842AA6279EBCF800621427 /* HashtagDetailDataModel.swift in Sources */,
 				23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */,
 				23842AA5279EBCF800621427 /* HomePosterDataModel.swift in Sources */,
@@ -936,10 +973,14 @@
 				23842A9D279EBCE800621427 /* ReviewTableViewCell.swift in Sources */,
 				000112B427B37BAC00201225 /* CagetoryDisplayResponse.swift in Sources */,
 				83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */,
+				237FDF5A27AFEC1500898B22 /* HomePosterDataModel.swift in Sources */,
+				237FDF5927AFEC1500898B22 /* HashtagDetailDataModel.swift in Sources */,
 				236279152796841A00C16340 /* HomeViewController.swift in Sources */,
 				23842A97279EBCD600621427 /* HashtagDetailViewController.swift in Sources */,
+				237FDF5B27AFEC1500898B22 /* HomeHashtagDataModel.swift in Sources */,
 				23842A9F279EBCE800621427 /* HashtagDetailTableViewCell.swift in Sources */,
 				23842A92279EBCD600621427 /* HomeViewController.swift in Sources */,
+				23C6669C27B4CCB000FD2BF0 /* HomeGetDataService.swift in Sources */,
 				8399CF8227994D31002E5287 /* ProcessViewStyle.swift in Sources */,
 				83C167C3279DD1E700A4F289 /* SearchTagCollectionViewCell.swift in Sources */,
 				83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */,

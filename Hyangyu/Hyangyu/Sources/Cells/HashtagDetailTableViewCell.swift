@@ -26,6 +26,7 @@ class HashtagDetailTableViewCell: UITableViewCell {
         if let image = UIImage(named: imageName) {
             hashDetailImageView.image = image
         }
+
         titleLabel.text = title
         placeLabel.text = subtitle
         dataLabel.text = data
