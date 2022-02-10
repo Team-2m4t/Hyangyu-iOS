@@ -83,15 +83,8 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이프 사진전 : 더 라스트 프린트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PwD-Od-slc">
-                                                            <rect key="frame" x="20" y="40" width="319" height="35"/>
+                                                            <rect key="frame" x="20" y="40" width="319" height="18"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Bold" family="Apple SD Gothic Neo" pointSize="15"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="라이프 사진전 : 더 라스트 프린트" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="n2l-bL-XOu">
-                                                            <rect key="frame" x="20" y="80" width="310" height="46"/>
-                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -116,17 +109,28 @@
                                                             <color key="textColor" systemColor="systemGray2Color"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOV-ea-Ggw">
+                                                            <rect key="frame" x="18" y="60" width="301" height="67"/>
+                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                            <color key="textColor" systemColor="labelColor"/>
+                                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="12"/>
+                                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                        </textView>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="s7R-Bi-p24" firstAttribute="top" secondItem="mQD-sx-XUr" secondAttribute="top" constant="13" id="2t3-Lq-el4"/>
-                                                        <constraint firstItem="n2l-bL-XOu" firstAttribute="top" secondItem="PwD-Od-slc" secondAttribute="bottom" constant="5" id="5HY-Kl-unU"/>
+                                                        <constraint firstItem="d1t-NN-92Y" firstAttribute="top" secondItem="vOV-ea-Ggw" secondAttribute="bottom" constant="15" id="CiW-0o-5Zd"/>
                                                         <constraint firstItem="y35-BJ-YdD" firstAttribute="top" secondItem="mQD-sx-XUr" secondAttribute="top" constant="10" id="GjW-kq-htc"/>
                                                         <constraint firstAttribute="trailing" secondItem="CNi-pC-70Y" secondAttribute="trailing" constant="10" id="ICw-iC-G9u"/>
+                                                        <constraint firstAttribute="trailing" secondItem="vOV-ea-Ggw" secondAttribute="trailing" constant="25" id="LQs-tH-XW9"/>
                                                         <constraint firstAttribute="trailing" secondItem="d1t-NN-92Y" secondAttribute="trailing" constant="14" id="Msp-SN-XOd"/>
                                                         <constraint firstAttribute="trailing" secondItem="PwD-Od-slc" secondAttribute="trailing" constant="5" id="fgr-g8-9gg"/>
                                                         <constraint firstItem="PwD-Od-slc" firstAttribute="leading" secondItem="mQD-sx-XUr" secondAttribute="leading" constant="20" id="h6i-HW-mS8"/>
                                                         <constraint firstItem="CNi-pC-70Y" firstAttribute="top" secondItem="mQD-sx-XUr" secondAttribute="top" constant="10" id="hBK-sf-iXg"/>
+                                                        <constraint firstItem="vOV-ea-Ggw" firstAttribute="leading" secondItem="mQD-sx-XUr" secondAttribute="leading" constant="18" id="hE2-cT-cI2"/>
+                                                        <constraint firstItem="vOV-ea-Ggw" firstAttribute="top" secondItem="PwD-Od-slc" secondAttribute="bottom" constant="2" id="j47-9B-2sg"/>
                                                         <constraint firstItem="s7R-Bi-p24" firstAttribute="leading" secondItem="y35-BJ-YdD" secondAttribute="trailing" constant="5" id="mKa-DL-eJv"/>
                                                         <constraint firstItem="y35-BJ-YdD" firstAttribute="leading" secondItem="mQD-sx-XUr" secondAttribute="leading" constant="10" id="oz0-bf-pbt"/>
                                                         <constraint firstItem="PwD-Od-slc" firstAttribute="top" secondItem="mQD-sx-XUr" secondAttribute="top" constant="40" id="phU-2E-zD5"/>
@@ -145,7 +149,7 @@
                                         <connections>
                                             <outlet property="dataLabel" destination="d1t-NN-92Y" id="Usr-ct-pYT"/>
                                             <outlet property="optionButton" destination="CNi-pC-70Y" id="uDr-er-qBA"/>
-                                            <outlet property="reviewLabel" destination="n2l-bL-XOu" id="Bw3-QR-JP9"/>
+                                            <outlet property="reviewLabel" destination="vOV-ea-Ggw" id="Q7u-ms-A0Y"/>
                                             <outlet property="scopeLabel" destination="s7R-Bi-p24" id="5ql-Nn-WrS"/>
                                             <outlet property="titleLabel" destination="PwD-Od-slc" id="wJ2-2I-McD"/>
                                             <outlet property="whiteView" destination="mQD-sx-XUr" id="5cy-2T-u9M"/>
