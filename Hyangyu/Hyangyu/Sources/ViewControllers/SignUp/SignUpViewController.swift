@@ -46,7 +46,7 @@ class SignUpViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         checkTextField()
-        navigationController?.initWithBackButton(backgroundColor: .white)
+        navigationController?.initWithBackButton()
         
     }
     

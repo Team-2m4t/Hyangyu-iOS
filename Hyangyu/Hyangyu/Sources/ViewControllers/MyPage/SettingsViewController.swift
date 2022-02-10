@@ -95,7 +95,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     private func signOutTapped() {
         
-        guard let window = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first else { return }
         
     }
     
