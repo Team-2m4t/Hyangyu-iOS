@@ -149,8 +149,24 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //api 연결 후 작성
-        self.performSegue(withIdentifier: "showHashDetail", sender: indexPath.row)
+        // 서버 연결 후 작성
+        
+        if collectionView == homeCollectionView {
+      //  let detailPageStoryboard = UIStoryboard(name: "DetailViewPage", bundle: nil)
+            /*    guard let detailPageVC = detailPageStoryboard.instantiateViewController(withIdentifier: "DetailPageViewController") as? DetailPageViewController else {
+                    return
+                }
+        detailPageVC.navigationItem.largeTitleDisplayMode = .never
+                detailPageVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailPageVC, animated: true)*/
+        } else {
+            guard let hashDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "HashtagDetailViewController") as? HashtagDetailViewController else {
+                return }
+            hashDetailVC.hashName = hashList[indexPath.row].hashName
+            hashDetailVC.hashNumber = indexPath.row
+            self.navigationController?.pushViewController(hashDetailVC, animated: true)
+       // self.performSegue(withIdentifier: "showHashDetail", sender: indexPath.row)
+        }
     }
 }
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
