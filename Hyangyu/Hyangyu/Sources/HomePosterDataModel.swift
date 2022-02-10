@@ -9,6 +9,6 @@ import Foundation
 
 struct HomePosterDataModel {
     
-    var coverName:String
+    var coverName: String
     
 }
