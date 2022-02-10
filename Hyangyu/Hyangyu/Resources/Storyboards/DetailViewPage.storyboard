@@ -350,15 +350,7 @@
                             <constraint firstItem="0Kg-Ll-bQl" firstAttribute="height" secondItem="xJl-7E-W3I" secondAttribute="height" priority="250" id="zWm-4D-vwb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Qx5-Ip-I3M">
-                        <barButtonItem key="leftBarButtonItem" image="back 1" style="plain" id="1rI-3d-pvv">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="uNj-mU-FCW">
-                                <rect key="frame" x="20" y="7" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="back 1"/>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Title" id="Qx5-Ip-I3M"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
                         <outlet property="endDateLabel" destination="Faw-DM-4fV" id="13Q-lZ-qmn"/>

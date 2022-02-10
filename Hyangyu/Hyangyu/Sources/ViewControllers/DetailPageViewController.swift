@@ -39,8 +39,8 @@ class DetailPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.initWithBackButton()
         configureUI()
+        navigationController?.isNavigationBarHidden = true
     }
     
     // MARK: - Functions
