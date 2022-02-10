@@ -110,7 +110,7 @@ final class ProfileEditViewController: UIViewController {
     }
     
     // 토스트 메세지
-    private func showToast(message: String) {
+    private func showToastKeyboard(message: String) {
         let isKeyboardOn: Bool = self.isKeyboardOn
         let keyboardHeight: CGFloat = self.keyboardHeight
         var toastLabel = UILabel()
@@ -320,7 +320,7 @@ extension ProfileEditViewController {
         MyPageAPI.shared.modifyUserName(completion: { (response) in
             switch response {
             case .success:
-                self.showToast(message: "닉네임 변경에 성공하였습니다")
+                self.showToastKeyboard(message: "닉네임 변경에 성공하였습니다")
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
                     self.dismiss(animated: true)
                 }

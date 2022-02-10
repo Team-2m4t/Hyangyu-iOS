@@ -11,6 +11,15 @@ import Then
 
 class WriteReviewViewController: UIViewController {
     
+    private var reviewRequest = ReviewRequest(content: "", score: 0)
+    
+    private var score: Int = 0
+    
+    private var displayId: Int = 0
+    
+    private var isKeyboardOn: Bool = false
+    private var keyboardHeight: CGFloat = 0
+    
     let placeholder = "전시/박람회/페스티벌에 대한 리뷰를 남겨주세요."
     
     let activityTextView = UITextView().then {
@@ -39,6 +48,20 @@ class WriteReviewViewController: UIViewController {
     // MARK: - Custom Method
     func configUI() {
         view.backgroundColor = .white
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+            keyboardHeight = keyboardFrame.cgRectValue.height
+        }
+        isKeyboardOn = true
+    }
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        keyboardHeight = 0
+        isKeyboardOn = false
     }
     
     func setupAutoLayout() {
@@ -56,6 +79,11 @@ class WriteReviewViewController: UIViewController {
             make.top.equalTo(activityTextView.snp.bottom).offset(6)
             make.trailing.equalToSuperview().inset(28)
         }
+    }
+    
+    func configure(displayId: Int) {
+        self.displayId = displayId
+        print("전시 아이디: \(displayId)")
     }
     
     func setupTextView() {
@@ -76,7 +104,46 @@ class WriteReviewViewController: UIViewController {
     
     // 확인 버튼
     @IBAction func confirmButtonClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        postDisplayReivew{[weak self] response in
+            NotificationCenter.default.post(
+                name: NSNotification.Name("RefreshMyReviewCollectionView"),
+                object: nil,
+                userInfo: nil
+            )
+        }
+    }
+    
+    // 토스트 메세지
+    private func showToastKeyboard(message: String) {
+        let isKeyboardOn: Bool = self.isKeyboardOn
+        let keyboardHeight: CGFloat = self.keyboardHeight
+        var toastLabel = UILabel()
+        // 토스트 위치
+        if isKeyboardOn {
+            toastLabel = UILabel(frame: CGRect(x: 30,
+                                               y: self.view.frame.size.height - keyboardHeight - 59,
+                                               width: self.view.frame.size.width - 60,
+                                               height: 40))
+        } else {
+            toastLabel = UILabel(frame: CGRect(x: 30,
+                                               y: self.view.frame.size.height - 95,
+                                               width: self.view.frame.size.width - 60,
+                                               height: 40))
+        }
+        // 토스트 색
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        // 토스트 값
+        toastLabel.text = message
+        // 토스트 모양
+        toastLabel.textAlignment = .center
+        toastLabel.layer.cornerRadius = 12
+        toastLabel.clipsToBounds = true
+        // 토스트 애니메이션
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 1.0, delay: 0.1,
+                       options: .curveEaseIn, animations: { toastLabel.alpha = 0.0 },
+                       completion: {_ in toastLabel.removeFromSuperview() })
     }
     
 }
@@ -121,6 +188,42 @@ extension WriteReviewViewController : UITextViewDelegate {
             letterNumLabel.textColor = .gray /// 텍스트 개수가 0일 경우에는 글자 수 표시 색상이 모두 gray 색이게 설정
             letterNumLabel.text = "0/300"
         }
+    }
+}
+
+extension WriteReviewViewController {
+    func postDisplayReivew(completion: @escaping(String) -> Void) {
+        reviewRequest.content = activityTextView.text
+        score = Int.random(in: 2...5)
+        ReviewAPI.shared.postDisplayReview(displayId: displayId, content: reviewRequest.content, score: score) { (response) in
+            switch response {
+            case .success(let data):
+                if let data = data as? String {
+                    self.showToastKeyboard(message: data)
+                    completion(data)
+                    
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.dismiss(animated: true)
+                }
+            case .requestErr(let message):
+                if let message = message as? String {
+                    print(message)
+                    self.showToastKeyboard(message: "이미 전시에 대한 리뷰를 달았습니다.")
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                    self.dismiss(animated: true)
+                }
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+        }
+        
     }
 }
 

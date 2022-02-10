@@ -11,6 +11,8 @@ class SearchResultsTableViewCell: UITableViewCell {
     
     static let identifier = "SearchResultsTableViewCell"
     
+    private var eventId: Int = 0
+    
     // MARK: - @IBOutlets
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -34,12 +36,15 @@ class SearchResultsTableViewCell: UITableViewCell {
         self.posterImageView.layer.masksToBounds = true
     }
     
-    func configure(with viewModel: SearchResultsTableViewCellViewModel){
-        posterImageView.image = UIImage(named: viewModel.imageURL ?? "")
-        titleLabel.text = viewModel.title
-        startDateLabel.text = viewModel.startDate
-        endDateLabel.text = viewModel.endDate
-        locationLabel.text = viewModel.location
+    func configure(with event: Event){
+        if !posterImageView.updateServerImage(event.photo1) {
+            posterImageView.image = UIImage(named: "exhibitionImg1")
+        }
+        eventId = event.eventID
+        titleLabel.text = event.title
+        startDateLabel.text = event.startDate
+        endDateLabel.text = event.endDate
+        locationLabel.text = event.site
     }
 
 }

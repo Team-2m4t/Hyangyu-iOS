@@ -18,6 +18,10 @@ protocol SearchResultsViewConrollerDelegate: AnyObject {
 
 class SearchResultsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    var searchResults: [SearchResult] = []
+    
+    private var emptyResearchView = EmptySearchResultView()
+    
         weak var delegate : SearchResultsViewConrollerDelegate?
     
     private var sections: [SearchSection] = []
@@ -33,12 +37,21 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         return tableView
     }()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .clear
         view.addSubview(tableView)
+        view.addSubview(emptyResearchView)
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+        
+        emptyResearchView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        emptyResearchView.isHidden = true
     }
     
     override func viewDidLayoutSubviews() {
@@ -48,17 +61,18 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func update(with results: [SearchResult]) {
-        let exhibitions = results.filter({
+        searchResults = results
+        let displays = results.filter({
             switch $0 {
-            case .exhibition: return true
+            case .display: return true
             default: return false
             }
         })
         
         
-        let expos = results.filter({
+        let fairs = results.filter({
             switch $0 {
-            case .expo: return true
+            case .fair: return true
             default: return false
             }
         })
@@ -71,13 +85,15 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
             }
         })
         self.sections = [
-            SearchSection(title: "전시회", results: exhibitions),
-            SearchSection(title: "박람회", results: expos),
+            SearchSection(title: "전시회", results: displays),
+            SearchSection(title: "박람회", results: fairs),
             SearchSection(title: "페스티벌", results: festivals),
         ]
         
         tableView.reloadData()
         tableView.isHidden = results.isEmpty
+        emptyResearchView.isHidden = !results.isEmpty
+        
     }
     
     
@@ -92,37 +108,23 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let result = sections[indexPath.section].results[indexPath.row]
         switch  result {
-        case .exhibition(let exhibition):
+        case .display(let display):
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: SearchResultsTableViewCell.identifier,
                 for: indexPath
             ) as? SearchResultsTableViewCell else {
                 return UITableViewCell()
             }
-            let viewModel = SearchResultsTableViewCellViewModel(
-                title: exhibition.title,
-                imageURL: exhibition.posterImageURL ?? "",
-                startDate: exhibition.startDate,
-                endDate: exhibition.endDate,
-                location: exhibition.location
-            )
-            cell.configure(with: viewModel)
+            cell.configure(with: display)
             return cell
-        case .expo(let expo):
+        case .fair(let fair):
             guard let cell = tableView.dequeueReusableCell(
                 withIdentifier: SearchResultsTableViewCell.identifier,
                 for: indexPath
             ) as? SearchResultsTableViewCell else {
                 return UITableViewCell()
             }
-            let viewModel = SearchResultsTableViewCellViewModel(
-                title: expo.title,
-                imageURL: expo.posterImageURL ?? "",
-                startDate: expo.startDate,
-                endDate: expo.endDate,
-                location: expo.location
-            )
-            cell.configure(with: viewModel)
+            cell.configure(with: fair)
             return cell
         case .festival(let festival):
             guard let cell = tableView.dequeueReusableCell(
@@ -131,14 +133,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
             ) as? SearchResultsTableViewCell  else {
                 return UITableViewCell()
             }
-            let viewModel = SearchResultsTableViewCellViewModel(
-                title: festival.title,
-                imageURL: festival.posterImageURL ?? "",
-                startDate: festival.startDate,
-                endDate: festival.endDate,
-                location: festival.location
-            )
-            cell.configure(with: viewModel)
+            cell.configure(with: festival)
             return cell
         }
     }
@@ -166,6 +161,7 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
         moreButton.frame = CGRect(x: headerView.frame.width - 30, y: 0, width: 10, height: 50)
         headerView.addSubview(titleLabel)
         headerView.addSubview(countLabel)
+        headerView.addSubview(moreButton)
         
         return headerView
     }
@@ -174,4 +170,11 @@ class SearchResultsViewController: UIViewController, UITableViewDelegate, UITabl
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return sections[section].title
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let result = sections[indexPath.section].results[indexPath.row]
+        tableView.deselectRow(at: indexPath, animated: true)
+        delegate?.didTapResult(result)
+    }
 }
+

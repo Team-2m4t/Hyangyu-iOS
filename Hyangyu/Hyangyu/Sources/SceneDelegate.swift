@@ -35,7 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     private func setRootViewControllerToLogin() {
-        self.navigationController = UINavigationController(rootViewController: SignInViewController())
+        self.navigationController = UINavigationController(rootViewController: SignInViewController.loadFromNib())
         self.window?.rootViewController = self.navigationController
     }
     
@@ -47,6 +47,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         tabbarViewController.modalPresentationStyle = .fullScreen
         tabbarViewController.modalTransitionStyle = .crossDissolve
         self.window?.rootViewController = tabbarViewController
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

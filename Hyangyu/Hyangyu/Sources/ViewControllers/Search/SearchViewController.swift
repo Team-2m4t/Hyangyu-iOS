@@ -11,7 +11,24 @@ protocol RecentSearchCoreDataUsable {
     func saveRecentResearch(term: String, date: Date, index: Int32)
 }
 
-class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate {
+class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchBarDelegate, SearchResultsViewConrollerDelegate {
+    func didTapResult(_ result: SearchResult) {
+        let detailPageStoryboard = UIStoryboard.init(name: "DetailViewPage", bundle: nil)
+        guard let detailPageVC = detailPageStoryboard.instantiateViewController(withIdentifier: "DetailPageViewController") as? DetailPageViewController else {
+            return
+        }
+        switch  result {
+        case .display(let model), .fair(let model), .festival(let model):
+            detailPageVC.configure(with: model)
+            detailPageVC.title = model.title
+            detailPageVC.navigationItem.largeTitleDisplayMode = .never
+            self.navigationController?.isNavigationBarHidden = false
+            detailPageVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailPageVC, animated: true)
+        }
+    }
+    
+    
     
     
     
@@ -65,7 +82,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
             withReuseIdentifier: SearchHeaderCollectionReusableView.identifier
         )
         
-        searchResultUpdate()
+//        searchResultUpdate()
         
         
         
@@ -98,29 +115,29 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
         searchController.searchBar.searchBarStyle = .minimal
     }
     
-    func searchResultUpdate() {
-        results.append(contentsOf: [
-            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "서울국제재즈페스티벌", startDate: "2020.5.25", endDate: "2020.5.26", location: "올림픽 공원")),
-            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "자라섬재즈페스티벌", startDate: "2021.11.7", endDate: "2021.11.7", location: "자라섬")),
-            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "제 8회 해운대재즈페스티벌", startDate: "2021.10.26", endDate: "2021.10.30", location: "부산 해운대 문화회관 해운홀")),
-            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "대구국제재즈축제", startDate: "2021.10.6", endDate: "2021.10.11", location: "수성 아트피아&아트 센터")),
-            .exhibition(model: MyListModel(
-                            posterImageURL: "exhibitionImg1",
-                            title: "재즈의 역사",
-                            startDate: "2021.3.18",
-                            endDate: "2021.10.18",
-                            location: "서울국제뮤지선"))
-        ])
-    }
+//    func searchResultUpdate() {
+//        results.append(contentsOf: [
+//            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "서울국제재즈페스티벌", startDate: "2020.5.25", endDate: "2020.5.26", location: "올림픽 공원")),
+//            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "자라섬재즈페스티벌", startDate: "2021.11.7", endDate: "2021.11.7", location: "자라섬")),
+//            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "제 8회 해운대재즈페스티벌", startDate: "2021.10.26", endDate: "2021.10.30", location: "부산 해운대 문화회관 해운홀")),
+//            .festival(model: MyListModel(posterImageURL: "exhibitionImg1", title: "대구국제재즈축제", startDate: "2021.10.6", endDate: "2021.10.11", location: "수성 아트피아&아트 센터")),
+//            .exhibition(model: MyListModel(
+//                            posterImageURL: "exhibitionImg1",
+//                            title: "재즈의 역사",
+//                            startDate: "2021.3.18",
+//                            endDate: "2021.10.18",
+//                            location: "서울국제뮤지선"))
+//        ])
+//    }
     
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        guard let resultsController = searchController.searchResultsController as? SearchResultsViewController,
-              let query = searchBar.text,
+              guard let query = searchBar.text,
               !query.trimmingCharacters(in: .whitespaces).isEmpty else {
             return
         }
-        resultsController.update(with: results)
+        search(query: query)
+    
         
         print(query)
         // perform search
@@ -136,6 +153,7 @@ class SearchViewController: UIViewController, UISearchResultsUpdating, UISearchB
     
     
     func updateSearchResults(for searchController: UISearchController) {
+        results = []
         guard let text = searchController.searchBar.text,
               !text.isEmpty else {
             return
@@ -209,4 +227,32 @@ extension SearchViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension SearchViewController {
+    func search(query: String) {
+        SearchAPI.shared.search(keyword: query) { response in
+            switch response {
+            case .success(let data):
+                if let data = data as? SearchResultResponse {
+                    self.results.append(contentsOf: data.display.compactMap({ .display(model: $0)}))
+                    self.results.append(contentsOf: data.festival.compactMap({ .festival(model: $0)}))
+                    self.results.append(contentsOf: data.fair.compactMap({ .fair(model: $0)}))
+                    guard let resultsController = self.searchController.searchResultsController as? SearchResultsViewController else {
+                        return
+                    }
+                    resultsController.update(with: self.results)
+                    resultsController.delegate = self
+                }
+            case .requestErr(let message):
+                print("requestErr", message)
+            case .pathErr:
+                print("pathErr")
+            case .serverErr:
+                print("serverErr")
+            case .networkFail:
+                print("networkFail")
+            }
+    }
+}
 
+
+}

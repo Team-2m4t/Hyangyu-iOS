@@ -50,6 +50,13 @@ extension Const {
         
         // 리뷰 조회(GET)
         static let showDisplayReview = "/show/review/display"
+        // MARK: - Review
+        
+        static let displayReviewURL = "/review/display"
+        
+        // MARK: - Search
+        static let searchURL = "/search"
+        
         
     }
 }

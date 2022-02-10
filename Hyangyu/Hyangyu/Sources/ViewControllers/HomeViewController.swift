@@ -15,12 +15,12 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()
-        setPosterList(postertitle: "e1")
-        setPosterList(postertitle: "e10")
-        setPosterList(postertitle: "e3")
-        setPosterList(postertitle: "e4")
-        setPosterList(postertitle: "e5")
-        setPosterList(postertitle: "e6")
+        setPosterList(postertitle: "e11")
+        setPosterList(postertitle: "e12")
+        setPosterList(postertitle: "e13")
+        setPosterList(postertitle: "e14")
+        setPosterList(postertitle: "e15")
+        setPosterList(postertitle: "e16")
         setPosterList(postertitle: "e7")
         setHashList()
 
@@ -43,9 +43,9 @@ class HomeViewController: UIViewController {
     
     func setHashList() {
         hashList.append(contentsOf: [
-            HomeHashtagDataModel(coverName: "철학", hashName: "철학"),
+            HomeHashtagDataModel(coverName: "이색적", hashName: "이색적"),
             HomeHashtagDataModel(coverName: "삶", hashName: "삶"),
-            HomeHashtagDataModel(coverName: "이색적", hashName: "이색적")
+            HomeHashtagDataModel(coverName: "철학", hashName: "철학")
         ])
         
     }
@@ -63,12 +63,12 @@ class HomeViewController: UIViewController {
         exhibitionColor.isHighlighted = false
         festivalColor.isHighlighted = true
         fairColor.isHighlighted = true
-        setPosterList(postertitle: "e1")
-        setPosterList(postertitle: "e10")
-        setPosterList(postertitle: "e3")
-        setPosterList(postertitle: "e4")
-        setPosterList(postertitle: "e5")
-        setPosterList(postertitle: "e6")
+        setPosterList(postertitle: "e11")
+        setPosterList(postertitle: "e12")
+        setPosterList(postertitle: "e13")
+        setPosterList(postertitle: "e14")
+        setPosterList(postertitle: "e15")
+        setPosterList(postertitle: "e16")
         setPosterList(postertitle: "e7")
         homeCollectionView.reloadData()
         homeCollectionView.scrollsToTop = true
@@ -82,10 +82,12 @@ class HomeViewController: UIViewController {
         exhibitionColor.isHighlighted = true
         festivalColor.isHighlighted = false
         fairColor.isHighlighted = true
-        setPosterList(postertitle: "e6")
-        setPosterList(postertitle: "e6")
-        setPosterList(postertitle: "e6")
-        setPosterList(postertitle: "e6")
+        setPosterList(postertitle: "f3")
+        setPosterList(postertitle: "f2")
+        setPosterList(postertitle: "f1")
+        setPosterList(postertitle: "f4")
+        setPosterList(postertitle: "f5")
+        setPosterList(postertitle: "f6")
         homeCollectionView.reloadData()
         homeCollectionView.scrollsToTop = true
         homeCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredHorizontally, animated: true)
@@ -97,10 +99,10 @@ class HomeViewController: UIViewController {
         exhibitionColor.isHighlighted = true
         festivalColor.isHighlighted = true
         fairColor.isHighlighted = false
-        setPosterList(postertitle: "e8")
-        setPosterList(postertitle: "e8")
-        setPosterList(postertitle: "e8")
-        setPosterList(postertitle: "e8")
+        setPosterList(postertitle: "fa1")
+        setPosterList(postertitle: "fa2")
+        setPosterList(postertitle: "fa3")
+        setPosterList(postertitle: "fa4")
         homeCollectionView.reloadData()
         homeCollectionView.scrollsToTop = true
         homeCollectionView.scrollToItem(at: IndexPath(row: 0, section: 0), at: .centeredHorizontally, animated: true)
@@ -147,8 +149,24 @@ extension HomeViewController: UICollectionViewDataSource {
         }
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        //api 연결 후 작성
-        self.performSegue(withIdentifier: "showHashDetail", sender: indexPath.row)
+        // 서버 연결 후 작성
+        
+        if collectionView == homeCollectionView {
+      //  let detailPageStoryboard = UIStoryboard(name: "DetailViewPage", bundle: nil)
+            /*    guard let detailPageVC = detailPageStoryboard.instantiateViewController(withIdentifier: "DetailPageViewController") as? DetailPageViewController else {
+                    return
+                }
+        detailPageVC.navigationItem.largeTitleDisplayMode = .never
+                detailPageVC.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(detailPageVC, animated: true)*/
+        } else {
+            guard let hashDetailVC = self.storyboard?.instantiateViewController(withIdentifier: "HashtagDetailViewController") as? HashtagDetailViewController else {
+                return }
+            hashDetailVC.hashName = hashList[indexPath.row].hashName
+            hashDetailVC.hashNumber = indexPath.row
+            self.navigationController?.pushViewController(hashDetailVC, animated: true)
+       // self.performSegue(withIdentifier: "showHashDetail", sender: indexPath.row)
+        }
     }
 }
 extension HomeViewController: UICollectionViewDelegateFlowLayout {
