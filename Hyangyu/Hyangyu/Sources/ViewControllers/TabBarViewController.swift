@@ -14,6 +14,7 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBarUI()
+        self.addCustomTabBarView()
     }
     
     override func viewDidLayoutSubviews() {
@@ -66,9 +67,9 @@ class TabBarViewController: UITabBarController {
         self.customTabBarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
 
         self.customTabBarView.layer.masksToBounds = false
-        self.customTabBarView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+        self.customTabBarView.layer.shadowColor = UIColor.black.withAlphaComponent(0.1).cgColor
         self.customTabBarView.layer.shadowOffset = CGSize(width: -4, height: -6)
-        self.customTabBarView.layer.shadowOpacity = 0.5
+        self.customTabBarView.layer.shadowOpacity = 0.2
         self.customTabBarView.layer.shadowRadius = 20
         self.customTabBarView.layer.shadowColor = UIColor.black.cgColor
         
