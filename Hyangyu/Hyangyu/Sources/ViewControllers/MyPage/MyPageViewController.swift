@@ -172,8 +172,14 @@ extension MyPageViewController: HeaderViewDelegate {
         guard let reviewVC = storyboard.instantiateViewController(withIdentifier: "ReviewViewController") as? ReviewViewController else {
             return
         }
-        reviewVC.navigationController?.initTransparentNavBar()
+       // reviewVC.navigationController?.initTransparentNavBar()
+        reviewVC.navigationController?.navigationBar.barStyle = .black
+       // reviewVC.navigationController?.setNavigationBarHidden(true, animated: true)
+
         self.navigationController?.pushViewController(reviewVC, animated: true)
+        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.tintColor = .black
+        navigationController?.navigationBar.topItem?.title = ""
         
     }
 }
