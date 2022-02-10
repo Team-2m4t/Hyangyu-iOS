@@ -125,6 +125,9 @@
 		83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E02278735FF009A8009 /* SceneDelegate.swift */; };
 		83B34E0A27873600009A8009 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0927873600009A8009 /* Assets.xcassets */; };
 		83B34E0D27873600009A8009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83B34E0B27873600009A8009 /* LaunchScreen.storyboard */; };
+		83B89BD327B4EFAB00025399 /* SearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B89BD227B4EFAB00025399 /* SearchAPI.swift */; };
+		83B89BD727B4EFB400025399 /* SearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B89BD627B4EFB400025399 /* SearchService.swift */; };
+		83B89BDA27B4F34000025399 /* Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B89BD927B4F34000025399 /* Search.swift */; };
 		83B8A66027A103C100C22495 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B8A65F27A103C100C22495 /* Auth.swift */; };
 		83B8A66327A1042B00C22495 /* SignUpAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B8A66227A1042B00C22495 /* SignUpAPI.swift */; };
 		83B8A66627A1048C00C22495 /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B8A66527A1048C00C22495 /* NetworkResult.swift */; };
@@ -271,6 +274,9 @@
 		83B34E02278735FF009A8009 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		83B34E0927873600009A8009 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83B34E0C27873600009A8009 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		83B89BD227B4EFAB00025399 /* SearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAPI.swift; sourceTree = "<group>"; };
+		83B89BD627B4EFB400025399 /* SearchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchService.swift; sourceTree = "<group>"; };
+		83B89BD927B4F34000025399 /* Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Search.swift; sourceTree = "<group>"; };
 		83B8A65F27A103C100C22495 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		83B8A66227A1042B00C22495 /* SignUpAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAPI.swift; sourceTree = "<group>"; };
 		83B8A66527A1048C00C22495 /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
@@ -513,6 +519,7 @@
 		837763BF27A088A400248B6F /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				83B89BD127B4EF9D00025399 /* SearchAPI */,
 				837E481327B42FDD00971486 /* ReviewAPI */,
 				83DADD6927B16A40001DCE44 /* SavedAPI */,
 				000112B527B37C6100201225 /* CategoryAPI */,
@@ -689,6 +696,7 @@
 				000112B327B37BAB00201225 /* CagetoryDisplayResponse.swift */,
 				00721AC127B3DAFE00E99CA2 /* DetailDisplayResponse.swift */,
 				837E481A27B4457500971486 /* Review.swift */,
+				83B89BD927B4F34000025399 /* Search.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -727,6 +735,15 @@
 				000112B027B35C3900201225 /* ReviewDataModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		83B89BD127B4EF9D00025399 /* SearchAPI */ = {
+			isa = PBXGroup;
+			children = (
+				83B89BD227B4EFAB00025399 /* SearchAPI.swift */,
+				83B89BD627B4EFB400025399 /* SearchService.swift */,
+			);
+			path = SearchAPI;
 			sourceTree = "<group>";
 		};
 		83C167B5279DBF5C00A4F289 /* Search */ = {
@@ -955,6 +972,7 @@
 				83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */,
 				236279152796841A00C16340 /* HomeViewController.swift in Sources */,
 				23842A97279EBCD600621427 /* HashtagDetailViewController.swift in Sources */,
+				83B89BD727B4EFB400025399 /* SearchService.swift in Sources */,
 				23842A9F279EBCE800621427 /* HashtagDetailTableViewCell.swift in Sources */,
 				23842A92279EBCD600621427 /* HomeViewController.swift in Sources */,
 				8399CF8227994D31002E5287 /* ProcessViewStyle.swift in Sources */,
@@ -980,6 +998,7 @@
 				8399CF612799271A002E5287 /* CustomPageViewController+Extensions.swift in Sources */,
 				838434BE279B4B6B00F0484C /* MyListModel.swift in Sources */,
 				83CA48D227AF1DD500F38EC6 /* SearchResultView.swift in Sources */,
+				83B89BD327B4EFAB00025399 /* SearchAPI.swift in Sources */,
 				00721AC227B3DAFE00E99CA2 /* DetailDisplayResponse.swift in Sources */,
 				8399CFB52799BCA6002E5287 /* UIView+Extensions.swift in Sources */,
 				83177BDB27ADA47400032BF3 /* ResetCodeViewController.swift in Sources */,
@@ -1017,6 +1036,7 @@
 				8399CF5D279926B5002E5287 /* CustomPageControlProtocol.swift in Sources */,
 				836086EF27A6A52400E9B9F5 /* SearchBarView.swift in Sources */,
 				83C167CD279DF4DE00A4F289 /* SearchResult.swift in Sources */,
+				83B89BDA27B4F34000025399 /* Search.swift in Sources */,
 				831B67FC279BC6F4009FB738 /* SettingsModel.swift in Sources */,
 				8375EADB27B00D4E007D5EFA /* ServiceDataModel.swift in Sources */,
 				83B8A66027A103C100C22495 /* Auth.swift in Sources */,
