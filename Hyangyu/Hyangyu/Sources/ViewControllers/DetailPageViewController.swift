@@ -26,7 +26,6 @@ class DetailPageViewController: UIViewController {
     @IBOutlet weak var siteLabel: UILabel!
     
     // MARK: - Properties
-    
     private var event: [Event] = []
     
     let moreReviewStoryboard : UIStoryboard = UIStoryboard(name: "MoreReviewPage", bundle: nil)
@@ -81,6 +80,8 @@ class DetailPageViewController: UIViewController {
     
     @IBAction func moreReviewButtonClicked(_ sender: Any) {
         guard let moreReviewVC = moreReviewStoryboard.instantiateViewController(identifier: "MoreReviewViewController") as? MoreReviewViewController else {return}
+        
+        moreReviewVC.displayiD = event[0].eventID
         
         moreReviewVC.modalPresentationStyle = .fullScreen
         moreReviewVC.modalTransitionStyle = .crossDissolve

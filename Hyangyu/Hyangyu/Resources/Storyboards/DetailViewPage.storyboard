@@ -234,48 +234,48 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWb-oF-qtJ">
-                                                <rect key="frame" x="21" y="844" width="52.5" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이물사딱" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HWb-oF-qtJ">
+                                                <rect key="frame" x="21" y="844" width="45" height="16"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtx-gB-SCN">
-                                                <rect key="frame" x="20" y="1010" width="52.5" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수야" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtx-gB-SCN">
+                                                <rect key="frame" x="20" y="994.5" width="22.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o13-q7-W8w">
-                                                <rect key="frame" x="21" y="1168" width="52.5" height="20"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="희수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o13-q7-W8w">
+                                                <rect key="frame" x="21" y="1168" width="22.5" height="20"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="create_time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcL-ky-4x4">
-                                                <rect key="frame" x="306" y="841" width="63" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/02/09 17:42" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JcL-ky-4x4">
+                                                <rect key="frame" x="269.5" y="841" width="99.5" height="22"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="create_time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdx-N6-2g2">
-                                                <rect key="frame" x="306" y="1009.5" width="63" height="17"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/02/09 01:28" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdx-N6-2g2">
+                                                <rect key="frame" x="269.5" y="994" width="102" height="17"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="create_time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRX-Gk-nz5">
-                                                <rect key="frame" x="306" y="1170" width="63" height="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022/02/09 00:46" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRX-Gk-nz5">
+                                                <rect key="frame" x="269.5" y="1170" width="105.5" height="16"/>
                                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9iO-l4-QeG">
-                                                <rect key="frame" x="21" y="873" width="378" height="109.5"/>
+                                                <rect key="frame" x="21" y="873" width="378" height="94"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xNh-08-Xiw" userLabel="content">
-                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="109.5"/>
-                                                        <string key="text">이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. </string>
+                                                        <rect key="frame" x="0.0" y="0.0" width="378" height="94"/>
+                                                        <string key="text">장난감 자동차를 캔버스 가득 옮기는 영국 작가 제레미 디킨슨의 그림은 삭막한 화이트큐브 전시장보다 사람들이 한데 어울리는 공간에 더 잘 어울린다. ‘Jeremy at Home’은 어쩌면 그런 이유에서 기획된 전시인지도 모르겠다. 12월 10일까지 청담동 갤러리 서미를 방문하면 헬라 용게리우스, 베르너 팬톤, 소리 야나기 등의 가구가 디킨슨의 그림과 어우러진 풍경을 감상할 수 있다.</string>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -294,11 +294,11 @@
                                                 <state key="normal" image="report"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hot-bG-1qd" userLabel="reportBtn">
-                                                <rect key="frame" x="384" y="1007" width="15" height="22"/>
+                                                <rect key="frame" x="386.5" y="991.5" width="15" height="22"/>
                                                 <state key="normal" image="report"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGw-yC-yHM" userLabel="reportBtn">
-                                                <rect key="frame" x="384" y="1167" width="15" height="22"/>
+                                                <rect key="frame" x="388" y="1167" width="15" height="22"/>
                                                 <state key="normal" image="report"/>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T8T-Ux-y3K">
@@ -312,12 +312,12 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="izs-dc-axy">
-                                                <rect key="frame" x="21" y="1036.5" width="379" height="106.5"/>
+                                                <rect key="frame" x="21" y="1021" width="379" height="124"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9G-7H-9Fe" userLabel="content">
                                                         <rect key="frame" x="0.0" y="0.0" width="378" height="109.5"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <string key="text">이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. </string>
+                                                        <string key="text">좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 좋아요 !</string>
                                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -328,7 +328,7 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4em-U5-4dK">
-                                                <rect key="frame" x="20" y="1196" width="379" height="109.5"/>
+                                                <rect key="frame" x="20" y="1196" width="383" height="109.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1V-cx-tSH" userLabel="content">
                                                         <rect key="frame" x="0.0" y="0.0" width="378" height="109.5"/>
@@ -398,7 +398,7 @@
                                             <constraint firstItem="zzg-D9-4Wt" firstAttribute="centerX" secondItem="vBD-no-OVz" secondAttribute="centerX" id="Ptl-F8-wdb"/>
                                             <constraint firstItem="Faw-DM-4fV" firstAttribute="centerY" secondItem="4Bf-FS-Tnc" secondAttribute="centerY" id="QMC-Je-ehw"/>
                                             <constraint firstItem="7ZI-Zg-fxW" firstAttribute="leading" secondItem="0Kg-Ll-bQl" secondAttribute="leading" constant="20" symbolic="YES" id="Qaf-eu-LG6"/>
-                                            <constraint firstItem="KRX-Gk-nz5" firstAttribute="top" secondItem="izs-dc-axy" secondAttribute="bottom" constant="27" id="Qjw-Dg-ebw"/>
+                                            <constraint firstItem="KRX-Gk-nz5" firstAttribute="top" secondItem="izs-dc-axy" secondAttribute="bottom" constant="25" id="Qjw-Dg-ebw"/>
                                             <constraint firstItem="aPS-iz-Tsb" firstAttribute="baseline" secondItem="7ZI-Zg-fxW" secondAttribute="baseline" id="Qvb-GY-DFE"/>
                                             <constraint firstItem="5Ei-0Z-dHM" firstAttribute="leading" secondItem="aPS-iz-Tsb" secondAttribute="leading" id="RzM-ET-WXH"/>
                                             <constraint firstItem="4Bf-FS-Tnc" firstAttribute="top" secondItem="aLo-4b-jrf" secondAttribute="bottom" constant="3" id="TYO-Cv-ZF1"/>
@@ -432,7 +432,7 @@
                                             <constraint firstItem="dOg-sA-qMo" firstAttribute="centerY" secondItem="Aqh-Pm-hM2" secondAttribute="centerY" id="fZB-OB-Ev0"/>
                                             <constraint firstItem="l2I-Y0-lmV" firstAttribute="bottom" secondItem="Ef0-8f-2NI" secondAttribute="bottom" id="fhU-Cn-GXL"/>
                                             <constraint firstItem="vBD-no-OVz" firstAttribute="top" secondItem="gYC-dz-V2q" secondAttribute="bottom" constant="15" id="fkr-1S-Daj"/>
-                                            <constraint firstItem="qGw-yC-yHM" firstAttribute="leading" secondItem="KRX-Gk-nz5" secondAttribute="trailing" constant="15" id="gVC-mR-d6t"/>
+                                            <constraint firstItem="qGw-yC-yHM" firstAttribute="leading" secondItem="KRX-Gk-nz5" secondAttribute="trailing" constant="13" id="gVC-mR-d6t"/>
                                             <constraint firstItem="Jdx-N6-2g2" firstAttribute="top" secondItem="9iO-l4-QeG" secondAttribute="bottom" constant="27" id="giy-rk-lut"/>
                                             <constraint firstItem="HWb-oF-qtJ" firstAttribute="leading" secondItem="0Kg-Ll-bQl" secondAttribute="leading" constant="21" id="gq9-Rq-dfQ"/>
                                             <constraint firstItem="aPS-iz-Tsb" firstAttribute="leading" secondItem="7ZI-Zg-fxW" secondAttribute="trailing" constant="10" id="iIU-fe-la0"/>

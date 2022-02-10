@@ -9,6 +9,11 @@ import UIKit
 
 class MoreReviewViewController: UIViewController {
     
+    // MARK: - Properties
+    private var allData = [ReviewDisplayResponse]()
+    private var currentData = [ReviewDisplayResponse]()
+    var displayiD : Int!
+    
     @IBOutlet weak var reviewCollectionView: UICollectionView!
     
     private var reviewList : [ReviewModel] = []
@@ -16,11 +21,11 @@ class MoreReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setReviewList()
         reviewCollectionView.delegate = self
         reviewCollectionView.dataSource = self
         
         registerXib()
+        getDisplayReview(displayId: displayiD)
     }
     
     func registerXib() {
@@ -28,18 +33,12 @@ class MoreReviewViewController: UIViewController {
         reviewCollectionView.register(nibName, forCellWithReuseIdentifier: "ReviewCollectionViewCell")
     }
     
-    func setReviewList()
-    {
-        reviewList.append(contentsOf: [
-            ReviewModel(nickName: "수야", createTime: "2022-02-07", reviewContent: "이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. "),
-            
-            ReviewModel(nickName: "수야", createTime: "2022-02-07", reviewContent: "전시회 짱이에요"),
-            
-            ReviewModel(nickName: "수야", createTime: "2022-02-07", reviewContent: "이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. "),
-            
-            ReviewModel(nickName: "수야", createTime: "2022-02-07", reviewContent: "이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입니다. 이 글은 300자 입//. ")
-        ])
+    private func updateData(display: ReviewDisplayResponse) {
+        //allData = displayReview
+        reviewCollectionView.reloadData()
     }
+    
+    
     
     //뒤로가기 버튼 클릭
     @IBAction func backButtonClicked(_ sender: Any) {
@@ -50,13 +49,12 @@ class MoreReviewViewController: UIViewController {
 extension MoreReviewViewController : UICollectionViewDataSource
 {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return reviewList.count
+        return allData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let reviewCell = collectionView.dequeueReusableCell(withReuseIdentifier: ReviewCollectionViewCell.identifier, for: indexPath) as? ReviewCollectionViewCell else {return UICollectionViewCell()}
         
-        reviewCell.setData(nickName: reviewList[indexPath.row].nickName, createtime: reviewList[indexPath.row].createTime, reviewcontent: reviewList[indexPath.row].reviewContent)
         return reviewCell
     }
 }
@@ -101,4 +99,26 @@ extension MoreReviewViewController : UICollectionViewDelegateFlowLayout
         return 0
     }
     
+}
+
+extension MoreReviewViewController  {
+    @objc func getDisplayReview(displayId: Int) {
+        ShowReviewAPI.shared.getDisplayReview(displayId: displayiD) { response in
+                switch response {
+                case .success(let data):
+                    if let data = data as? ReviewDisplayResponse {
+                        self.updateData(display: data)
+                        self.reviewCollectionView.reloadData()
+                    }
+                case .requestErr(let message):
+                    print("requestErr", message)
+                case .pathErr:
+                    print("pathErr")
+                case .serverErr:
+                    print("serverErr")
+                case .networkFail:
+                    print("networkFail")
+                }
+        }
+    }
 }

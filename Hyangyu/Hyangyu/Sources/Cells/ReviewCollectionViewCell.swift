@@ -14,6 +14,7 @@ class ReviewCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var nickname: UILabel!
     @IBOutlet weak var createTime: UILabel!
     @IBOutlet weak var reviewContent: UILabel!
+    var reviewNumber: Int!
     
     
     override func awakeFromNib() {
@@ -21,12 +22,14 @@ class ReviewCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setData(nickName: String, createtime: String, reviewcontent: String){
-        nickname.text = nickName
-        createTime.text = createtime
-        reviewContent.text = reviewcontent
+    func setData(displayReview: ReviewDisplayResponse){
+        nickname.text = displayReview.username
+        createTime.text = displayReview.createTime
+        reviewContent.text = displayReview.content
+        reviewNumber = displayReview.reviewID
     }
     @IBAction func reportButtonClicked(_ sender: Any) {
+        //리뷰 신고
     }
     
 }

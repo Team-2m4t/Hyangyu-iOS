@@ -28,6 +28,9 @@
 		00788D4927B29C5D00CA115A /* CostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00788D4827B29C5D00CA115A /* CostVC.swift */; };
 		00788D4E27B2AA3800CA115A /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0079288C2797E44C006B8EDE /* CategoryCollectionViewCell.xib */; };
 		0079288D2797E44C006B8EDE /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0079288B2797E44C006B8EDE /* CategoryCollectionViewCell.swift */; };
+		009342F427B4B05E004B23E7 /* ReviewDisplayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009342F327B4B05E004B23E7 /* ReviewDisplayResponse.swift */; };
+		009342F727B4B7E6004B23E7 /* ShowReviewAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009342F627B4B7E6004B23E7 /* ShowReviewAPI.swift */; };
+		009342F927B4B80D004B23E7 /* ShowReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009342F827B4B80D004B23E7 /* ShowReviewService.swift */; };
 		0093448427AFAE7F00490D57 /* MoreReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093448327AFAE7E00490D57 /* MoreReviewViewController.swift */; };
 		0093448627AFAEB000490D57 /* WriteReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093448527AFAEB000490D57 /* WriteReviewViewController.swift */; };
 		0099690327A16FFC00D7CDA2 /* DetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0099690227A16FFC00D7CDA2 /* DetailPageViewController.swift */; };
@@ -167,6 +170,9 @@
 		00788D4827B29C5D00CA115A /* CostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostVC.swift; sourceTree = "<group>"; };
 		0079288B2797E44C006B8EDE /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0079288C2797E44C006B8EDE /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		009342F327B4B05E004B23E7 /* ReviewDisplayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDisplayResponse.swift; sourceTree = "<group>"; };
+		009342F627B4B7E6004B23E7 /* ShowReviewAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowReviewAPI.swift; sourceTree = "<group>"; };
+		009342F827B4B80D004B23E7 /* ShowReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowReviewService.swift; sourceTree = "<group>"; };
 		0093448327AFAE7E00490D57 /* MoreReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreReviewViewController.swift; sourceTree = "<group>"; };
 		0093448527AFAEB000490D57 /* WriteReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteReviewViewController.swift; sourceTree = "<group>"; };
 		0099690027A15AD200D7CDA2 /* DetailViewPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewPage.storyboard; sourceTree = "<group>"; };
@@ -323,6 +329,15 @@
 				00788D4827B29C5D00CA115A /* CostVC.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		009342F527B4B7CA004B23E7 /* ReviewAPI */ = {
+			isa = PBXGroup;
+			children = (
+				009342F627B4B7E6004B23E7 /* ShowReviewAPI.swift */,
+				009342F827B4B80D004B23E7 /* ShowReviewService.swift */,
+			);
+			path = ReviewAPI;
 			sourceTree = "<group>";
 		};
 		66E8DBB31F43C4F6A3ADC179 /* Pods */ = {
@@ -507,6 +522,7 @@
 		837763BF27A088A400248B6F /* APIServices */ = {
 			isa = PBXGroup;
 			children = (
+				009342F527B4B7CA004B23E7 /* ReviewAPI */,
 				83DADD6927B16A40001DCE44 /* SavedAPI */,
 				000112B527B37C6100201225 /* CategoryAPI */,
 				8375EAE327B02D76007D5EFA /* MyPageAPI */,
@@ -646,7 +662,6 @@
 				0099690227A16FFC00D7CDA2 /* DetailPageViewController.swift */,
 				0093448327AFAE7E00490D57 /* MoreReviewViewController.swift */,
 				0093448527AFAEB000490D57 /* WriteReviewViewController.swift */,
-				0003779927B0F6E200724152 /* ReviewModel.swift */,
 				83177BD827ADA45D00032BF3 /* ResetCode */,
 				8307901F27AB1D6500E0F7D4 /* NewPassword */,
 				8307901227AB112D00E0F7D4 /* FindPassword */,
@@ -672,6 +687,7 @@
 				83DADD5F27B12B51001DCE44 /* MyPage.swift */,
 				000112B327B37BAB00201225 /* CagetoryDisplayResponse.swift */,
 				00721AC127B3DAFE00E99CA2 /* DetailDisplayResponse.swift */,
+				009342F327B4B05E004B23E7 /* ReviewDisplayResponse.swift */,
 			);
 			path = APIModels;
 			sourceTree = "<group>";
@@ -708,6 +724,7 @@
 				83C167CC279DF4DE00A4F289 /* SearchResult.swift */,
 				8307A330279EAA50006258E1 /* SearchResultsTableViewCellViewModel.swift */,
 				000112B027B35C3900201225 /* ReviewDataModel.swift */,
+				0003779927B0F6E200724152 /* ReviewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -932,11 +949,13 @@
 				23842AA5279EBCF800621427 /* HomePosterDataModel.swift in Sources */,
 				00788D4127B29C1C00CA115A /* HomeVC.swift in Sources */,
 				23842A9E279EBCE800621427 /* HomeImageCollectionViewCell.swift in Sources */,
+				009342F727B4B7E6004B23E7 /* ShowReviewAPI.swift in Sources */,
 				23842A9C279EBCE800621427 /* HashtagCollectionViewCell.swift in Sources */,
 				23842A9D279EBCE800621427 /* ReviewTableViewCell.swift in Sources */,
 				000112B427B37BAC00201225 /* CagetoryDisplayResponse.swift in Sources */,
 				83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */,
 				236279152796841A00C16340 /* HomeViewController.swift in Sources */,
+				009342F427B4B05E004B23E7 /* ReviewDisplayResponse.swift in Sources */,
 				23842A97279EBCD600621427 /* HashtagDetailViewController.swift in Sources */,
 				23842A9F279EBCE800621427 /* HashtagDetailTableViewCell.swift in Sources */,
 				23842A92279EBCD600621427 /* HomeViewController.swift in Sources */,
@@ -947,6 +966,7 @@
 				831E91C7279C325B001F7F87 /* UIColor+Extensions.swift in Sources */,
 				8399CF9D279955B4002E5287 /* MyPageCollectionViewCell.swift in Sources */,
 				8399CF6627992818002E5287 /* CustomPageViewController.swift in Sources */,
+				009342F927B4B80D004B23E7 /* ShowReviewService.swift in Sources */,
 				8399CF8527994D49002E5287 /* MenuItemView.swift in Sources */,
 				831E91DD279C80F1001F7F87 /* Image.swift in Sources */,
 				83537ADB2796BA7800873198 /* MyExhibitionViewController.swift in Sources */,
