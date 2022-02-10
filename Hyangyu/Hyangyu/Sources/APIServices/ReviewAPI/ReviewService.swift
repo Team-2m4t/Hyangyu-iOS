@@ -25,7 +25,7 @@ extension ReviewService: TargetType, AccessTokenAuthorizable {
     }
     var path: String {
         switch self {
-        case .postDisplayReview(let displayId):
+        case .postDisplayReview(let displayId, let content, let score):
             return Const.URL.displayReviewURL + "/\(displayId)"
         }
     }
@@ -44,7 +44,7 @@ extension ReviewService: TargetType, AccessTokenAuthorizable {
     
     var task: Task {
         switch self {
-        case .postDisplayReview(let displayId, let content, let score):
+        case .postDisplayReview(let _, let content, let score):
             return .requestParameters(parameters: [
                 "content": content,
                 "score": score,
