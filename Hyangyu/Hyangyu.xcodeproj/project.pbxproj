@@ -27,6 +27,7 @@
 		23C6669A27B4CCAE00FD2BF0 /* HomeApiDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6669927B4CCAE00FD2BF0 /* HomeApiDataModel.swift */; };
 		23C6669C27B4CCB000FD2BF0 /* HomeGetDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6669B27B4CCB000FD2BF0 /* HomeGetDataService.swift */; };
 		23C6669E27B4CCB500FD2BF0 /* HomeNetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C6669D27B4CCB500FD2BF0 /* HomeNetworkResult.swift */; };
+		23C666A127B4D7AF00FD2BF0 /* 123.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23C666A027B4D7AF00FD2BF0 /* 123.swift */; };
 		6A4324E6077B73484DAA70C1 /* Pods_Hyangyu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */; };
 		83B34E01278735FF009A8009 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E00278735FF009A8009 /* AppDelegate.swift */; };
 		83B34E03278735FF009A8009 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B34E02278735FF009A8009 /* SceneDelegate.swift */; };
@@ -54,6 +55,7 @@
 		23C6669927B4CCAE00FD2BF0 /* HomeApiDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeApiDataModel.swift; sourceTree = "<group>"; };
 		23C6669B27B4CCB000FD2BF0 /* HomeGetDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeGetDataService.swift; sourceTree = "<group>"; };
 		23C6669D27B4CCB500FD2BF0 /* HomeNetworkResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeNetworkResult.swift; path = Hyangyu/Sources/APIModels/HomeAPIModels/HomeNetworkResult.swift; sourceTree = SOURCE_ROOT; };
+		23C666A027B4D7AF00FD2BF0 /* 123.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = 123.swift; sourceTree = "<group>"; };
 		804693A4DEEB4D51050E0217 /* Pods_Hyangyu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hyangyu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B34DFD278735FF009A8009 /* Hyangyu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hyangyu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83B34E00278735FF009A8009 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,14 @@
 				23C6669927B4CCAE00FD2BF0 /* HomeApiDataModel.swift */,
 			);
 			path = HomeAPIModel;
+			sourceTree = "<group>";
+		};
+		23C6669F27B4D78D00FD2BF0 /* Git merge error */ = {
+			isa = PBXGroup;
+			children = (
+				23C666A027B4D7AF00FD2BF0 /* 123.swift */,
+			);
+			path = "Git merge error";
 			sourceTree = "<group>";
 		};
 		66E8DBB31F43C4F6A3ADC179 /* Pods */ = {
@@ -187,6 +197,7 @@
 		83B34E1B278736C4009A8009 /* APIModels */ = {
 			isa = PBXGroup;
 			children = (
+				23C6669F27B4D78D00FD2BF0 /* Git merge error */,
 				23C6669827B4CC9F00FD2BF0 /* HomeAPIModel */,
 			);
 			path = APIModels;
@@ -361,6 +372,7 @@
 				23C6669A27B4CCAE00FD2BF0 /* HomeApiDataModel.swift in Sources */,
 				23842A94279EBCD600621427 /* ReviewEditViewController.swift in Sources */,
 				23842AA7279EBCF800621427 /* ReviewDataModel.swift in Sources */,
+				23C666A127B4D7AF00FD2BF0 /* 123.swift in Sources */,
 				23C6669E27B4CCB500FD2BF0 /* HomeNetworkResult.swift in Sources */,
 				23842A9E279EBCE800621427 /* HomeImageCollectionViewCell.swift in Sources */,
 				23842A9C279EBCE800621427 /* HashtagCollectionViewCell.swift in Sources */,
