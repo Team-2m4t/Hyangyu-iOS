@@ -14,7 +14,6 @@ class TabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTabBarUI()
-        self.addCustomTabBarView()
     }
     
     override func viewDidLayoutSubviews() {
