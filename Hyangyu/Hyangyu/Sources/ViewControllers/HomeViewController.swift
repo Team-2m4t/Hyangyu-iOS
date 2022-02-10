@@ -12,6 +12,7 @@ class HomeViewController: UIViewController {
     private var posterList: [HomePosterDataModel] = []
     private var hashList: [HomeHashtagDataModel] = []
    //private var allData: SavedResponse = SavedResponse(displays: [Event]())
+    var isFromLogoutOrWithdrawal: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         cornerView()

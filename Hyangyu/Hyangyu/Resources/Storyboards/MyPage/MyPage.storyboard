@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F9g-6d-W9x">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--My Page View Controller-->
+        <scene sceneID="fbi-DK-2ls">
+            <objects>
+                <viewController id="tSk-xO-A8e" customClass="MyPageViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gVt-AY-mpg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cEf-A7-Vb0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7DB-mo-jH1"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xtS-aL-VS9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="940" y="20.689655172413794"/>
+        </scene>
+        <!--My Exhibition View Controller-->
+        <scene sceneID="OJD-K5-qJW">
+            <objects>
+                <viewController storyboardIdentifier="MyExhibitionViewController" id="kpm-jk-XHw" customClass="MyExhibitionViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5lb-Dz-OXo">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="hAY-Dq-bYw">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ifa-ew-sXh">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <view key="backgroundView" contentMode="scaleToFill" id="REh-3F-MTa">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 저장한 전시회가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p2q-5A-5kj">
+                                            <rect key="frame" x="103.66666666666667" y="358" width="167.66666666666663" height="18"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
+                                            <color key="textColor" name="tabBarCustomGray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="p2q-5A-5kj" firstAttribute="centerY" secondItem="REh-3F-MTa" secondAttribute="centerY" id="StP-yg-mW4"/>
+                                        <constraint firstItem="p2q-5A-5kj" firstAttribute="centerX" secondItem="REh-3F-MTa" secondAttribute="centerX" id="rDn-ri-EZm"/>
+                                    </constraints>
+                                </view>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YFx-Kk-trc"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="hAY-Dq-bYw" firstAttribute="top" secondItem="YFx-Kk-trc" secondAttribute="top" id="8f3-j8-W8w"/>
+                            <constraint firstItem="YFx-Kk-trc" firstAttribute="trailing" secondItem="hAY-Dq-bYw" secondAttribute="trailing" id="E5a-xX-pNt"/>
+                            <constraint firstItem="hAY-Dq-bYw" firstAttribute="leading" secondItem="YFx-Kk-trc" secondAttribute="leading" id="S3B-ef-AYj"/>
+                            <constraint firstItem="YFx-Kk-trc" firstAttribute="bottom" secondItem="hAY-Dq-bYw" secondAttribute="bottom" id="Td2-Ts-gVe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="hAY-Dq-bYw" id="sr9-ZB-sF9"/>
+                        <outlet property="emptyExhibitionView" destination="REh-3F-MTa" id="Ghe-nu-XLG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aQA-HC-uql" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1660" y="20.689655172413794"/>
+        </scene>
+        <!--My Festival View Controller-->
+        <scene sceneID="st7-RU-ufM">
+            <objects>
+                <viewController storyboardIdentifier="MyFestivalViewController" id="Xcw-1S-Eue" customClass="MyFestivalViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6hw-Zb-3QD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="swD-mz-hXR">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NjQ-Cp-NKo">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <view key="backgroundView" contentMode="scaleToFill" id="09H-eE-RHF">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 저장한 페스티벌이 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1t-T9-VVu">
+                                            <rect key="frame" x="97.333333333333329" y="358" width="180.66666666666669" height="18"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
+                                            <color key="textColor" name="tabBarCustomGray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="d1t-T9-VVu" firstAttribute="centerY" secondItem="09H-eE-RHF" secondAttribute="centerY" id="7zp-ud-gR4"/>
+                                        <constraint firstItem="d1t-T9-VVu" firstAttribute="centerX" secondItem="09H-eE-RHF" secondAttribute="centerX" id="mKG-yt-u3L"/>
+                                    </constraints>
+                                </view>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="B3s-8b-SNi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="B3s-8b-SNi" firstAttribute="bottom" secondItem="swD-mz-hXR" secondAttribute="bottom" id="0jX-sU-nWn"/>
+                            <constraint firstItem="swD-mz-hXR" firstAttribute="top" secondItem="B3s-8b-SNi" secondAttribute="top" id="A1U-QZ-0dV"/>
+                            <constraint firstItem="swD-mz-hXR" firstAttribute="leading" secondItem="B3s-8b-SNi" secondAttribute="leading" id="OMA-Zg-arS"/>
+                            <constraint firstItem="B3s-8b-SNi" firstAttribute="trailing" secondItem="swD-mz-hXR" secondAttribute="trailing" id="hFX-ml-Hbb"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="swD-mz-hXR" id="kPM-NU-ur2"/>
+                        <outlet property="emptyFestivalView" destination="09H-eE-RHF" id="frz-7N-umu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xAU-ws-ias" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2351.1999999999998" y="20.689655172413794"/>
+        </scene>
+        <!--My Expo View Controller-->
+        <scene sceneID="N3q-tX-Jzb">
+            <objects>
+                <viewController storyboardIdentifier="MyExpoViewController" id="wvM-X5-XYl" customClass="MyExpoViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="A6x-3y-FQ4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lNa-Zy-WeH">
+                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G0P-Ow-poG">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <view key="backgroundView" contentMode="scaleToFill" id="DHB-4V-rxQ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아직 저장한 박람회가 없어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3oN-OX-uWe">
+                                            <rect key="frame" x="103.66666666666667" y="358" width="167.66666666666663" height="18"/>
+                                            <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="15"/>
+                                            <color key="textColor" name="tabBarCustomGray"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="3oN-OX-uWe" firstAttribute="centerY" secondItem="DHB-4V-rxQ" secondAttribute="centerY" id="bYA-zb-1tA"/>
+                                        <constraint firstItem="3oN-OX-uWe" firstAttribute="centerX" secondItem="DHB-4V-rxQ" secondAttribute="centerX" id="frJ-LY-oES"/>
+                                    </constraints>
+                                </view>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vGh-Na-HW2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vGh-Na-HW2" firstAttribute="bottom" secondItem="lNa-Zy-WeH" secondAttribute="bottom" id="8Tw-gl-sz7"/>
+                            <constraint firstItem="lNa-Zy-WeH" firstAttribute="top" secondItem="vGh-Na-HW2" secondAttribute="top" id="NrP-Rq-QTY"/>
+                            <constraint firstItem="lNa-Zy-WeH" firstAttribute="leading" secondItem="vGh-Na-HW2" secondAttribute="leading" id="ewf-9I-IOy"/>
+                            <constraint firstItem="vGh-Na-HW2" firstAttribute="trailing" secondItem="lNa-Zy-WeH" secondAttribute="trailing" id="rP2-J4-F87"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="lNa-Zy-WeH" id="eQ7-7V-nip"/>
+                        <outlet property="emptyExpoView" destination="DHB-4V-rxQ" id="cY2-sb-RMj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="epV-mN-Qak" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="887" y="-660"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dRE-fd-Gfl">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F9g-6d-W9x" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="myPage" selectedImage="myPage-fill" id="DrK-Z7-FW6">
+                        <color key="badgeColor" red="0.10503011199999999" green="0.078191988170000004" blue="0.074826963250000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fhz-zg-IoT">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="tSk-xO-A8e" kind="relationship" relationship="rootViewController" id="Bsi-iE-lcO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ktR-6d-2hN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2.3999999999999999" y="20.689655172413794"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="myPage" width="27" height="27"/>
+        <image name="myPage-fill" width="28" height="28"/>
+        <namedColor name="tabBarCustomGray">
+            <color red="0.74117647058823533" green="0.74117647058823533" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
