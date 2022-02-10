@@ -34,8 +34,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         return UserDefaults.standard.object(forKey: "jwtToken") != nil
     }
     
+//    private func setRootViewControllerToLogin() {
+//        self.navigationController = UINavigationController(rootViewController: SignInViewController.loadFromNib())
+//        self.window?.rootViewController = self.navigationController
+//    }
+    
     private func setRootViewControllerToLogin() {
-        self.navigationController = UINavigationController(rootViewController: SignInViewController.loadFromNib())
+        let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+        let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+        self.navigationController = UINavigationController(rootViewController: loginViewController)
         self.window?.rootViewController = self.navigationController
     }
     
