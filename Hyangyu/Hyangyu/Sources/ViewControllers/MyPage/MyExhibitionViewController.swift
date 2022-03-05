@@ -8,7 +8,7 @@
 import UIKit
 
 
-class MyExhibitionViewController: UIViewController, CustomChildViewController  {
+final class MyExhibitionViewController: UIViewController, CustomChildViewController  {
     
     
     // MARK: - Properties

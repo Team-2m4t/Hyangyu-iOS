@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyFestivalViewController: UIViewController, CustomChildViewController {
+final class MyFestivalViewController: UIViewController, CustomChildViewController {
 
     // MARK: - @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!

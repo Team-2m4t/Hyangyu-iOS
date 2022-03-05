@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyExpoViewController: UIViewController, CustomChildViewController {
+final class MyExpoViewController: UIViewController, CustomChildViewController {
     
     // MARK: - @IBOutlet
     @IBOutlet weak var collectionView: UICollectionView!
