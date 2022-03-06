@@ -16,31 +16,28 @@ extension Const {
         // MARK: - Auth -  Auth Service
         
         // 회원가입 (POST)
-        static let signUpURL = "/UserApi/signup"
+        static let signUpURL = "/user/signup"
         
         // 로그인 (POST)
         
-        static let signInURL = "/AuthController/authenticate"
+        static let signInURL = "/auth"
         
         // 비밀번호 변경 (POST)
-        static let passwordURL = "/UserApi/modifyPassword"
-        
-        // 회원 탈퇴 (DELETE)
-        static let deleteUserURL = "/UserApi/user/deleteMyUser"
+        static let passwordURL = "/user/password"
         
         // MARK: - Saved - My Page Saved Service
         
-        // 전시회 조회 (GET), 전시회 저장 (POST)
+        // 전시회 저장 (POST), 전시회 취소(DELETE), 전시회 조회 (GET), 카테고리 - 전시회(GET)
         static let displayURL = "/display"
         
         
         // MARK: - My Page - User Service
         
         // 닉네임 변경 (POST)
-        static let modifyUserNameURL = "/UserApi/user/modifyUsername"
+        static let modifyUserNameURL = "/user/username"
         
-        // 유저 조회 (GET)
-        static let userViewURL = "/UserApi/user"
+        // 유저 조회 (GET), 유저 조회 이메일로(GET), 회원 탈퇴(DELETE)
+        static let userURL = "/user"
         
         // 마이페이지 조회 (GET)
         static let myPageURL = "/myPage"
