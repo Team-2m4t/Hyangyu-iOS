@@ -197,7 +197,7 @@ extension MyPageViewController: ProfileEditViewControllerDelegate {
 extension MyPageViewController {
     private func getUserData() {
         
-        MyPageAPI.shared.getUserData { (response) in
+        MyPageAPI.shared.getUserData { response in
             switch response {
             case .success(let data):
                 if let data = data as? MyPageResponse {
@@ -206,7 +206,6 @@ extension MyPageViewController {
                 }
             case .requestErr(let message):
                 print("requestErr", message)
-                print("어디가 문제야?")
             case .pathErr:
                 print(".pathErr")
             case .serverErr:
