@@ -1,0 +1,24 @@
+disabled_rules:
+- line_length
+- trailing_whitespace
+- orphaned_doc_comment
+- nesting
+- function_body_length
+- large_tuple
+
+force_cast:
+  warning
+
+included:
+excluded:
+- Pods
+- Hyangyu/Sources/AppDelegate.swift
+- Hyangyu/Sources/SceneDelegate.swift
+- Hyangyu/Sources/Extensions
+
+identifier_name:
+  allowed_symbols: "_"
+  min_length: 1
+  excluded:
+    - id
+
