@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,7 +13,7 @@
             <objects>
                 <viewController storyboardIdentifier="LoginViewController" id="ncJ-nj-5mc" customClass="LoginViewController" customModule="Hyangyu" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="48b-vK-dXd">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="loginBackground" translatesAutoresizingMaskIntoConstraints="NO" id="So3-Je-3ju">
@@ -24,19 +23,19 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="향유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qks-nr-YYE">
-                                <rect key="frame" x="40" y="288" width="334" height="48"/>
+                                <rect key="frame" x="40" y="244" width="520" height="48"/>
                                 <fontDescription key="fontDescription" name="AppleSDGothicNeo-SemiBold" family="Apple SD Gothic Neo" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="NlN-dy-sAv">
-                                <rect key="frame" x="28" y="664" width="374" height="126"/>
+                                <rect key="frame" x="28" y="664" width="560" height="126"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cur-Ok-MSR">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="58"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="560" height="58"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1rp-Fc-8DD">
-                                                <rect key="frame" x="14" y="14" width="346" height="30"/>
+                                                <rect key="frame" x="14" y="14" width="532" height="30"/>
                                                 <state key="normal" title="향유 회원가입">
                                                     <color key="titleColor" name="lightYellow"/>
                                                 </state>
@@ -57,10 +56,10 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xTW-cO-9FW">
-                                        <rect key="frame" x="0.0" y="68" width="374" height="58"/>
+                                        <rect key="frame" x="0.0" y="68" width="560" height="58"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9x7-hq-bXz">
-                                                <rect key="frame" x="14" y="14" width="346" height="30"/>
+                                                <rect key="frame" x="14" y="14" width="532" height="30"/>
                                                 <state key="normal" title="향유 로그인">
                                                     <color key="titleColor" systemColor="systemGray3Color"/>
                                                 </state>
@@ -82,7 +81,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 전시의 시작" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AcY-lc-PN1">
-                                <rect key="frame" x="40" y="344" width="334" height="20.5"/>
+                                <rect key="frame" x="40" y="300" width="520" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -107,10 +106,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="4mH-0D-zcu"/>
                     <connections>
-                        <outlet property="SignUpButtonBackgroundView" destination="cur-Ok-MSR" id="Q0z-Ru-kMU"/>
                         <outlet property="backgroundTopSpace" destination="afa-Ir-Gko" id="GsB-t9-fov"/>
                         <outlet property="loginStackView" destination="NlN-dy-sAv" id="zc3-GP-Vp8"/>
                         <outlet property="signInButtonBackgroundView" destination="xTW-cO-9FW" id="Z5a-yz-RAX"/>
+                        <outlet property="signUpButtonBackgroundView" destination="cur-Ok-MSR" id="Q0z-Ru-kMU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xlE-iO-MGx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

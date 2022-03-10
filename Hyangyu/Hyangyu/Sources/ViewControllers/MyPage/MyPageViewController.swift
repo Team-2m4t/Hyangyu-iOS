@@ -121,13 +121,15 @@ final class MyPageViewController: CustomPageViewController  {
     
     override func pageController(_ pageController: CustomPageViewController, viewControllerAt index: Int) -> CustomController{
         let storyboard = UIStoryboard(name: "MyPage", bundle: nil)
+        // swiftlint:disable force_cast
         if index == 0 {
-            return storyboard.instantiateViewController(withIdentifier: "MyExhibitionViewController") as! MyExhibitionViewController
+          return storyboard.instantiateViewController(withIdentifier: "MyExhibitionViewController") as! MyExhibitionViewController
         } else if index == 1 {
             return storyboard.instantiateViewController(withIdentifier: "MyExpoViewController") as! MyExpoViewController
         } else {
             return storyboard.instantiateViewController(withIdentifier: "MyFestivalViewController") as! MyFestivalViewController
         }
+        // swiftlint:enable force_cast
     }
     
     override func menuViewFor(_ pageController: CustomPageViewController) -> UIView {

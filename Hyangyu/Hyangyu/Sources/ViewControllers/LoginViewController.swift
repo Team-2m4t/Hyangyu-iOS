@@ -9,7 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet weak var SignUpButtonBackgroundView: UIView!
+    @IBOutlet weak var signUpButtonBackgroundView: UIView!
     @IBOutlet weak var signInButtonBackgroundView: UIView!
     @IBOutlet weak var backgroundTopSpace: NSLayoutConstraint!
     @IBOutlet weak var loginStackView: UIStackView!
@@ -32,7 +32,7 @@ class LoginViewController: UIViewController {
     }
     
     private func configureUI() {
-        SignUpButtonBackgroundView.makeRoundedWithBorder(radius: 12, color: UIColor.primary.cgColor)
+        signUpButtonBackgroundView.makeRoundedWithBorder(radius: 12, color: UIColor.primary.cgColor)
         signInButtonBackgroundView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray4.cgColor)
     }
     
