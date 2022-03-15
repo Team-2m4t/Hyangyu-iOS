@@ -350,7 +350,9 @@ open class CustomPageViewController: UIViewController, CustomPageControllerDataS
     
     open func pageController(_ pageController: CustomPageViewController, viewControllerAt index: Int) -> CustomController {
         assertionFailure("Sub-class must implement the AMPageControllerDataSource method")
+        // swiftlint:disable force_cast
         return UIViewController() as! CustomController
+        // swiftlint:enable force_cast
     }
     
     open func numberOfViewControllers(in pageController: CustomPageViewController) -> Int {
