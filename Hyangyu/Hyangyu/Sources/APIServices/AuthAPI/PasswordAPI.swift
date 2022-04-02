@@ -31,8 +31,8 @@ public class PasswordAPI {
         }
     }
     
-    func getEmailCode(completion: @escaping (NetworkResult<Any>) -> Void, email: String) {
-        courseProvider.request(.getEmailCode(email: email)) { (result) in
+    func postEmailCode(completion: @escaping (NetworkResult<Any>) -> Void, email: String) {
+        courseProvider.request(.postEmailCode(email: email)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
@@ -70,7 +70,7 @@ public class PasswordAPI {
     private func judgeGetEmailCodeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<CodeData>.self, from: data) else {
+        guard let decodedData = try? decoder.decode(GenericResponse<EmailCheckData>.self, from: data) else {
             return .pathErr
         }
         

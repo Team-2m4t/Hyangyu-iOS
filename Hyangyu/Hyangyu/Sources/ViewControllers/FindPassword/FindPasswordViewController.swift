@@ -15,12 +15,13 @@ class FindPasswordViewController: UIViewController {
     var isResetCodeEnabled: Bool = false
     private var userResetCode: Int = 0
     
+    // MARK: - @IBOutlet Properties
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var emailTextFieldView: UIView!
     @IBOutlet weak var emailWarningLabel: UILabel!
-
-    
     @IBOutlet weak var nextButton: UIButton!
+    
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         initNavigationBar()
@@ -39,13 +40,11 @@ class FindPasswordViewController: UIViewController {
         emailTextField.delegate = self
     }
     
-    
     private func configureUI() {
         emailTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
         nextButton.makeRounded(radius: 20)
         
         emailWarningLabel.isHidden = true
-        
         
         nextButton.isEnabled = false
     }
@@ -82,29 +81,15 @@ class FindPasswordViewController: UIViewController {
         nextButton.alpha = 0.3
     }
     
-    func validateCode(code: String) -> Bool {
-        // Email 정규식
-        let codeRegEx = "^[0-9]{4}$"
-        let codeTest = NSPredicate(format: "SELF MATCHES %@", codeRegEx)
-        return codeTest.evaluate(with: code)
-    }
-    
-    private func checkCodeFormat(userInput: String) {
-        if validateCode(code: userInput) {
-            makeCompleteButtonEnable()
-        } else {
-            makeCompleteButtonDisable()
-        }
-    }
-    
-
-    
     private func pushToNewPasswordViewController() {
-        self.navigationController?.pushViewController(NewPasswordViewController.loadFromNib(), animated: true)
+        self.navigationController?.pushViewController(ResetCodeViewController.loadFromNib(), animated: true)
+    }
+    
+    @IBAction func touchNextButton(_ sender: Any) {
+        getCode()
     }
     
     
-
 }
 
 extension FindPasswordViewController: UITextFieldDelegate {
@@ -112,7 +97,6 @@ extension FindPasswordViewController: UITextFieldDelegate {
         emailTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
     }
     
-    // 실시간
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else {
             return false
@@ -121,7 +105,6 @@ extension FindPasswordViewController: UITextFieldDelegate {
         return true
     }
     
-    // 키보드 내렸을 때 (.co 등 때문에 추가)
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text else {
             return
@@ -137,18 +120,22 @@ extension FindPasswordViewController {
         
         if let email = self.emailTextField.text {
             
-            PasswordAPI.shared.getEmailCode(completion: { (result) in
+            PasswordAPI.shared.postEmailCode(completion: { (result) in
                 switch result {
                 case .success(let code):
                     
-                    if let data = code as? CodeData {
+                    if let data = code as? EmailCheckData {
                         self.emailWarningLabel.isHidden = true
                         self.user.email = email
+                        print("data.message: \(data.message)")
+                        self.emailWarningLabel.text = "\(data.message)"
+                        self.pushToNewPasswordViewController()
                     }
                 case .requestErr(let message):
                     self.emailWarningLabel.isHidden = false
                     if let message = message as? String {
                         self.emailWarningLabel.text = "\(message)"
+                        self.pushToNewPasswordViewController()
                     }
                 case .pathErr:
                     print(".pathErr")
