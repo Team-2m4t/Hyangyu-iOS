@@ -27,6 +27,9 @@ extension Const {
         // 비밀번호 변경 (POST)
         static let passwordURL = "/user/password"
         
+        // 인증번호 동일 확인 (DELETE)
+        static let checkCodeURL = "/authnum"
+        
         // MARK: - Saved - My Page Saved Service
         
         // 전시회 저장 (POST), 전시회 취소(DELETE), 전시회 조회 (GET), 카테고리 - 전시회(GET)
