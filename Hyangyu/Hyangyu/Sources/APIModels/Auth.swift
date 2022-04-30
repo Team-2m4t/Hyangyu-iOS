@@ -32,5 +32,3 @@ struct CodeData: Codable {
 struct EmailCheckData: Codable {
     let message: String
 }
-
-

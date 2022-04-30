@@ -11,6 +11,7 @@ import Moya
 enum PasswordService {
     case putChangedPassword(email: String, password: String)
     case postEmailCode(email: String)
+    case checkCode(email: String, authNum: String)
     
 }
 
@@ -25,6 +26,8 @@ extension PasswordService: TargetType {
             return Const.URL.passwordURL
         case .postEmailCode(let email):
             return Const.URL.findPasswordURL + "/\(email)"
+        case .checkCode(let email, let authNum):
+            return Const.URL.checkCodeURL
         }
     }
     
@@ -34,6 +37,8 @@ extension PasswordService: TargetType {
             return .put
         case .postEmailCode(_):
             return .post
+        case .checkCode(_, _):
+            return .delete
         }
     }
     
@@ -51,6 +56,11 @@ extension PasswordService: TargetType {
             ], encoding: JSONEncoding.default)
         case .postEmailCode(_):
             return .requestPlain
+        case .checkCode(let email, let authNum):
+            return .requestParameters(parameters: [
+                "email": email,
+                "authNum": authNum
+            ], encoding: JSONEncoding.default)
         }
     }
     
