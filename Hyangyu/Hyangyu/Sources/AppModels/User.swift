@@ -11,6 +11,8 @@ import UIKit
 class User {
     static let shared = User()
     
+    var email: String?
     var username: String?
     var profileImage: UIImage?
+    var password: String?
 }
