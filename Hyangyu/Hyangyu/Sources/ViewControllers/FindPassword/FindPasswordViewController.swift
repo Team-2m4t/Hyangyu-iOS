@@ -14,6 +14,7 @@ class FindPasswordViewController: UIViewController {
     let user = SignUpUser.shared
     var isResetCodeEnabled: Bool = false
     private var userResetCode: Int = 0
+    private var isEmailRight: Bool = false
     
     // MARK: - @IBOutlet Properties
     @IBOutlet weak var emailTextField: UITextField!
@@ -31,6 +32,23 @@ class FindPasswordViewController: UIViewController {
     }
     
     // MARK: - Functions
+    private func addTarget() {
+        emailTextField.addTarget(self, action: #selector(self.activateEmailTextField), for: .editingDidBegin)
+        emailTextField.addTarget(self, action: #selector(self.inactivateEmailTextField), for: .editingDidEnd)
+    }
+    
+    // 텍스트 필드 확성화
+    @objc private func activateEmailTextField() {
+        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
+    }
+
+    // 텍스트 필드 비활성화
+    @objc private func inactivateEmailTextField() {
+        
+        isEmailRight = checkEmail(email: emailTextField.text ?? "")
+        emailWarningLabel.isHidden = isEmailRight || !emailTextField.hasText ? true : false
+        emailTextFieldView.layer.borderColor = isEmailRight || !emailTextField.hasText ? UIColor.systemGray2.cgColor : UIColor.systemRed.cgColor
+    }
     
     private func initNavigationBar() {
         self.navigationController?.initWithBackButton()
@@ -41,8 +59,8 @@ class FindPasswordViewController: UIViewController {
     }
     
     private func configureUI() {
-        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
-        nextButton.makeRounded(radius: 20)
+        emailTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray6.cgColor)
+        nextButton.makeRounded(radius: 12)
         
         emailWarningLabel.isHidden = true
         
@@ -50,7 +68,7 @@ class FindPasswordViewController: UIViewController {
     }
     
     private func checkEmailFormat(email: String) {
-        if validateEmail(email: email) {
+        if checkEmail(email: email) {
             nextButton.isEnabled = true
             nextButton.alpha = 1.0
             
@@ -64,7 +82,7 @@ class FindPasswordViewController: UIViewController {
         }
     }
     
-    func validateEmail(email: String) -> Bool {
+    private func checkEmail(email: String) -> Bool {
         // Email 정규식
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
@@ -81,14 +99,16 @@ class FindPasswordViewController: UIViewController {
         nextButton.alpha = 0.3
     }
     
-    private func pushToNewPasswordViewController() {
-        self.navigationController?.pushViewController(ResetCodeViewController.loadFromNib(), animated: true)
+    private func pushToNewPasswordViewController(email: String) {
+        let resetCodeViewController = ResetCodeViewController.loadFromNib()
+        resetCodeViewController.email = email
+        self.navigationController?.pushViewController(resetCodeViewController, animated: true)
+    
     }
     
     @IBAction func touchNextButton(_ sender: Any) {
         getCode()
     }
-    
     
 }
 
@@ -124,18 +144,19 @@ extension FindPasswordViewController {
                 switch result {
                 case .success(let code):
                     
-                    if let data = code as? EmailCheckData {
+                    if let data = code as? String {
                         self.emailWarningLabel.isHidden = true
                         self.user.email = email
-                        print("data.message: \(data.message)")
-                        self.emailWarningLabel.text = "\(data.message)"
-                        self.pushToNewPasswordViewController()
+                        print("data.message: \(data)")
+                        self.emailWarningLabel.text = "\(data)"
+                        self.showToast(message: data)
+                        self.pushToNewPasswordViewController(email: email)
                     }
                 case .requestErr(let message):
                     self.emailWarningLabel.isHidden = false
                     if let message = message as? String {
                         self.emailWarningLabel.text = "\(message)"
-                        self.pushToNewPasswordViewController()
+                        self.pushToNewPasswordViewController(email: email)
                     }
                 case .pathErr:
                     print(".pathErr")
