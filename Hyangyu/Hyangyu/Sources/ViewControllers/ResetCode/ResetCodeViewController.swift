@@ -64,6 +64,7 @@ class ResetCodeViewController: UIViewController {
     private func configureUI() {
         codeTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray6.cgColor)
         completeButton.makeRounded(radius: 12)
+        warningLabel.isHidden = true
         makeCompleteButtonDisable()
     }
     
