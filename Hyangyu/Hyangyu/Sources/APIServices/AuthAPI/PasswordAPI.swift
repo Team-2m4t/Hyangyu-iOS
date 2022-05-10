@@ -15,14 +15,16 @@ public class PasswordAPI {
     
     public init() { }
     
-    func putNewPassword(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String) {
-        courseProvider.request(.putChangedPassword(email: email, password: password)) { (result) in
+    func postNewPassword(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String) {
+        courseProvider.request(.postChangedPassword(email: email, password: password)) { (result) in
+            print(result)
             switch result {
             case .success(let response):
+                print("response 제대로 오는지 확인: ", response)
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeChangePasswordStatus(by: statusCode, data)
+                let networkResult = self.judgeStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -100,24 +102,4 @@ public class PasswordAPI {
             return .networkFail
         }
     }
-    
-//    private func judgeGetEmailCodeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
-//
-//        let decoder = JSONDecoder()
-//        guard let decodedData = try? decoder.decode(GenericResponse<EmailCheckData>.self, from: data) else {
-//            return .pathErr
-//        }
-//
-//        switch statusCode {
-//        case 200:
-//            return .success(decodedData.data)
-//        case 400..<500:
-//            return .requestErr(decodedData.message)
-//        case 500:
-//            return .serverErr
-//        default:
-//            return .networkFail
-//        }
-//    }
 }
-

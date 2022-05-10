@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum PasswordService {
-    case putChangedPassword(email: String, password: String)
+    case postChangedPassword(email: String, password: String)
     case postEmailCode(email: String)
     case checkCode(email: String, authNum: String)
     
@@ -22,7 +22,7 @@ extension PasswordService: TargetType {
     
     var path: String {
         switch self {
-        case .putChangedPassword(_, _):
+        case .postChangedPassword(_, _):
             return Const.URL.passwordURL
         case .postEmailCode(let email):
             return Const.URL.findPasswordURL + "/\(email)"
@@ -33,8 +33,8 @@ extension PasswordService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .putChangedPassword(_, _):
-            return .put
+        case .postChangedPassword(_, _):
+            return .post
         case .postEmailCode(_):
             return .post
         case .checkCode(_, _):
@@ -48,10 +48,11 @@ extension PasswordService: TargetType {
     
     var task: Task {
         switch self {
-        case .putChangedPassword(let email, let password):
+        case .postChangedPassword(let email, let password):
             // body가 있는 request - JSONEncoding.default
             return .requestParameters(parameters: [
                 "email": email,
+                "username": "",
                 "password": password
             ], encoding: JSONEncoding.default)
         case .postEmailCode(_):
