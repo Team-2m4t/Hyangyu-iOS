@@ -92,8 +92,6 @@ class SignUpViewController: UIViewController {
         
         // 버튼 활성화 조건
         [emailTextField, passwordTextField, confirmPasswordTextField, nicknameTextField].forEach {$0.addTarget(self, action: #selector(self.activateSignUpButton), for: .editingChanged)}
-        
-        
     }
     
     // 이메일 정규식 체크

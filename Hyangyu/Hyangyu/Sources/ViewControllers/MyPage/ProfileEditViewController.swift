@@ -9,7 +9,7 @@ import UIKit
 
 import Then
 
-protocol ProfileEditViewControllerDelegate: class {
+protocol ProfileEditViewControllerDelegate: AnyObject {
     func setUpdate(data: MyPageResponse)
 }
 
@@ -17,7 +17,6 @@ struct ProfileEditViewControllerViewModel {
     let profileImage: UIImage
     let userName: String
 }
-
 
 
 final class ProfileEditViewController: UIViewController {
@@ -47,14 +46,12 @@ final class ProfileEditViewController: UIViewController {
     
     @IBOutlet weak var countingLabel: UILabel!
     
-    
     private let imageShadowView = UIView().then {
         $0.layer.shadowOffset = CGSize(width: 0, height: 0)
         $0.layer.shadowOpacity = 0.2
         $0.layer.shadowRadius = 5.0
         $0.layer.shadowColor = UIColor.gray.cgColor
     }
-    
     
     weak var delegate: ProfileEditViewControllerDelegate?
     
@@ -89,7 +86,6 @@ final class ProfileEditViewController: UIViewController {
         userProfileImageView.layer.cornerRadius = 50
         userProfileImageView.clipsToBounds = true
     }
-    
     
     private func setDelegation() {
         userNameTextField.delegate = self
@@ -143,7 +139,6 @@ final class ProfileEditViewController: UIViewController {
     }
     
     // MARK: - @IBAction
-    
     
     @IBAction func didTapCancel(_ sender: Any) {
         dismiss(animated: true, completion: nil)
@@ -219,11 +214,7 @@ final class ProfileEditViewController: UIViewController {
     @objc func touchToPickImage() {
         actionSheetAlert()
     }
-    
-    
-    
-    
-    
+
     private func actionSheetAlert() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
@@ -268,12 +259,11 @@ final class ProfileEditViewController: UIViewController {
         self.viewModel = viewModel
     }
     
-    
 }
 
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegatenil
 extension ProfileEditViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
         var newImage: UIImage? = nil
         

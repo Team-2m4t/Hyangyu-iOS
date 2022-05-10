@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 import Kingfisher
 import Then
 import SnapKit
@@ -58,14 +59,12 @@ class HeaderView: UIView {
     
     weak var delegate: HeaderViewDelegate?
     
-    
     func configureUI() {
         addSubview(profileImageView)
         addSubview(userNameLabel)
         addSubview(buttonStackView)
         buttonStackView.addArrangedSubview(profileEditButton)
         buttonStackView.addArrangedSubview(myReviewButton)
-        
         
         profileImageView.snp.makeConstraints {
             $0.top.equalTo(safeAreaInsets.top).offset(110)

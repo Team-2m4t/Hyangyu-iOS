@@ -15,14 +15,16 @@ public class PasswordAPI {
     
     public init() { }
     
-    func putNewPassword(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String) {
-        courseProvider.request(.putChangedPassword(email: email, password: password)) { (result) in
+    func postNewPassword(completion: @escaping (NetworkResult<Any>) -> Void, email: String, password: String) {
+        courseProvider.request(.postChangedPassword(email: email, password: password)) { (result) in
+            print(result)
             switch result {
             case .success(let response):
+                print("response 제대로 오는지 확인: ", response)
                 let statusCode = response.statusCode
                 let data = response.data
                 
-                let networkResult = self.judgeChangePasswordStatus(by: statusCode, data)
+                let networkResult = self.judgeStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -31,13 +33,28 @@ public class PasswordAPI {
         }
     }
     
-    func getEmailCode(completion: @escaping (NetworkResult<Any>) -> Void, email: String) {
-        courseProvider.request(.getEmailCode(email: email)) { (result) in
+    func postEmailCode(completion: @escaping (NetworkResult<Any>) -> Void, email: String) {
+        courseProvider.request(.postEmailCode(email: email)) { (result) in
             switch result {
             case .success(let response):
                 let statusCode = response.statusCode
                 let data = response.data
-                let networkResult = self.judgeGetEmailCodeStatus(by: statusCode, data)
+                let networkResult = self.judgeStatus(by: statusCode, data)
+                completion(networkResult)
+                
+            case .failure(let err):
+                print(err)
+            }
+        }
+    }
+    
+    func checkCode(completion: @escaping (NetworkResult<Any>) -> Void, email: String, authNum: String) {
+        courseProvider.request(.checkCode(email: email, authNum: authNum)) { (result) in
+            switch result {
+            case .success(let response):
+                let statusCode = response.statusCode
+                let data = response.data
+                let networkResult = self.judgeStatus(by: statusCode, data)
                 completion(networkResult)
                 
             case .failure(let err):
@@ -67,16 +84,16 @@ public class PasswordAPI {
         }
     }
     
-    private func judgeGetEmailCodeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
-        
+    private func judgeStatus(by statusCode: Int, _ data: Data) -> NetworkResult<Any> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(GenericResponse<CodeData>.self, from: data) else {
+        guard let decodedData = try? decoder.decode(GenericResponse<String>.self, from: data)
+        else {
             return .pathErr
         }
         
         switch statusCode {
         case 200:
-            return .success(decodedData.data)
+            return .success(decodedData.message)
         case 400..<500:
             return .requestErr(decodedData.message)
         case 500:
@@ -86,4 +103,3 @@ public class PasswordAPI {
         }
     }
 }
-

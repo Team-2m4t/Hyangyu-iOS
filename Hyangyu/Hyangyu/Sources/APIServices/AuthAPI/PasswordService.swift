@@ -9,8 +9,10 @@ import Foundation
 import Moya
 
 enum PasswordService {
-    case putChangedPassword(email: String, password: String)
-    case getEmailCode(email: String)
+    case postChangedPassword(email: String, password: String)
+    case postEmailCode(email: String)
+    case checkCode(email: String, authNum: String)
+    
 }
 
 extension PasswordService: TargetType {
@@ -20,19 +22,23 @@ extension PasswordService: TargetType {
     
     var path: String {
         switch self {
-        case .putChangedPassword(_, _):
+        case .postChangedPassword(_, _):
             return Const.URL.passwordURL
-        case .getEmailCode(let email):
-            return Const.URL.passwordURL + "/\(email)"
+        case .postEmailCode(let email):
+            return Const.URL.findPasswordURL + "/\(email)"
+        case .checkCode(let email, let authNum):
+            return Const.URL.checkCodeURL
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .putChangedPassword(_, _):
-            return .put
-        case .getEmailCode(_):
-            return .get
+        case .postChangedPassword(_, _):
+            return .post
+        case .postEmailCode(_):
+            return .post
+        case .checkCode(_, _):
+            return .delete
         }
     }
     
@@ -42,14 +48,20 @@ extension PasswordService: TargetType {
     
     var task: Task {
         switch self {
-        case .putChangedPassword(let email, let password):
+        case .postChangedPassword(let email, let password):
             // body가 있는 request - JSONEncoding.default
             return .requestParameters(parameters: [
                 "email": email,
+                "username": "",
                 "password": password
             ], encoding: JSONEncoding.default)
-        case .getEmailCode(_):
+        case .postEmailCode(_):
             return .requestPlain
+        case .checkCode(let email, let authNum):
+            return .requestParameters(parameters: [
+                "email": email,
+                "authNum": authNum
+            ], encoding: JSONEncoding.default)
         }
     }
     
@@ -59,4 +71,3 @@ extension PasswordService: TargetType {
         ]
     }
 }
-
