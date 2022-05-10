@@ -8,7 +8,7 @@
 import UIKit
 
 class ResetCodeViewController: UIViewController {
-
+    
     // MARK: - Properties
     var email: String? // 이메일
     
@@ -19,15 +19,14 @@ class ResetCodeViewController: UIViewController {
     @IBOutlet weak var warningLabel: UILabel!
     @IBOutlet weak var completeButton: UIButton!
     
-    // MARK: - View Life Cycle 
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
-        print("이거 실행되긴 하니?")
         super.viewDidLoad()
         
         initNavigationBar()
         setDelegation()
         configureUI()
-
+        
     }
     
     // MARK: - Functions
@@ -41,7 +40,7 @@ class ResetCodeViewController: UIViewController {
     @objc private func activateCodeTextField() {
         codeTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
     }
-
+    
     // 텍스트 필드 비활성화
     @objc private func inactivateCodeTextField() {
         codeTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray6.cgColor)
@@ -76,19 +75,19 @@ class ResetCodeViewController: UIViewController {
         completeButton.isEnabled = true
         completeButton.alpha = 1.0
     }
-
+    
     private func makeCompleteButtonDisable() {
         completeButton.isEnabled = false
         completeButton.alpha = 0.3
     }
-
+    
     func validateCode(code: String) -> Bool {
         // Email 정규식
         let codeRegEx = "^[a-z0-9+]{6}$"
         let codeTest = NSPredicate(format: "SELF MATCHES %@", codeRegEx)
         return codeTest.evaluate(with: code)
     }
-
+    
     private func checkCodeFormat(userInput: String) {
         if validateCode(code: userInput) {
             makeCompleteButtonEnable()
@@ -96,16 +95,19 @@ class ResetCodeViewController: UIViewController {
             makeCompleteButtonDisable()
         }
     }
-        
+    
     @IBAction func touchCompleteButton(_ sender: Any) {
-        print("touched Complete Button")
         sendCode()
+    }
+    
+    // 화면 터치시 키보드 내림
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     private func pushToNewPasswordViewController(email: String) {
         let newPasswordViewController = NewPasswordViewController.loadFromNib()
         self.navigationController?.pushViewController(newPasswordViewController, animated: true)
-    
     }
     
 }
@@ -113,7 +115,6 @@ class ResetCodeViewController: UIViewController {
 // MARK: - UITextFieldDelegate
 extension ResetCodeViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
-        print("textFieldDidendEditing")
         guard let text = textField.text else {
             return
         }
@@ -121,7 +122,6 @@ extension ResetCodeViewController: UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        print("저 실행되었습니다.")
         warningLabel.isHidden = true
         codeTextFieldView.makeRoundedWithBorder(radius: 12, color: UIColor.systemGray2.cgColor)
         completeButton.isEnabled = true
@@ -136,7 +136,6 @@ extension ResetCodeViewController: UITextFieldDelegate {
 
 extension ResetCodeViewController {
     func sendCode() {
-        print("저 실행됩니다요")
         guard let code = codeTextField.text else {
             return
         }
@@ -144,20 +143,14 @@ extension ResetCodeViewController {
         PasswordAPI.shared.checkCode(completion: { response in
             switch response {
             case .success(let data):
-                if let data = data as? String {
-                    self.showToast(message: data)
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.dismiss(animated: true)
-                }
                 self.pushToNewPasswordViewController()
             case .requestErr(let message):
                 if let message = message as? String {
                     print(message)
                     self.showToast(message: message)
-                }
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    self.dismiss(animated: true)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                        self.dismiss(animated: true)
+                    }
                 }
                 print("requestErr", message)
             case .pathErr:

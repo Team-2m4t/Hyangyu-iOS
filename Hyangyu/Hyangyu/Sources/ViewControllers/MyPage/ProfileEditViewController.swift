@@ -214,8 +214,7 @@ final class ProfileEditViewController: UIViewController {
     @objc func touchToPickImage() {
         actionSheetAlert()
     }
-    
-    
+
     private func actionSheetAlert() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
