@@ -7,25 +7,14 @@
 
 import UIKit
 
-final class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    
+final class SettingsViewController: UIViewController {
+        
     private let tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
-    
-    private let appVersionCell = UITableViewCell().then{
-        $0.textLabel?.text = "버전정보"
-        $0.detailTextLabel?.text = "1.0.1"
-    }
-    
-    private let switchCell = UITableViewCell().then {
-        $0.textLabel?.text = "푸시 알람 받기"
-    }
-    
-    
+        
     private var sections = [Section]()
     
     // MARK: - Life Cycle Functions
@@ -39,8 +28,11 @@ final class SettingsViewController: UIViewController, UITableViewDelegate, UITab
         
         tableView.dataSource = self
         tableView.delegate = self
-        
-        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tableView.frame = view.bounds
     }
     
     // MARK: - Functions
@@ -52,20 +44,20 @@ final class SettingsViewController: UIViewController, UITableViewDelegate, UITab
     private func configureModels() {
         sections.append(Section(title: "공지", options: [Option(title: "공지", handler: { [weak self] in
             DispatchQueue.main.async {
-                self?.signOutTapped()
+                self?.infoTapped()
             }
         }), Option(title: "문의사항", handler: { [weak self] in
             DispatchQueue.main.async {
-                self?.signOutTapped()
+                self?.contanctTapped()
             }
         })]))
         sections.append(Section(title: "설정", options: [Option(title: "계정 설정", handler: { [weak self] in
             DispatchQueue.main.async {
-                self?.signOutTapped()
+                self?.notificationTapped()
             }
         }), Option(title: "푸시 알림 설정", handler: { [weak self] in
             DispatchQueue.main.async {
-                self?.signOutTapped()
+                self?.notificationTapped()
             }
         })]))
         sections.append(Section(title: "로그아웃", options: [Option(title: "로그아웃", handler: { [weak self] in
@@ -74,45 +66,63 @@ final class SettingsViewController: UIViewController, UITableViewDelegate, UITab
             }
         }), Option(title: "회원 탈퇴", handler: { [weak self] in
             DispatchQueue.main.async {
-                self?.signOutTapped()
+                self?.withDrawalTapped()
             }
         })]))
     }
     
-    private func popToLoginViewController() {
-        if let loginViewController = self.navigationController?.viewControllers.filter({$0 is SignInViewController}).first as? SignInViewController {
-            print("이거 실행됨")
-            self.navigationController?.popToViewController(loginViewController, animated: true)
-        } else {
-            guard let homeViewController = self.navigationController?.viewControllers.filter({$0 is HomeViewController}).first as? HomeViewController else {
-                print("아님 이거")
-                return
-            }
-            homeViewController.isFromLogoutOrWithdrawal = true
-            self.navigationController?.popToViewController(homeViewController, animated: true)
-        }
+    // MARK: - handlers
+    
+    private func signOut(completion: (Bool) -> Void) {
+        UserDefaults.standard.removeObject(forKey: "jwtToken")
+        completion(true)
     }
     
     private func signOutTapped() {
-        
-        
+        let alert = UIAlertController(title: "로그아웃",
+                                      message: "정말 로그아웃 하시겠어요?",
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "로그아웃", style: .destructive, handler: { _ in
+            self.signOut { [weak self] signedOut in
+                if signedOut {
+                    DispatchQueue.main.async {
+                        let loginStoryboard = UIStoryboard(name: "Login", bundle: nil)
+                        let loginViewController = loginStoryboard.instantiateViewController(withIdentifier: "LoginViewController")
+                        let navVC = UINavigationController(rootViewController: loginViewController)
+                        navVC.modalPresentationStyle = .fullScreen
+                        self?.present(navVC, animated: true, completion: nil)
+                    }
+                }
+            }
+        }))
+        present(alert, animated: true)
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tableView.frame = view.bounds
-    }
+    private func infoTapped() { }
     
-    private func viewProfile() {
-        
-    }
+    private func contanctTapped() { }
     
-    // MARK: - TableView
+    private func notificationTapped() { }
+    
+    private func withDrawalTapped() { }
+    
+}
+
+// MARK: - UITableViewDelegate
+
+extension SettingsViewController: UITableViewDelegate {
+    
+    
+}
+
+// MARK: - UITableDataSource
+extension SettingsViewController: UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
-    
+        
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return sections[section].options.count
     }
@@ -120,22 +130,13 @@ final class SettingsViewController: UIViewController, UITableViewDelegate, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = sections[indexPath.section].options[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.selectionStyle = .none
         cell.textLabel?.text = model.title
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        // Call handler for cell
         let model = sections[indexPath.section].options[indexPath.row]
         model.handler()
     }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let model = sections[section]
-        return model.title
-    }
-    
-    
 }
-
