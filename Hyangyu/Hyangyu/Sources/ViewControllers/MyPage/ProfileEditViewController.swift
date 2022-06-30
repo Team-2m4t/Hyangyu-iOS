@@ -9,7 +9,7 @@ import UIKit
 
 import Then
 
-protocol ProfileEditViewControllerDelegate: class {
+protocol ProfileEditViewControllerDelegate: AnyObject {
     func setUpdate(data: MyPageResponse)
 }
 
@@ -219,11 +219,7 @@ final class ProfileEditViewController: UIViewController {
     @objc func touchToPickImage() {
         actionSheetAlert()
     }
-    
-    
-    
-    
-    
+  
     private func actionSheetAlert() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
