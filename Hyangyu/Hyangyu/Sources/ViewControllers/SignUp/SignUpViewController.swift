@@ -7,6 +7,8 @@
 
 import UIKit
 
+import PhotosUI
+
 class SignUpViewController: UIViewController {
     
     // MARK: Properties
@@ -39,7 +41,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var signUpButton: UIButton!
     @IBOutlet weak var passwordSecureButton: UIButton!
     @IBOutlet weak var confirmPasswordSecureButton: UIButton!
-    
+    @IBOutlet weak var userImageView: UIImageView!
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -47,10 +49,50 @@ class SignUpViewController: UIViewController {
         configureUI()
         checkTextField()
         navigationController?.initWithBackButton()
-        
+        setTapGestureOnUserImageView()
+        dismissKeyboard()
     }
     
     // MARK: - Functions
+    private func setTapGestureOnUserImageView() {
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
+        userImageView.isUserInteractionEnabled = true
+        userImageView.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    @objc func imageTapped(tapGestureRecognizer: UITapGestureRecognizer) {
+        let defaultAction = UIAlertAction(title: "앨범에서 사진 선택", style: .default) { _ in
+            var configuration = PHPickerConfiguration()
+            // Set the selection limit to enable multiselection.
+            configuration.selectionLimit = 1
+            // Set the filter type according to the user’s selection.
+            configuration.filter = .any(of: [.images])
+            
+            let picker = PHPickerViewController(configuration: configuration)
+            picker.delegate = self
+            self.present(picker, animated: true, completion: nil)
+        }
+        let destroyAction = UIAlertAction(title: "프로필 이미지 삭제", style: .destructive) { _ in
+            self.userImageView.image = Image.userDefaultImage
+        }
+        let cancelAction = UIAlertAction(title: "취소",
+                  style: .cancel, handler: nil)
+        
+        let alert = UIAlertController(title: "프로필 이미지 선택",
+                                      message: "",
+                                      preferredStyle: .actionSheet)
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        if self.userImageView.image != nil && self.userImageView.image != Image.userDefaultImage {
+            alert.addAction(destroyAction)
+        }
+        
+        // the alert was presented
+        self.present(alert, animated: true)
+        
+    }
+    
+    // MARK: - @IBAction
     @IBAction func updateCurrentStatus(_ sender: UIButton) {
         passwordTextField.isSecureTextEntry.toggle()
         if passwordTextField.isSecureTextEntry {
@@ -76,6 +118,8 @@ class SignUpViewController: UIViewController {
         
         signUpButton.isEnabled = false
         
+        userImageView.layer.cornerRadius = 50
+        userImageView.clipsToBounds = true
     }
     
     private func checkTextField() {
@@ -92,8 +136,7 @@ class SignUpViewController: UIViewController {
         
         // 버튼 활성화 조건
         [emailTextField, passwordTextField, confirmPasswordTextField, nicknameTextField].forEach {$0.addTarget(self, action: #selector(self.activateSignUpButton), for: .editingChanged)}
-        
-        
+                
     }
     
     // 이메일 정규식 체크
@@ -217,7 +260,9 @@ class SignUpViewController: UIViewController {
     
 }
 
+// MARK: - 서버 통신
 extension SignUpViewController {
+    
     func signUp() {
         
         guard let email = user.email else {return}
@@ -242,5 +287,27 @@ extension SignUpViewController {
                 print("networkFail")
             }
         }, email: email, password: password, nickname: nickname)
+    }
+}
+
+// MARK: - PHPickerViewControllerDelegate
+extension SignUpViewController: PHPickerViewControllerDelegate {
+    
+    func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+        
+        picker.dismiss(animated: true)
+        
+        let itemProvider = results.first?.itemProvider
+        
+        if let itemProvider = itemProvider,
+           itemProvider.canLoadObject(ofClass: UIImage.self) {
+            itemProvider.loadObject(ofClass: UIImage.self) { (image, _) in
+                DispatchQueue.main.async {
+                    self.userImageView.image = image as? UIImage
+                }
+            }
+        } else {
+            print("error: failed to load picker view")
+        }
     }
 }

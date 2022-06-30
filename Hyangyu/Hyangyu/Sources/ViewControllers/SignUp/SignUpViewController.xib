@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -27,6 +28,7 @@
                 <outlet property="passwordTextFieldView" destination="Ff9-Vj-M9p" id="lGx-40-B7g"/>
                 <outlet property="passwordWarningLabel" destination="ajp-8s-uCX" id="44N-xB-76K"/>
                 <outlet property="signUpButton" destination="wC7-PU-av0" id="3QZ-tH-bQA"/>
+                <outlet property="userImageView" destination="BWM-m4-bk1" id="UPK-gz-jxi"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -47,8 +49,15 @@
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="userDefaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="BWM-m4-bk1">
+                                    <rect key="frame" x="157" y="90" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="NfB-bb-I8j"/>
+                                        <constraint firstAttribute="width" constant="100" id="rk6-zQ-EUu"/>
+                                    </constraints>
+                                </imageView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="7dZ-5E-rnr" userLabel="이메일스택">
-                                    <rect key="frame" x="20" y="118" width="374" height="96"/>
+                                    <rect key="frame" x="20" y="214" width="374" height="96"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LvV-Dc-ZDe">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -82,7 +91,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DoE-3t-L79" userLabel="비밀번호스택">
-                                    <rect key="frame" x="20" y="244" width="374" height="96"/>
+                                    <rect key="frame" x="20" y="340" width="374" height="96"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FJa-mK-ZRI">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -126,7 +135,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="TWq-xW-56h" userLabel="새비밀번호스택">
-                                    <rect key="frame" x="20" y="370" width="374" height="96"/>
+                                    <rect key="frame" x="20" y="466" width="374" height="96"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="비밀번호 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jHc-ME-c02">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -170,7 +179,7 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="YUp-QJ-8nl" userLabel="닉네임스택">
-                                    <rect key="frame" x="20" y="496" width="374" height="76"/>
+                                    <rect key="frame" x="20" y="592" width="374" height="76"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="닉네임" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kE9-Lj-Vbw">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="18"/>
@@ -198,22 +207,22 @@
                                     </subviews>
                                 </stackView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3자 이상 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4g4-MW-Wdm">
-                                    <rect key="frame" x="30" y="575" width="115.5" height="16"/>
+                                    <rect key="frame" x="30" y="671" width="115.5" height="16"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                     <color key="textColor" systemColor="systemRedColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ru-MF-htp">
-                                    <rect key="frame" x="362" y="575" width="22" height="16"/>
+                                    <rect key="frame" x="362" y="671" width="22" height="16"/>
                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                     <color key="textColor" systemColor="systemRedColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wC7-PU-av0">
-                                    <rect key="frame" x="24" y="622" width="366" height="40"/>
+                                    <rect key="frame" x="20" y="723" width="374" height="60"/>
                                     <color key="backgroundColor" name="primary"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="40" id="zTh-nS-MMy"/>
+                                        <constraint firstAttribute="height" constant="60" id="aDp-B5-rgq"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="14"/>
                                     <state key="normal" title="회원가입">
@@ -229,23 +238,25 @@
                                 <constraint firstAttribute="trailing" secondItem="TWq-xW-56h" secondAttribute="trailing" constant="20" id="5Lc-Tj-u0k"/>
                                 <constraint firstItem="7dZ-5E-rnr" firstAttribute="leading" secondItem="1Q4-qg-gi0" secondAttribute="leading" constant="20" id="5hp-A5-9fY"/>
                                 <constraint firstItem="aaB-ro-sew" firstAttribute="top" secondItem="1Q4-qg-gi0" secondAttribute="top" constant="38" id="7ne-bL-Opa"/>
+                                <constraint firstItem="wC7-PU-av0" firstAttribute="trailing" secondItem="YUp-QJ-8nl" secondAttribute="trailing" id="9bJ-vh-oHo"/>
                                 <constraint firstItem="TWq-xW-56h" firstAttribute="leading" secondItem="1Q4-qg-gi0" secondAttribute="leading" constant="20" id="A2R-hj-P7v"/>
-                                <constraint firstAttribute="trailing" secondItem="wC7-PU-av0" secondAttribute="trailing" constant="24" id="A6s-KK-oL6"/>
                                 <constraint firstAttribute="trailing" secondItem="aaB-ro-sew" secondAttribute="trailing" constant="20" id="Asa-1G-O1c"/>
                                 <constraint firstItem="4g4-MW-Wdm" firstAttribute="top" secondItem="YUp-QJ-8nl" secondAttribute="bottom" constant="3" id="CRN-GN-TI3"/>
                                 <constraint firstAttribute="trailing" secondItem="7dZ-5E-rnr" secondAttribute="trailing" constant="20" id="EjA-O3-Oqd"/>
                                 <constraint firstAttribute="trailing" secondItem="YUp-QJ-8nl" secondAttribute="trailing" constant="20" id="Ent-Pg-PQ9"/>
                                 <constraint firstItem="4g4-MW-Wdm" firstAttribute="leading" secondItem="1Q4-qg-gi0" secondAttribute="leading" constant="30" id="Fls-8s-c8A"/>
-                                <constraint firstItem="wC7-PU-av0" firstAttribute="leading" secondItem="1Q4-qg-gi0" secondAttribute="leading" constant="24" id="J7u-wY-eT0"/>
+                                <constraint firstItem="wC7-PU-av0" firstAttribute="leading" secondItem="YUp-QJ-8nl" secondAttribute="leading" id="IPy-ic-ghw"/>
                                 <constraint firstItem="aaB-ro-sew" firstAttribute="leading" secondItem="1Q4-qg-gi0" secondAttribute="leading" constant="20" id="KyL-fy-IZa"/>
-                                <constraint firstItem="7dZ-5E-rnr" firstAttribute="top" secondItem="aaB-ro-sew" secondAttribute="bottom" constant="52" id="OEC-n1-fsR"/>
+                                <constraint firstItem="7dZ-5E-rnr" firstAttribute="top" secondItem="BWM-m4-bk1" secondAttribute="bottom" constant="24" id="OEC-n1-fsR"/>
                                 <constraint firstAttribute="trailing" secondItem="9ru-MF-htp" secondAttribute="trailing" constant="30" id="OxL-kV-ft0"/>
                                 <constraint firstItem="YUp-QJ-8nl" firstAttribute="top" secondItem="TWq-xW-56h" secondAttribute="bottom" constant="30" id="QhA-eY-I5f"/>
-                                <constraint firstItem="wC7-PU-av0" firstAttribute="top" secondItem="YUp-QJ-8nl" secondAttribute="bottom" constant="50" id="axN-T5-Uuu"/>
+                                <constraint firstItem="wC7-PU-av0" firstAttribute="top" secondItem="YUp-QJ-8nl" secondAttribute="bottom" constant="55" id="TN4-ac-sBf"/>
                                 <constraint firstItem="DoE-3t-L79" firstAttribute="top" secondItem="7dZ-5E-rnr" secondAttribute="bottom" constant="30" id="bFY-l3-K9N"/>
                                 <constraint firstItem="YUp-QJ-8nl" firstAttribute="leading" secondItem="1Q4-qg-gi0" secondAttribute="leading" constant="20" id="hZ0-zG-XNx"/>
                                 <constraint firstAttribute="trailing" secondItem="DoE-3t-L79" secondAttribute="trailing" constant="20" id="hgV-WF-Zgl"/>
+                                <constraint firstItem="BWM-m4-bk1" firstAttribute="top" secondItem="aaB-ro-sew" secondAttribute="bottom" constant="24" id="hj6-4e-K4A"/>
                                 <constraint firstItem="TWq-xW-56h" firstAttribute="top" secondItem="DoE-3t-L79" secondAttribute="bottom" constant="30" id="kMo-3L-vK1"/>
+                                <constraint firstItem="BWM-m4-bk1" firstAttribute="centerX" secondItem="1Q4-qg-gi0" secondAttribute="centerX" id="l7q-Ff-nHb"/>
                                 <constraint firstItem="DoE-3t-L79" firstAttribute="leading" secondItem="1Q4-qg-gi0" secondAttribute="leading" constant="20" id="px3-wm-EUw"/>
                                 <constraint firstItem="9ru-MF-htp" firstAttribute="top" secondItem="YUp-QJ-8nl" secondAttribute="bottom" constant="3" id="qtZ-DE-Yad"/>
                             </constraints>
@@ -277,6 +288,7 @@
     </objects>
     <resources>
         <image name="eye" catalog="system" width="128" height="81"/>
+        <image name="userDefaultImage" width="74" height="74"/>
         <namedColor name="lightYellow">
             <color red="0.9882352941176471" green="0.9882352941176471" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
